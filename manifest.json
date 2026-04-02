@@ -1,6 +1,6 @@
 {
-  "version": "2026-04-02",
-  "updated": "2026-04-02T19:35:00Z",
+  "version": "2026-04-03",
+  "updated": "2026-04-03T20:00:00Z",
   "description": "VinceMedia brand-to-affiliate-link mapping — compare against landingpages.txt to detect added/removed links",
   "brands": [
     {
@@ -10,7 +10,7 @@
       "description": "Fitness trackers, massage guns, smart scales and health monitors",
       "affiliateLinks": ["E2A21CE0-037D-47DE-8EAF-445B25A8875A"],
       "storeUrl": "https://www.amazon.com/stores/RENPHO",
-      "favicon": "https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/0cb89e86-a71e-4bff-b46e-e4295b6cc6f1.png",
+      "favicon": "https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/02ecd33d-cfaf-421e-a525-af7e00db51c1._CR0,0,400,400_SX100_.jpg",
       "bg": null,
       "gradient": "linear-gradient(135deg,#0d2f2f 0%,#0f1f1f 100%)"
     },
