@@ -14,11 +14,13 @@
 
 ```
 affiliate-vince.github.io/
-├── index.html          ← 唯一页面（含 banner + 品牌卡片）
-├── manifest.json       ← 品牌映射表（UUID → 品牌信息 → 联盟链接）
-├── landingpages.txt    ← 联盟链接源（用户维护，每行一个）
-├── sitemap.xml         ← 搜索引擎索引
-└── robots.txt          ← 爬虫规则
+├── index.html           ← 唯一页面（纯视图，引用外部数据）
+├── brands.js            ← 品牌数据（分类/描述/logo/背景），可手动编辑
+├── affiliate-links.js   ← 联盟链接（UUID→URL + slug→UUID）
+├── manifest.json        ← 品牌元数据备份
+├── landingpages.txt     ← 联盟链接源（用户维护）
+├── sitemap.xml          ← 搜索引擎索引
+└── robots.txt           ← 爬虫规则
 ```
 
 **关键原则**：
@@ -114,22 +116,31 @@ manifest.json → brands[].affiliateLinks[] 中的所有 UUID
 
 ## index.html 中的对应数据结构
 
+index.html 中**不再内联数据**，通过外部文件引入：
+
+```html
+<script src="brands.js"></script>
+<script src="affiliate-links.js"></script>
+<script>
+  // 应用逻辑...
+</script>
+```
+
+**brands.js** — 品牌信息，可手动编辑：
 ```javascript
-// BRANDS[] — manifest → 品牌信息
 const BRANDS = [
   { slug, brand, category, description, favicon, bg, gradient }
 ];
-
-// AFFILIATE_URLS{} — landingpages.txt → UUID → 完整联盟链接
-const AFFILIATE_URLS = {
-  "UUID": "https://...&tag=maas&..."
-};
-
-// BRAND_UUIDS{} — slug → 首选 UUID
-const BRAND_UUIDS = {
-  "renpho": "E2A21CE0-037D-47DE-8EAF-445B25A8875A"
-};
 ```
+
+**affiliate-links.js** — 联盟链接：
+```javascript
+const AFFILIATE_URLS = { "UUID": "https://...&tag=maas&..." };
+const BRAND_UUIDS = { "renpho": "E2A21CE0-..." };
+```
+
+**手动填写 favicon 方法**：
+在 `brands.js` 中找到对应品牌的 `favicon` 字段，填入 Amazon Store 页面中 `<a title="brand-logo">` → `<img>` 的 `src` URL。
 
 **URL 构建规则**：
 - 从 `landingpages.txt` 提取链接时，取 `?` 前的路径部分

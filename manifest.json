@@ -1,12 +1,12 @@
 {
-  "version": "2026-04-03",
-  "updated": "2026-04-03T20:00:00Z",
+  "version": "2026-04-03b",
+  "updated": "2026-04-02T20:41:00Z",
   "description": "VinceMedia brand-to-affiliate-link mapping — compare against landingpages.txt to detect added/removed links",
   "brands": [
     {
       "slug": "renpho",
       "brand": "RENPHO",
-      "category": "Health & Wellness",
+      "category": "Beauty & Care",
       "description": "Fitness trackers, massage guns, smart scales and health monitors",
       "affiliateLinks": ["E2A21CE0-037D-47DE-8EAF-445B25A8875A"],
       "storeUrl": "https://www.amazon.com/stores/RENPHO",
@@ -17,7 +17,7 @@
     {
       "slug": "reolink",
       "brand": "REOLINK",
-      "category": "Smart Home & Security",
+      "category": "Electronics",
       "description": "Security cameras, doorbells, battery-powered cams and NVR systems",
       "affiliateLinks": ["201E3A4F-C63F-48A6-87B7-524F985330DA"],
       "storeUrl": "https://www.amazon.com/stores/REOLINK",
@@ -28,7 +28,7 @@
     {
       "slug": "halova",
       "brand": "HaloVa",
-      "category": "Baby & Mother Care",
+      "category": "Beauty & Care",
       "description": "Baby carriers, nursing pillows, postpartum recovery products",
       "affiliateLinks": ["9BEBE13D-0781-43DE-967B-26CF95746E59","95BB274A-2557-452C-8DA8-2AFF64377113","0C357483-A7C6-4D03-9B65-D135AFC7D8D9"],
       "storeUrl": "https://www.amazon.com/stores/HaloVa",
@@ -39,7 +39,7 @@
     {
       "slug": "grownsy",
       "brand": "GROWNSY",
-      "category": "Baby Care",
+      "category": "Beauty & Care",
       "description": "Baby feeding kits, care sets, bottle warmers and parenting tools",
       "affiliateLinks": ["0AB1F9B4-B199-4694-9D81-B5AFE725E08B","7A947F79-0AD8-4391-8FB5-99734DAC4973"],
       "storeUrl": "https://www.amazon.com/stores/GROWNSY",
@@ -50,7 +50,7 @@
     {
       "slug": "it-cosmetics",
       "brand": "IT Cosmetics",
-      "category": "Beauty & Cosmetics",
+      "category": "Beauty & Care",
       "description": "Makeup and skincare powered by skin-care science and dermatology",
       "affiliateLinks": ["F8D9521C-6961-43F8-BB2F-2963DF3E2207"],
       "storeUrl": "https://www.amazon.com/stores/ITCosmetics",
@@ -61,7 +61,7 @@
     {
       "slug": "horow",
       "brand": "HOROW",
-      "category": "Home & Bathroom",
+      "category": "Home & Living",
       "description": "Smart toilets, vanities, bathroom fixtures and modern home essentials",
       "affiliateLinks": ["A09341BE-FA66-4BD9-80CC-1A75964A8DC1"],
       "storeUrl": "https://www.amazon.com/stores/HOROW",
@@ -83,7 +83,7 @@
     {
       "slug": "aiper",
       "brand": "AIPER",
-      "category": "Smart Cleaning",
+      "category": "Home & Living",
       "description": "Pool robots, cordless vacuums and smart cleaning devices",
       "affiliateLinks": ["C03611E3-CC8B-44F0-9326-059AAF46A0B1"],
       "storeUrl": "https://www.amazon.com/stores/AIPER",
@@ -94,7 +94,7 @@
     {
       "slug": "plaud",
       "brand": "Plaud",
-      "category": "AI Devices",
+      "category": "Electronics",
       "description": "AI voice recorders with GPT-powered transcription and summarization",
       "affiliateLinks": ["8CF9A795-D789-4562-874A-43E632222F8C"],
       "storeUrl": "https://www.amazon.com/stores/Plaud",
@@ -105,7 +105,7 @@
     {
       "slug": "cute-stone",
       "brand": "CUTE STONE",
-      "category": "Kids & Toys",
+      "category": "Baby & Kids",
       "description": "Kids toys, play sets, educational games and building blocks",
       "affiliateLinks": ["033F62C5-1A33-4D7B-AFF4-1C359716322A"],
       "storeUrl": "https://www.amazon.com/stores/CUTESTONE",
@@ -116,7 +116,7 @@
     {
       "slug": "running-girl",
       "brand": "RUNNING GIRL",
-      "category": "Athletic Apparel",
+      "category": "Sports & Outdoors",
       "description": "Athletic wear and sports apparel designed for active women",
       "affiliateLinks": ["B7ACC67E-2539-43EF-98B5-E77ACC4F1B02"],
       "storeUrl": "https://www.amazon.com/stores/RUNNINGGIRL",
@@ -127,7 +127,7 @@
     {
       "slug": "mescomb",
       "brand": "MESCOMB",
-      "category": "Beauty & Hair",
+      "category": "Beauty & Care",
       "description": "Hot air stylers, curling irons, hair dryers and ionic hair tools",
       "affiliateLinks": ["A34677B1-CC9F-4EC5-8660-F6F5A5E75FE0"],
       "storeUrl": "https://www.amazon.com/stores/MESCOMB",
@@ -138,7 +138,7 @@
     {
       "slug": "hittiona",
       "brand": "HITTIONA",
-      "category": "Beauty & Home",
+      "category": "Beauty & Care",
       "description": "Hair dryers, stylers, ionic beauty tools and home fitness gear",
       "affiliateLinks": ["07B15259-3BD4-47D6-B682-B431AF66F916"],
       "storeUrl": "https://www.amazon.com/stores/HITTIONA",
@@ -149,7 +149,7 @@
     {
       "slug": "aurzen",
       "brand": "Aurzen",
-      "category": "Consumer Electronics",
+      "category": "Electronics",
       "description": "Smart projectors, Roku TVs, Eazze and Boom portable projectors",
       "affiliateLinks": ["16ED44A3-DF5C-4C3D-A734-FFD961269E97"],
       "storeUrl": "https://www.amazon.com/stores/Aurzen",
@@ -160,7 +160,7 @@
     {
       "slug": "prudiut",
       "brand": "Prudiut",
-      "category": "Craft & Kitchen",
+      "category": "Home & Living",
       "description": "Watercolor paper, craft supplies, kitchen tools and accessories",
       "affiliateLinks": ["0198132F-1713-4A28-8AD9-D313AC6E08CB"],
       "storeUrl": "https://www.amazon.com/stores/Prudiut",
@@ -171,7 +171,7 @@
     {
       "slug": "livebox",
       "brand": "LIVEBOX",
-      "category": "Home Decor",
+      "category": "Home & Living",
       "description": "Area rugs, carpets, living room textiles and home furnishings",
       "affiliateLinks": ["C714345E-E401-4BB9-9617-C7A8F20B3FFA"],
       "storeUrl": "https://www.amazon.com/stores/LIVEBOX",
@@ -193,7 +193,7 @@
     {
       "slug": "olight",
       "brand": "OLIGHT",
-      "category": "Lighting & Tools",
+      "category": "Home & Living",
       "description": "EDC flashlights, headlamps, weapon lights and outdoor illumination",
       "affiliateLinks": ["098E844F-88E8-45DC-901F-203F35540649"],
       "storeUrl": "https://www.amazon.com/stores/OLIGHT",
