@@ -3,7 +3,8 @@
 // ⚠️ 不要手动编辑此文件，运行维护流程自动更新
 // ══════════════════════════════════════════════════════════════
 
-// Affiliate URLs indexed by UUID (from landingpages.txt)
+// Affiliate URLs indexed by brand slug (key is brand slug, value is full Amazon store URL with tracking params)
+// UUID is extracted from the URL path: /stores/page/{UUID}
 const AFFILIATE_URLS = {
   "renpho":       "https://www.amazon.com/stores/page/E2A21CE0-037D-47DE-8EAF-445B25A8875A?maas=maas_adg_api_588996196462594400_static_9_258&ref_=aa_maas&tag=maas&aa_campaignid=aa_2841e0a5432b0dd62e5620bdfe84289c&aa_adgroupid=aa_8f02ec43416a2b468b91d2655b3b8158&aa_creativeid=aa_793902831884ef82d3f6059ac72301fc",
   "reolink":      "https://www.amazon.com/stores/page/201E3A4F-C63F-48A6-87B7-524F985330DA?maas=maas_adg_api_588289795052186734_static_9_258&ref_=aa_maas&tag=maas&aa_campaignid=aa_f9427e83ddc2814ead5f7e87a97983c3&aa_adgroupid=aa_b4e18cc5284b22b211a87656f5418fc6&aa_creativeid=aa_793902831884ef82d3f6059ac72301fc",
