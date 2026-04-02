@@ -1,7 +1,8 @@
 User-agent: *
 Allow: /
-Allow: /data/products.json
-Disallow: /data/sync-log.json
-Disallow: /.workbuddy/
 
-Sitemap: https://affiliate-vince.github.io/sitemap.xml
+# Block sensitive or dynamic files
+Disallow: /manifest.json
+Disallow: /landingpages.txt
+
+Sitemap: https://vincemedia.store/sitemap.xml

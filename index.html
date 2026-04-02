@@ -1,994 +1,593 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>BackTheNew – Best Kickstarter Crowdfunding Picks &amp; Reviews 2026</title>
-  <meta name="description" content="Discover the hottest Kickstarter crowdfunding campaigns of 2026. Curated reviews of the best EDC gear, tech gadgets, outdoor adventure products, and innovative home goods — before they sell out." />
-  <meta name="keywords" content="kickstarter 2026, best crowdfunding projects, kickstarter EDC, crowdfunding gadgets, kickstarter picks, crowdfunding reviews" />
-  <meta name="author" content="BackTheNew" />
-  <link rel="canonical" href="https://affiliate-vince.github.io/" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="VinceMedia — Curated lifestyle brands on Amazon. Find the best products in health, home, beauty, tech and more. Commission-free discovery.">
+  <meta name="keywords" content="Amazon brands, lifestyle products, health tech, smart home, beauty tools, Amazon store">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://vincemedia.store/">
+  <title>VinceMedia — Curated Brands on Amazon</title>
 
   <!-- Open Graph -->
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="BackTheNew – Best Kickstarter Crowdfunding Picks 2026" />
-  <meta property="og:description" content="Curated Kickstarter crowdfunding picks: EDC gear, tech gadgets, outdoor gear, and innovative products worth backing in 2026." />
-  <meta property="og:url" content="https://affiliate-vince.github.io/" />
-  <meta property="og:site_name" content="BackTheNew" />
-  <meta property="og:image" content="https://affiliate-vince.github.io/assets/og-cover.jpg" />
-
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="BackTheNew – Best Kickstarter Picks 2026" />
-  <meta name="twitter:description" content="Curated crowdfunding picks: EDC, tech, outdoor gear, and innovations worth backing." />
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="VinceMedia — Curated Brands on Amazon">
+  <meta property="og:description" content="Handpicked products across health, home, beauty and tech from trusted Amazon brands.">
+  <meta property="og:url" content="https://vincemedia.store/">
+  <meta property="og:site_name" content="VinceMedia">
 
   <!-- Schema.org -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    "name": "BackTheNew",
-    "url": "https://affiliate-vince.github.io/",
-    "description": "Curated Kickstarter crowdfunding picks for EDC, tech, outdoor, and home innovation.",
-    "potentialAction": {
-      "@type": "SearchAction",
-      "target": "https://affiliate-vince.github.io/?q={search_term_string}",
-      "query-input": "required name=search_term_string"
+    "name": "VinceMedia",
+    "url": "https://vincemedia.store/",
+    "description": "Curated Amazon brand discovery",
+    "publisher": {
+      "@type": "Organization",
+      "name": "VinceMedia",
+      "url": "https://vincemedia.store/"
     }
   }
   </script>
 
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='12' fill='%230f0f0f'/><text y='.9em' font-size='72' x='50%' text-anchor='middle' dominant-baseline='middle' fill='%23E8FF47' font-family='serif'>V</text></svg>">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=Cormorant+Garamond:wght@500;600&display=swap" rel="stylesheet">
+
   <style>
-    /* ===== CSS Reset & Variables ===== */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --green: #1DB954;
-      --green-dark: #17a348;
-      --green-light: #e8f8ee;
-      --dark: #111827;
-      --gray-900: #1f2937;
-      --gray-700: #374151;
-      --gray-500: #6b7280;
-      --gray-300: #d1d5db;
-      --gray-100: #f3f4f6;
-      --white: #ffffff;
-      --accent: #f59e0b;
-      --red: #ef4444;
-      --radius: 12px;
-      --shadow: 0 4px 24px rgba(0,0,0,.08);
-      --shadow-hover: 0 8px 40px rgba(0,0,0,.15);
-      --font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      --bg: #0f0f0f;
+      --bg2: #171717;
+      --bg3: #1f1f1f;
+      --border: #2a2a2a;
+      --text: #f0f0f0;
+      --text2: #888;
+      --accent: #E8FF47;
+      --accent-dim: #b8cc35;
     }
 
     html { scroll-behavior: smooth; }
 
     body {
-      font-family: var(--font);
-      background: var(--gray-100);
-      color: var(--dark);
+      font-family: 'DM Sans', system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
       line-height: 1.6;
       min-height: 100vh;
     }
 
-    /* ===== Navigation ===== */
-    nav {
+    /* ─── Header ─── */
+    header {
       position: sticky;
       top: 0;
       z-index: 100;
-      background: rgba(255,255,255,.95);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid var(--gray-300);
-      padding: 0 24px;
-    }
-
-    .nav-inner {
-      max-width: 1280px;
-      margin: 0 auto;
+      background: rgba(15,15,15,0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 40px;
+      height: 64px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      height: 60px;
-      gap: 16px;
     }
 
     .logo {
-      display: flex;
-      align-items: center;
-      gap: 8px;
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 1.5rem;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      color: var(--text);
       text-decoration: none;
-      font-weight: 800;
-      font-size: 1.25rem;
-      color: var(--dark);
-      white-space: nowrap;
     }
 
-    .logo-icon {
-      width: 32px;
-      height: 32px;
-      background: var(--green);
-      border-radius: 8px;
+    .logo span {
+      color: var(--accent);
+    }
+
+    .tagline {
+      font-size: 0.8rem;
+      color: var(--text2);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    /* ─── Hero Banner ─── */
+    .hero {
+      position: relative;
+      height: 480px;
+      overflow: hidden;
+      background: var(--bg2);
+    }
+
+    .slides-wrapper {
+      display: flex;
+      height: 100%;
+      transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+
+    .slide {
+      min-width: 100%;
+      height: 100%;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 16px;
-      flex-shrink: 0;
-    }
-
-    .nav-search {
-      flex: 1;
-      max-width: 400px;
-      position: relative;
-    }
-
-    .nav-search input {
-      width: 100%;
-      padding: 8px 16px 8px 40px;
-      border: 1px solid var(--gray-300);
-      border-radius: 50px;
-      font-size: .9rem;
-      background: var(--gray-100);
-      outline: none;
-      transition: border-color .2s, box-shadow .2s;
-    }
-
-    .nav-search input:focus {
-      border-color: var(--green);
-      box-shadow: 0 0 0 3px rgba(29,185,84,.15);
-      background: var(--white);
-    }
-
-    .nav-search .search-icon {
-      position: absolute;
-      left: 14px;
-      top: 50%;
-      transform: translateY(-50%);
-      color: var(--gray-500);
-      font-size: 14px;
-    }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 4px;
-      list-style: none;
-    }
-
-    .nav-links a {
-      padding: 6px 12px;
-      border-radius: 8px;
+      padding: 60px;
       text-decoration: none;
-      font-size: .9rem;
-      color: var(--gray-700);
-      font-weight: 500;
-      transition: background .2s, color .2s;
-    }
-
-    .nav-links a:hover { background: var(--gray-100); color: var(--dark); }
-
-    /* ===== Hero ===== */
-    .hero {
-      background: linear-gradient(135deg, #0f172a 0%, #1e3a2f 50%, #052e16 100%);
-      color: var(--white);
-      padding: 80px 24px 64px;
-      text-align: center;
       position: relative;
-      overflow: hidden;
     }
 
-    .hero::before {
+    .slide::before {
       content: '';
       position: absolute;
       inset: 0;
-      background: radial-gradient(ellipse at 30% 50%, rgba(29,185,84,.15) 0%, transparent 60%),
-                  radial-gradient(ellipse at 70% 50%, rgba(245,158,11,.1) 0%, transparent 60%);
+      background: radial-gradient(ellipse at 30% 50%, rgba(232,255,71,0.06) 0%, transparent 65%);
+      pointer-events: none;
     }
 
-    .hero-content { position: relative; z-index: 1; max-width: 700px; margin: 0 auto; }
+    .slide-content {
+      text-align: center;
+      max-width: 560px;
+      position: relative;
+      z-index: 1;
+    }
 
-    .hero-badge {
+    .slide-brand-img {
+      width: 80px;
+      height: 80px;
+      border-radius: 16px;
+      object-fit: contain;
+      background: rgba(255,255,255,0.06);
+      padding: 12px;
+      margin: 0 auto 28px;
+      display: block;
+    }
+
+    .slide-brand {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 3.2rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      color: var(--text);
+      line-height: 1.1;
+      margin-bottom: 12px;
+    }
+
+    .slide-category {
+      font-size: 0.8rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 16px;
+    }
+
+    .slide-desc {
+      font-size: 1rem;
+      color: var(--text2);
+      margin-bottom: 32px;
+      font-weight: 300;
+    }
+
+    .slide-cta {
       display: inline-flex;
       align-items: center;
-      gap: 6px;
-      background: rgba(29,185,84,.15);
-      border: 1px solid rgba(29,185,84,.3);
-      color: #4ade80;
-      padding: 6px 16px;
-      border-radius: 50px;
-      font-size: .8rem;
+      gap: 8px;
+      background: var(--accent);
+      color: #0f0f0f;
       font-weight: 600;
-      letter-spacing: .05em;
-      text-transform: uppercase;
-      margin-bottom: 24px;
+      font-size: 0.9rem;
+      letter-spacing: 0.04em;
+      padding: 12px 28px;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.2s;
     }
 
-    .hero h1 {
-      font-size: clamp(2rem, 5vw, 3.25rem);
-      font-weight: 800;
-      line-height: 1.15;
-      margin-bottom: 20px;
-      letter-spacing: -.02em;
+    .slide-cta:hover {
+      background: var(--accent-dim);
+      transform: translateY(-1px);
     }
 
-    .hero h1 span { color: var(--green); }
-
-    .hero p {
-      font-size: 1.125rem;
-      color: rgba(255,255,255,.75);
-      max-width: 540px;
-      margin: 0 auto 36px;
-    }
-
-    .hero-stats {
+    /* Dot indicators */
+    .dots {
+      position: absolute;
+      bottom: 24px;
+      left: 50%;
+      transform: translateX(-50%);
       display: flex;
-      justify-content: center;
-      gap: 32px;
-      flex-wrap: wrap;
+      gap: 8px;
+      z-index: 10;
     }
 
-    .hero-stat { text-align: center; }
-    .hero-stat .num { font-size: 1.75rem; font-weight: 800; color: var(--green); }
-    .hero-stat .label { font-size: .8rem; color: rgba(255,255,255,.6); margin-top: 2px; }
-
-    /* ===== Filter Bar ===== */
-    .filter-section {
-      background: var(--white);
-      border-bottom: 1px solid var(--gray-300);
-      padding: 0 24px;
-      position: sticky;
-      top: 60px;
-      z-index: 90;
+    .dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.3);
+      cursor: pointer;
+      transition: background 0.3s, transform 0.3s;
     }
 
-    .filter-inner {
-      max-width: 1280px;
-      margin: 0 auto;
+    .dot.active {
+      background: var(--accent);
+      transform: scale(1.3);
+    }
+
+    /* Prev/Next arrows */
+    .nav-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: rgba(15,15,15,0.7);
+      border: 1px solid var(--border);
       display: flex;
       align-items: center;
-      gap: 8px;
-      overflow-x: auto;
-      padding: 12px 0;
-      scrollbar-width: none;
-    }
-
-    .filter-inner::-webkit-scrollbar { display: none; }
-
-    .filter-btn {
-      padding: 7px 18px;
-      border-radius: 50px;
-      border: 1.5px solid var(--gray-300);
-      background: var(--white);
-      color: var(--gray-700);
-      font-size: .85rem;
-      font-weight: 500;
+      justify-content: center;
       cursor: pointer;
-      white-space: nowrap;
-      transition: all .2s;
+      z-index: 10;
+      color: var(--text);
+      transition: background 0.2s;
+      font-size: 1.1rem;
     }
 
-    .filter-btn:hover, .filter-btn.active {
-      background: var(--green);
-      border-color: var(--green);
-      color: var(--white);
-    }
+    .nav-arrow:hover { background: var(--bg3); }
+    .nav-arrow.prev { left: 20px; }
+    .nav-arrow.next { right: 20px; }
 
-    .filter-count {
-      display: inline-block;
-      background: rgba(0,0,0,.1);
-      border-radius: 50px;
-      padding: 1px 7px;
-      font-size: .75rem;
-      margin-left: 4px;
-    }
-
-    .filter-btn.active .filter-count { background: rgba(255,255,255,.25); }
-
-    /* ===== Products Grid ===== */
-    .products-section {
-      max-width: 1280px;
+    /* ─── Section ─── */
+    .section {
+      max-width: 1200px;
       margin: 0 auto;
-      padding: 40px 24px;
+      padding: 72px 40px;
     }
 
     .section-header {
       display: flex;
-      align-items: center;
+      align-items: baseline;
       justify-content: space-between;
-      margin-bottom: 28px;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
-
-    .section-title { font-size: 1.5rem; font-weight: 700; }
-    .section-count { color: var(--gray-500); font-size: .9rem; }
-
-    .sort-select {
-      padding: 7px 14px;
-      border: 1px solid var(--gray-300);
-      border-radius: 8px;
-      font-size: .85rem;
-      background: var(--white);
-      color: var(--gray-700);
-      cursor: pointer;
-      outline: none;
-    }
-
-    .products-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-      gap: 24px;
-    }
-
-    /* ===== Product Card ===== */
-    .product-card {
-      background: var(--white);
-      border-radius: var(--radius);
-      overflow: hidden;
-      box-shadow: var(--shadow);
-      transition: transform .25s, box-shadow .25s;
-      display: flex;
-      flex-direction: column;
-      position: relative;
-    }
-
-    .product-card:hover {
-      transform: translateY(-4px);
-      box-shadow: var(--shadow-hover);
-    }
-
-    .card-image {
-      width: 100%;
-      aspect-ratio: 16/9;
-      object-fit: cover;
-      background: var(--gray-100);
-      display: block;
-    }
-
-    .card-image-placeholder {
-      width: 100%;
-      aspect-ratio: 16/9;
-      background: linear-gradient(135deg, var(--gray-100), var(--gray-300));
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 2.5rem;
-    }
-
-    .card-body { padding: 20px; flex: 1; display: flex; flex-direction: column; }
-
-    .card-tags {
-      display: flex;
-      gap: 6px;
-      flex-wrap: wrap;
-      margin-bottom: 10px;
-    }
-
-    .tag {
-      display: inline-block;
-      padding: 3px 10px;
-      background: var(--green-light);
-      color: var(--green-dark);
-      border-radius: 50px;
-      font-size: .73rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: .04em;
-    }
-
-    .tag-hot { background: #fef3c7; color: #b45309; }
-    .tag-funded { background: #dcfce7; color: #16a34a; }
-
-    .card-name { font-size: 1.1rem; font-weight: 700; margin-bottom: 4px; color: var(--dark); }
-    .card-tagline { font-size: .85rem; color: var(--gray-500); margin-bottom: 10px; }
-    .card-desc { font-size: .9rem; color: var(--gray-700); flex: 1; margin-bottom: 16px; line-height: 1.55; }
-
-    .card-highlight {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      background: var(--green-light);
-      color: var(--green-dark);
-      padding: 5px 12px;
-      border-radius: 8px;
-      font-size: .8rem;
-      font-weight: 600;
-      margin-bottom: 14px;
-    }
-
-    .card-funding-badge {
-      position: absolute;
-      top: 12px;
-      right: 12px;
-      background: var(--accent);
-      color: var(--white);
-      padding: 4px 10px;
-      border-radius: 50px;
-      font-size: .75rem;
-      font-weight: 700;
-    }
-
-    .card-cta {
-      display: block;
-      width: 100%;
-      padding: 12px 20px;
-      background: var(--green);
-      color: var(--white);
-      text-align: center;
-      text-decoration: none;
-      border-radius: 8px;
-      font-weight: 700;
-      font-size: .9rem;
-      transition: background .2s, transform .1s;
-    }
-
-    .card-cta:hover { background: var(--green-dark); transform: scale(1.01); }
-    .card-cta:active { transform: scale(.99); }
-
-    .card-cta-sub {
-      text-align: center;
-      font-size: .75rem;
-      color: var(--gray-500);
-      margin-top: 8px;
-    }
-
-    /* ===== No Results ===== */
-    .no-results {
-      grid-column: 1 / -1;
-      text-align: center;
-      padding: 80px 24px;
-      color: var(--gray-500);
-    }
-
-    .no-results .icon { font-size: 3rem; margin-bottom: 16px; }
-    .no-results h3 { font-size: 1.25rem; margin-bottom: 8px; color: var(--dark); }
-
-    /* ===== About / Trust Section ===== */
-    .trust-section {
-      background: var(--white);
-      border-top: 1px solid var(--gray-300);
-      padding: 64px 24px;
-    }
-
-    .trust-inner {
-      max-width: 960px;
-      margin: 0 auto;
-      text-align: center;
-    }
-
-    .trust-inner h2 { font-size: 1.75rem; font-weight: 700; margin-bottom: 16px; }
-    .trust-inner p { color: var(--gray-700); max-width: 600px; margin: 0 auto 40px; }
-
-    .trust-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 24px;
-    }
-
-    .trust-card {
-      padding: 28px 20px;
-      background: var(--gray-100);
-      border-radius: var(--radius);
-    }
-
-    .trust-card .icon { font-size: 2rem; margin-bottom: 12px; }
-    .trust-card h3 { font-size: 1rem; font-weight: 700; margin-bottom: 8px; }
-    .trust-card p { font-size: .875rem; color: var(--gray-500); }
-
-    /* ===== Categories Section ===== */
-    .categories-section {
-      max-width: 1280px;
-      margin: 0 auto;
-      padding: 0 24px 48px;
-    }
-
-    .categories-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-      gap: 12px;
-    }
-
-    .category-card {
-      background: var(--white);
-      border-radius: var(--radius);
-      padding: 20px 12px;
-      text-align: center;
-      cursor: pointer;
-      transition: all .2s;
-      border: 2px solid transparent;
-      box-shadow: var(--shadow);
-    }
-
-    .category-card:hover, .category-card.active {
-      border-color: var(--green);
-      transform: translateY(-2px);
-    }
-
-    .category-card .cat-icon { font-size: 1.75rem; margin-bottom: 8px; }
-    .category-card .cat-name { font-size: .875rem; font-weight: 600; color: var(--dark); }
-    .category-card .cat-count { font-size: .75rem; color: var(--gray-500); margin-top: 4px; }
-
-    /* ===== Footer ===== */
-    footer {
-      background: var(--dark);
-      color: rgba(255,255,255,.7);
-      padding: 48px 24px 32px;
-    }
-
-    .footer-inner {
-      max-width: 1280px;
-      margin: 0 auto;
-    }
-
-    .footer-top {
-      display: grid;
-      grid-template-columns: 2fr 1fr 1fr;
-      gap: 40px;
       margin-bottom: 40px;
     }
 
-    .footer-brand .logo { color: var(--white); margin-bottom: 12px; display: inline-flex; }
-    .footer-brand p { font-size: .875rem; line-height: 1.7; max-width: 300px; }
+    .section-title {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 2rem;
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      color: var(--text);
+    }
 
-    .footer-col h4 { color: var(--white); font-size: .9rem; font-weight: 600; margin-bottom: 16px; }
-    .footer-col ul { list-style: none; }
-    .footer-col ul li { margin-bottom: 8px; }
-    .footer-col ul a { color: rgba(255,255,255,.6); text-decoration: none; font-size: .875rem; transition: color .2s; }
-    .footer-col ul a:hover { color: var(--green); }
+    .section-sub {
+      font-size: 0.85rem;
+      color: var(--text2);
+    }
 
-    .footer-bottom {
-      border-top: 1px solid rgba(255,255,255,.1);
-      padding-top: 24px;
+    /* ─── Brand Grid ─── */
+    .brand-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .brand-card {
+      background: var(--bg2);
+      padding: 32px 28px;
+      text-decoration: none;
       display: flex;
-      justify-content: space-between;
+      flex-direction: column;
+      gap: 8px;
+      transition: background 0.2s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .brand-card::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: var(--accent);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.3s ease;
+    }
+
+    .brand-card:hover { background: var(--bg3); }
+    .brand-card:hover::after { transform: scaleX(1); }
+
+    .brand-card-top {
+      display: flex;
       align-items: center;
-      flex-wrap: wrap;
-      gap: 12px;
-      font-size: .8rem;
+      gap: 14px;
+      margin-bottom: 8px;
     }
 
-    .footer-bottom a { color: rgba(255,255,255,.5); text-decoration: none; }
-    .footer-bottom a:hover { color: var(--green); }
-
-    .affiliate-notice {
-      background: rgba(245,158,11,.1);
-      border: 1px solid rgba(245,158,11,.3);
-      color: rgba(255,255,255,.7);
-      padding: 12px 20px;
-      border-radius: 8px;
-      font-size: .8rem;
-      margin-bottom: 24px;
+    .brand-card-img {
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      object-fit: contain;
+      background: rgba(255,255,255,0.05);
+      padding: 8px;
+      flex-shrink: 0;
     }
 
-    /* ===== Responsive ===== */
+    .brand-card-name {
+      font-weight: 600;
+      font-size: 1rem;
+      color: var(--text);
+      letter-spacing: -0.01em;
+    }
+
+    .brand-card-cat {
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 500;
+    }
+
+    .brand-card-desc {
+      font-size: 0.85rem;
+      color: var(--text2);
+      line-height: 1.5;
+      flex: 1;
+    }
+
+    .brand-card-cta {
+      margin-top: 12px;
+      font-size: 0.82rem;
+      font-weight: 500;
+      color: var(--accent);
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      letter-spacing: 0.02em;
+    }
+
+    .brand-card:hover .brand-card-cta { gap: 8px; }
+
+    /* ─── Footer ─── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 40px;
+      text-align: center;
+      font-size: 0.8rem;
+      color: var(--text2);
+    }
+
+    footer a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    footer a:hover { text-decoration: underline; }
+
+    /* ─── Responsive ─── */
     @media (max-width: 768px) {
-      .nav-links { display: none; }
-      .footer-top { grid-template-columns: 1fr; }
-      .hero { padding: 56px 20px 48px; }
-      .hero-stats { gap: 20px; }
-      .products-grid { grid-template-columns: 1fr; }
-      .categories-grid { grid-template-columns: repeat(3, 1fr); }
+      header { padding: 0 20px; }
+      .tagline { display: none; }
+      .hero { height: 400px; }
+      .slide-brand { font-size: 2.4rem; }
+      .section { padding: 48px 20px; }
+      .section-header { flex-direction: column; gap: 6px; }
+      .brand-grid { grid-template-columns: 1fr 1fr; gap: 1px; }
     }
 
     @media (max-width: 480px) {
-      .categories-grid { grid-template-columns: repeat(2, 1fr); }
-      .section-header { flex-direction: column; align-items: flex-start; }
-    }
-
-    /* ===== Animations ===== */
-    @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    .fade-in { animation: fadeInUp .4s ease both; }
-    .product-card { animation: fadeInUp .4s ease both; }
-
-    /* ===== Loading Skeleton ===== */
-    .skeleton {
-      background: linear-gradient(90deg, var(--gray-200,#e5e7eb) 25%, var(--gray-100,#f3f4f6) 50%, var(--gray-200,#e5e7eb) 75%);
-      background-size: 200% 100%;
-      animation: shimmer 1.5s infinite;
-      border-radius: 6px;
-    }
-
-    @keyframes shimmer {
-      0% { background-position: 200% 0; }
-      100% { background-position: -200% 0; }
+      .brand-grid { grid-template-columns: 1fr; }
+      .slide { padding: 40px 24px; }
     }
   </style>
 </head>
-
 <body>
 
-<!-- Navigation -->
-<nav>
-  <div class="nav-inner">
-    <a href="/" class="logo">
-      <span class="logo-icon">🚀</span>
-      BackTheNew
-    </a>
-    <div class="nav-search">
-      <span class="search-icon">🔍</span>
-      <input type="search" id="searchInput" placeholder="Search products..." aria-label="Search products" />
+  <header>
+    <a href="/" class="logo">Vince<span>Media</span></a>
+    <span class="tagline">Curated Brands on Amazon</span>
+  </header>
+
+  <!-- Hero Banner -->
+  <section class="hero" id="banner">
+    <div class="slides-wrapper" id="slidesWrapper">
+      <!-- Slides injected by JS -->
     </div>
-    <ul class="nav-links">
-      <li><a href="#products">All Products</a></li>
-      <li><a href="#categories">Categories</a></li>
-      <li><a href="#about">About</a></li>
-    </ul>
-  </div>
-</nav>
-
-<!-- Hero -->
-<section class="hero" aria-label="Hero banner">
-  <div class="hero-content">
-    <div class="hero-badge">🔥 Updated April 2026</div>
-    <h1>The Best <span>Kickstarter Picks</span><br/>Worth Backing Right Now</h1>
-    <p>Curated crowdfunding campaigns across EDC gear, tech gadgets, outdoor adventures, and home innovation — all live and funding today.</p>
-    <div class="hero-stats">
-      <div class="hero-stat">
-        <div class="num" id="statProducts">21</div>
-        <div class="label">Live Projects</div>
-      </div>
-      <div class="hero-stat">
-        <div class="num" id="statCategories">10</div>
-        <div class="label">Categories</div>
-      </div>
-      <div class="hero-stat">
-        <div class="num">$1M+</div>
-        <div class="label">Combined Funded</div>
-      </div>
+    <button class="nav-arrow prev" onclick="prevSlide()" aria-label="Previous">&#8592;</button>
+    <button class="nav-arrow next" onclick="nextSlide()" aria-label="Next">&#8594;</button>
+    <div class="dots" id="dots">
+      <!-- Dots injected by JS -->
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- Filter Bar -->
-<div class="filter-section" id="filterBar">
-  <div class="filter-inner" id="filterButtons" role="tablist" aria-label="Product category filters">
-    <!-- Dynamically populated -->
-  </div>
-</div>
-
-<!-- Categories Visual Grid -->
-<section class="categories-section" id="categories" aria-label="Browse by category">
-  <div class="section-header">
-    <h2 class="section-title">Browse by Category</h2>
-  </div>
-  <div class="categories-grid" id="categoriesGrid">
-    <!-- Dynamically populated -->
-  </div>
-</section>
-
-<!-- Products Grid -->
-<main class="products-section" id="products" aria-label="Product listings">
-  <div class="section-header">
-    <div>
-      <h2 class="section-title">🔥 Live Campaigns</h2>
-      <span class="section-count" id="productCount">Loading...</span>
+  <!-- Brand Grid -->
+  <section class="section">
+    <div class="section-header">
+      <h2 class="section-title">All Brands</h2>
+      <span class="section-sub" id="brandCount"></span>
     </div>
-    <select class="sort-select" id="sortSelect" aria-label="Sort products">
-      <option value="default">Default Order</option>
-      <option value="name-asc">Name A–Z</option>
-      <option value="name-desc">Name Z–A</option>
-      <option value="funded">Most Funded First</option>
-    </select>
-  </div>
-  <div class="products-grid" id="productsGrid" role="list">
-    <!-- Dynamically populated -->
-  </div>
-</main>
-
-<!-- Trust Section -->
-<section class="trust-section" id="about" aria-label="About BackTheNew">
-  <div class="trust-inner">
-    <h2>Why Trust BackTheNew?</h2>
-    <p>We dig through hundreds of crowdfunding campaigns so you don't have to. Only the most innovative, most-funded, and most genuinely useful products make the cut.</p>
-    <div class="trust-grid">
-      <div class="trust-card">
-        <div class="icon">🎯</div>
-        <h3>Hand-Curated</h3>
-        <p>Every product is personally reviewed and selected for quality and innovation.</p>
-      </div>
-      <div class="trust-card">
-        <div class="icon">⚡</div>
-        <h3>Always Current</h3>
-        <p>We track live Kickstarter campaigns and update our picks regularly.</p>
-      </div>
-      <div class="trust-card">
-        <div class="icon">🔒</div>
-        <h3>Transparent</h3>
-        <p>We use affiliate links. Your support helps us keep this resource free.</p>
-      </div>
-      <div class="trust-card">
-        <div class="icon">🌍</div>
-        <h3>Global Picks</h3>
-        <p>Products from creators worldwide, across 10+ categories and use-cases.</p>
-      </div>
+    <div class="brand-grid" id="brandGrid">
+      <!-- Cards injected by JS -->
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- Footer -->
-<footer>
-  <div class="footer-inner">
-    <div class="affiliate-notice">
-      ⚠️ <strong>Affiliate Disclosure:</strong> Some links on this page are affiliate links. If you click through and make a purchase or pledge, we may earn a commission at no extra cost to you. This helps us keep BackTheNew running.
-    </div>
-    <div class="footer-top">
-      <div class="footer-brand">
-        <a href="/" class="logo">
-          <span class="logo-icon">🚀</span>
-          BackTheNew
-        </a>
-        <p>Your trusted source for the best Kickstarter crowdfunding picks. Discover innovative products before they go mainstream.</p>
-      </div>
-      <div class="footer-col">
-        <h4>Categories</h4>
-        <ul id="footerCategories">
-          <!-- Dynamically populated -->
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Resources</h4>
-        <ul>
-          <li><a href="https://www.kickstarter.com" target="_blank" rel="noopener noreferrer">Kickstarter.com</a></li>
-          <li><a href="#about">About BackTheNew</a></li>
-          <li><a href="#products">All Products</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <span>© 2026 BackTheNew. All rights reserved.</span>
-      <span>Independent crowdfunding reviews &amp; curated picks.</span>
-    </div>
-  </div>
-</footer>
+  <footer>
+    <p>As an Amazon Associate, VinceMedia earns from qualifying purchases.</p>
+    <p style="margin-top:6px;">
+      <a href="https://www.amazon.com/stores/page/E2A21CE0-037D-47DE-8EAF-445B25A8875A">RENPHO</a> ·
+      <a href="https://www.amazon.com/stores/REOLINK">REOLINK</a> ·
+      <a href="https://www.amazon.com/stores/AIPER">AIPER</a> ·
+      <a href="https://www.amazon.com/stores/OLIGHT">OLIGHT</a> ·
+      <a href="https://www.amazon.com/stores/Plaud">Plaud</a>
+    </p>
+  </footer>
 
-<script>
-// ============================================================
-// BackTheNew – Product Grid Engine
-// Data-driven: reads from data/products.json
-// ============================================================
+  <script>
+    // ── Brand data (from manifest.json) ──
+    const BRANDS = [
+      { slug:"renpho",    brand:"RENPHO",       category:"Health & Wellness",    category_zh:"健康生活", description:"Fitness trackers, massage guns, smart scales",       favicon:"https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/0cb89e86-a71e-4bff-b46e-e4295b6cc6f1.png" },
+      { slug:"reolink",   brand:"REOLINK",       category:"Smart Home & Security",category_zh:"智能安防", description:"Security cameras, doorbells, battery-powered cams", favicon:null },
+      { slug:"halova",    brand:"HaloVa",        category:"Baby & Mother Care",  category_zh:"母婴用品", description:"Baby carriers, nursing pillows, postpartum care",  favicon:null },
+      { slug:"grownsy",   brand:"GROWNSY",       category:"Baby Care",           category_zh:"婴儿用品", description:"Baby feeding kits, care sets, parenting tools",    favicon:null },
+      { slug:"it-cosmetics", brand:"IT Cosmetics", category:"Beauty & Cosmetics",category_zh:"美妆护肤", description:"Makeup and skincare powered by skin-care science",   favicon:null },
+      { slug:"horow",     brand:"HOROW",         category:"Home & Bathroom",     category_zh:"家居卫浴", description:"Toilets, vanities, bathroom fixtures",             favicon:"https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/c442ad67-1d07-4e42-ab61-4c34cf10cd7f.jpg" },
+      { slug:"yitamotor",  brand:"YITAMOTOR",    category:"Automotive",          category_zh:"汽车配件", description:"Floor mats, running boards, LED light bars",       favicon:null },
+      { slug:"aiper",     brand:"AIPER",         category:"Smart Cleaning",      category_zh:"智能清洁", description:"Pool robots, cordless vacuums, cleaning devices", favicon:"https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/3b1f2888-3f4c-461b-9878-3ff799375379.jpg" },
+      { slug:"plaud",     brand:"Plaud",         category:"AI Devices",          category_zh:"AI设备",   description:"AI voice recorders with GPT transcription",          favicon:null },
+      { slug:"cute-stone",brand:"CUTE STONE",    category:"Kids & Toys",         category_zh:"儿童玩具", description:"Kids toys, play sets, educational games",            favicon:"https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/43e65b8a-b15c-4f0f-9a29-1e6d8895bd08.jpg" },
+      { slug:"running-girl", brand:"RUNNING GIRL",category:"Athletic Apparel",   category_zh:"运动服饰", description:"Athletic wear and sports apparel for women",       favicon:"https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/cdb61fab-2e74-460c-97ae-3c998f739c6c.jpg" },
+      { slug:"mescomb",   brand:"MESCOMB",       category:"Beauty & Hair",       category_zh:"美发工具", description:"Hot air stylers, curling irons, travel dryers",     favicon:null },
+      { slug:"hittiona",  brand:"HITTIONA",      category:"Beauty & Home",       category_zh:"美容家居", description:"Hair dryers, stylers, pickleball paddles",          favicon:"https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/e31cdde7-be34-47a2-a5f8-4528630189a7.jpg" },
+      { slug:"aurzen",    brand:"Aurzen",         category:"Consumer Electronics",category_zh:"消费电子", description:"Smart projectors, Roku TVs, Eazze & Boom series",  favicon:null },
+      { slug:"prudiut",   brand:"Prudiut",        category:"Craft & Kitchen",    category_zh:"手工厨具", description:"Watercolor paper, craft supplies, coffee filters",  favicon:"https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/0bc98899-aaf2-48a9-815f-b38145bc5712.jpg" },
+      { slug:"livebox",   brand:"LIVEBOX",        category:"Home Decor",          category_zh:"家居装饰", description:"Area rugs, carpets, living room textiles",           favicon:null },
+      { slug:"imarku",    brand:"imarku",         category:"Kitchen",            category_zh:"厨房用品", description:"Chef knives, cookware, kitchen tools",              favicon:"https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/294676d0-c9b3-472c-92f5-c3779c16e4b0.jpg" },
+      { slug:"olight",    brand:"OLIGHT",         category:"Lighting & Tools",   category_zh:"照明工具", description:"EDC flashlights, headlamps, weapon lights",         favicon:null }
+    ];
 
-const CATEGORY_ICONS = {
-  'Photography': '📷',
-  'Tech': '💻',
-  'Outdoors': '🏕️',
-  'EDC': '🔧',
-  'Stationery': '📓',
-  'Audio': '🎵',
-  'Watches': '⌚',
-  'Music': '🎶',
-  'Health': '💪',
-  'Kitchen': '🍳',
-  'Mobility': '⚡',
-  'Home': '🌿',
-  'Tools': '🔩',
-};
+    // Affiliate URLs (from landingpages.txt, indexed by UUID)
+    const AFFILIATE_URLS = {
+      "E2A21CE0-037D-47DE-8EAF-445B25A8875A": "https://www.amazon.com/stores/page/E2A21CE0-037D-47DE-8EAF-445B25A8875A?maas=maas_adg_api_588996196462594400_static_9_258&ref_=aa_maas&tag=maas&aa_campaignid=aa_2841e0a5432b0dd62e5620bdfe84289c&aa_adgroupid=aa_8f02ec43416a2b468b91d2655b3b8158&aa_creativeid=aa_793902831884ef82d3f6059ac72301fc",
+      "201E3A4F-C63F-48A6-87B7-524F985330DA": "https://www.amazon.com/stores/page/201E3A4F-C63F-48A6-87B7-524F985330DA?maas=maas_adg_api_588289795052186734_static_9_258&ref_=aa_maas&tag=maas&aa_campaignid=aa_f9427e83ddc2814ead5f7e87a97983c3&aa_adgroupid=aa_b4e18cc5284b22b211a87656f5418fc6&aa_creativeid=aa_793902831884ef82d3f6059ac72301fc",
+      "9BEBE13D-0781-43DE-967B-26CF95746E59": "https://www.amazon.com/stores/page/9BEBE13D-0781-43DE-967B-26CF95746E59?maas=maas_adg_api_586889210752940542_static_9_258&ref_=aa_maas&tag=maas&aa_campaignid=aa_1bd9708db99e85117894f98d4024a942&aa_adgroupid=aa_ec7e872592848e58c4d5e2ac7697f505&aa_creativeid=aa_793902831884ef82d3f6059ac72301fc",
+      "95BB274A-2557-452C-8DA8-2AFF64377113": "https://www.amazon.com/stores/page/95BB274A-2557-452C-8DA8-2AFF64377113?maas=maas_adg_api_593384273117619767_static_9_258&ref_=aa_maas&tag=maas&aa_campaignid=aa_2860e6d3972ee56bdc593021b09bd4a5&aa_adgroupid=aa_b61dfbde4e5cfc0f4978510b53b4c359&aa_creativeid=aa_793902831884ef82d3f6059ac72301fc",
+      "0C357483-A7C6-4D03-9B65-D135AFC7D8D9": "https://www.amazon.com/stores/page/0C357483-A7C6-4D03-9B65-D135AFC7D8D9?maas=maas_adg_api_576915618551793827_static_9_258&ref_=aa_maas&tag=maas&aa_campaignid=aa_db9ab850f4f22f3540773072a7663075&aa_adgroupid=aa_7f37e2115b6d74917dbb0787c960e89a&aa_creativeid=aa_793902831884ef82d3f6059ac72301fc",
+      "0AB1F9B4-B199-4694-9D81-B5AFE725E08B": "https://www.amazon.com/stores/page/0AB1F9B4-B199-4694-9D81-B5AFE725E08B?maas=maas_adg_api_586167635649457007_static_9_258&ref_=aa_maas&tag=maas&aa_campaignid=aa_f25432d24fb3d55d931861b0f9bf0c92&aa_adgroupid=aa_9f7eee53ba15db8715b5739cb94a5a05&aa_creativeid=aa_793902831884ef82d3f6059ac72301fc",
+      "7A947F79-0AD8-4391-8FB5-99734DAC4973": "https://www.amazon.com/stores/page/7A947F79-0AD8-4391-8FB5-99734DAC4973?maas=maas_adg_api_592096648984404491_static_9_258&ref_=aa_maas&tag=maas&aa_campaignid=aa_59e0486a60ac918118b6f75310b19512&aa_adgroupid=aa_6a9dd32ad57ac59fac9638c3f51c62b6&aa_creativeid=aa_793902831884ef82d3f6059ac72301fc",
+      "F8D9521C-6961-43F8-BB2F-2963DF3E2207": "https://www.amazon.com/stores/page/F8D9521C-6961-43F8-BB2F-2963DF3E2207?maas=maas_adg_api_576652694125528480_static_9_258&ref_=aa_maas&tag=maas&aa_campaignid=aa_cfded1ae7ce2e054d5577e2513c803c2&aa_adgroupid=aa_3e68df31d0929700b6f508a952522899&aa_creativeid=aa_793902831884ef82d3f6059ac72301fc",
+      "A09341BE-FA66-4BD9-80CC-1A75964A8DC1": "https://www.amazon.com/stores/page/A09341BE-FA66-4BD9-80CC-1A75964A8DC1?maas=maas_adg_api_582690769062435165_static_9_258&ref_=aa_maas&tag=maas&aa_campaignid=aa_b29656e40193e63279238fe03f485d12&aa_adgroupid=aa_c702f4bd20edfb5999ae012a38b2443c&aa_creativeid=aa_793902831884ef82d3f6059ac72301fc",
+      "E28BDCDE-D661-43BC-AB00-DB89F391DACE": "https://www.amazon.com/stores/page/E28BDCDE-D661-43BC-AB00-DB89F391DACE?maas=maas_adg_api_580759325334639564_static_9_258&ref_=aa_maas&tag=maas&aa_campaignid=aa_8318a70355f3520a0912b92be783a0da&aa_adgroupid=aa_1d34ae952b987c136dbaeacb49053137&aa_creativeid=aa_793902831884ef82d3f6059ac72301fc",
+      "C03611E3-CC8B-44F0-9326-059AAF46A0B1": "https://www.amazon.com/stores/page/C03611E3-CC8B-44F0-9326-059AAF46A0B1?maas=maas_adg_api_590892048320336634_static_9_258&ref_=aa_maas&tag=maas&aa_campaignid=aa_1197d30a9c8fd4c7acd22407daf2d667&aa_adgroupid=aa_4b3b4367f1edc5c42c9701fc3f768132&aa_creativeid=aa_793902831884ef82d3f6059ac72301fc",
+      "8CF9A795-D789-4562-874A-43E632222F8C": "https://www.amazon.com/stores/page/8CF9A795-D789-4562-874A-43E632222F8C?maas=maas_adg_api_585192376993106449_static_9_258&ref_=aa_maas&tag=maas&aa_campaignid=aa_38cf97fb7e07933787fe78eabfa70790&aa_adgroupid=aa_f77db4bb7279eeee8ce0a123b5d04ece&aa_creativeid=aa_793902831884ef82d3f6059ac72301fc",
+      "033F62C5-1A33-4D7B-AFF4-1C359716322A": "https://www.amazon.com/stores/page/033F62C5-1A33-4D7B-AFF4-1C359716322A?maas=maas_adg_api_590730872995573670_static_9_258&ref_=aa_maas&tag=maas&aa_campaignid=aa_dc67bc5b7ca455b055fb113db2c90b23&aa_adgroupid=aa_eb8b4fa19b46002700479a1e60dc6cd8&aa_creativeid=aa_793902831884ef82d3f6059ac72301fc",
+      "B7ACC67E-2539-43EF-98B5-E77ACC4F1B02": "https://www.amazon.com/stores/page/B7ACC67E-2539-43EF-98B5-E77ACC4F1B02?maas=maas_adg_api_582377302091315759_static_9_258&ref_=aa_maas&tag=maas&aa_campaignid=aa_7f93c7816fd39fa222400c854149ba59&aa_adgroupid=aa_117b1a3441c49c49af7d25c1192ccb2d&aa_creativeid=aa_793902831884ef82d3f6059ac72301fc",
+      "A34677B1-CC9F-4EC5-8660-F6F5A5E75FE0": "https://www.amazon.com/stores/page/A34677B1-CC9F-4EC5-8660-F6F5A5E75FE0?maas=maas_adg_api_590631914767380531_static_9_258&ref_=aa_maas&tag=maas&aa_campaignid=aa_9388105e5f6d8cd1591b9a39d06be1a2&aa_adgroupid=aa_51ad366a71695c2c2c48241099ac014b&aa_creativeid=aa_793902831884ef82d3f6059ac72301fc",
+      "07B15259-3BD4-47D6-B682-B431AF66F916": "https://www.amazon.com/stores/page/07B15259-3BD4-47D6-B682-B431AF66F916?maas=maas_adg_api_594254816179786917_static_9_258&ref_=aa_maas&tag=maas&aa_campaignid=aa_8cd3528e5c0a975e3d0d251f973cafe0&aa_adgroupid=aa_1771fd07ab3ae82f56f79ef5481dd2c7&aa_creativeid=aa_793902831884ef82d3f6059ac72301fc",
+      "16ED44A3-DF5C-4C3D-A734-FFD961269E97": "https://www.amazon.com/stores/page/16ED44A3-DF5C-4C3D-A734-FFD961269E97?maas=maas_adg_api_591426020517174329_static_9_258&ref_=aa_maas&tag=maas&aa_campaignid=aa_a66a0dbab15ede86bdf1f88487fc6295&aa_adgroupid=aa_29225fb25504b80747a050badb0188f9&aa_creativeid=aa_793902831884ef82d3f6059ac72301fc",
+      "0198132F-1713-4A28-8AD9-D313AC6E08CB": "https://www.amazon.com/stores/page/0198132F-1713-4A28-8AD9-D313AC6E08CB?maas=maas_adg_api_593235624453045421_static_9_258&ref_=aa_maas&tag=maas&aa_campaignid=aa_f7f551583255226bbe3a44c918918fa7&aa_adgroupid=aa_7da45575a2fd75ff5023bd7e39da26b4&aa_creativeid=aa_793902831884ef82d3f6059ac72301fc",
+      "C714345E-E401-4BB9-9617-C7A8F20B3FFA": "https://www.amazon.com/stores/page/C714345E-E401-4BB9-9617-C7A8F20B3FFA?maas=maas_adg_api_579425723224053802_static_9_258&ref_=aa_maas&tag=maas&aa_campaignid=aa_a96428070d6f05fee213424791e1d224&aa_adgroupid=aa_b47e6a788bf11241afa5f6b7dee4849c&aa_creativeid=aa_793902831884ef82d3f6059ac72301fc",
+      "6CFD9621-C8D8-47AB-951B-1010C39E5757": "https://www.amazon.com/stores/page/6CFD9621-C8D8-47AB-951B-1010C39E5757?maas=maas_adg_api_581022733857299921_static_9_258&ref_=aa_maas&tag=maas&aa_campaignid=aa_387d96ffe6b39aa12a6ee529749c7c77&aa_adgroupid=aa_a4bf881192aac8520bef81cdd4bc8b6c&aa_creativeid=aa_793902831884ef82d3f6059ac72301fc",
+      "098E844F-88E8-45DC-901F-203F35540649": "https://www.amazon.com/stores/page/098E844F-88E8-45DC-901F-203F35540649?maas=maas_adg_api_578262113212164655_static_9_258&ref_=aa_maas&tag=maas&aa_campaignid=aa_d73a5e1e2cd7e9734a88a02ef8f41da7&aa_adgroupid=aa_a3b3a69cce88e6ad31ee407ee8dc6f6b&aa_creativeid=aa_793902831884ef82d3f6059ac72301fc"
+    };
 
-let allProducts = [];
-let activeCategory = 'All';
-let searchQuery = '';
-let sortMode = 'default';
+    // UUID for each brand (primary/canonical)
+    const BRAND_UUIDS = {
+      "renpho":     "E2A21CE0-037D-47DE-8EAF-445B25A8875A",
+      "reolink":    "201E3A4F-C63F-48A6-87B7-524F985330DA",
+      "halova":     "9BEBE13D-0781-43DE-967B-26CF95746E59",
+      "grownsy":    "0AB1F9B4-B199-4694-9D81-B5AFE725E08B",
+      "it-cosmetics":"F8D9521C-6961-43F8-BB2F-2963DF3E2207",
+      "horow":      "A09341BE-FA66-4BD9-80CC-1A75964A8DC1",
+      "yitamotor":  "E28BDCDE-D661-43BC-AB00-DB89F391DACE",
+      "aiper":      "C03611E3-CC8B-44F0-9326-059AAF46A0B1",
+      "plaud":      "8CF9A795-D789-4562-874A-43E632222F8C",
+      "cute-stone": "033F62C5-1A33-4D7B-AFF4-1C359716322A",
+      "running-girl":"B7ACC67E-2539-43EF-98B5-E77ACC4F1B02",
+      "mescomb":    "A34677B1-CC9F-4EC5-8660-F6F5A5E75FE0",
+      "hittiona":   "07B15259-3BD4-47D6-B682-B431AF66F916",
+      "aurzen":     "16ED44A3-DF5C-4C3D-A734-FFD961269E97",
+      "prudiut":    "0198132F-1713-4A28-8AD9-D313AC6E08CB",
+      "livebox":    "C714345E-E401-4BB9-9617-C7A8F20B3FFA",
+      "imarku":     "6CFD9621-C8D8-47AB-951B-1010C39E5757",
+      "olight":     "098E844F-88E8-45DC-901F-203F35540649"
+    };
 
-// ---- Fetch products ----
-async function loadProducts() {
-  try {
-    const resp = await fetch('data/products.json');
-    const data = await resp.json();
-    allProducts = data.products;
-    initUI();
-  } catch (err) {
-    console.error('Failed to load products:', err);
-    document.getElementById('productsGrid').innerHTML = `
-      <div class="no-results">
-        <div class="icon">⚠️</div>
-        <h3>Could not load products</h3>
-        <p>Please try refreshing the page.</p>
-      </div>`;
-  }
-}
+    // ── Banner: pick 5 random brands ──
+    function shuffle(arr) {
+      const a = [...arr];
+      for (let i = a.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [a[i], a[j]] = [a[j], a[i]];
+      }
+      return a;
+    }
 
-// ---- Initialize UI ----
-function initUI() {
-  buildFilters();
-  buildCategoryGrid();
-  buildFooterCategories();
-  renderProducts();
-  updateStats();
+    const bannerBrands = shuffle(BRANDS).slice(0, 5);
+    let currentSlide = 0;
+    let slideInterval;
 
-  // Search
-  document.getElementById('searchInput').addEventListener('input', (e) => {
-    searchQuery = e.target.value.toLowerCase().trim();
-    renderProducts();
-  });
+    function buildBanner() {
+      const wrapper = document.getElementById('slidesWrapper');
+      const dotsEl = document.getElementById('dots');
+      wrapper.innerHTML = '';
+      dotsEl.innerHTML = '';
 
-  // Sort
-  document.getElementById('sortSelect').addEventListener('change', (e) => {
-    sortMode = e.target.value;
-    renderProducts();
-  });
-}
+      bannerBrands.forEach((brand, i) => {
+        const uuid = BRAND_UUIDS[brand.slug];
+        const url = AFFILIATE_URLS[uuid] || brand.favicon ? `https://www.amazon.com/stores/${brand.slug}` : '#';
+        const imgSrc = brand.favicon || `https://placehold.co/160x160/1a1a1a/E8FF47?text=${encodeURIComponent(brand.brand)}&font=roboto`;
 
-// ---- Get categories with counts ----
-function getCategoryCounts() {
-  const counts = {};
-  allProducts.forEach(p => {
-    counts[p.category] = (counts[p.category] || 0) + 1;
-  });
-  return counts;
-}
+        wrapper.innerHTML += `
+          <a class="slide" href="${url}" target="_blank" rel="noopener noreferrer nofollow">
+            <div class="slide-content">
+              <img class="slide-brand-img" src="${imgSrc}" alt="${brand.brand} logo" loading="${i===0?'eager':'lazy'}">
+              <p class="slide-category">${brand.category_zh} · ${brand.category}</p>
+              <h1 class="slide-brand">${brand.brand}</h1>
+              <p class="slide-desc">${brand.description}</p>
+              <span class="slide-cta">Shop Now →</span>
+            </div>
+          </a>`;
 
-// ---- Build filter buttons ----
-function buildFilters() {
-  const counts = getCategoryCounts();
-  const categories = ['All', ...Object.keys(counts)];
-  const container = document.getElementById('filterButtons');
-  container.innerHTML = '';
-
-  categories.forEach(cat => {
-    const btn = document.createElement('button');
-    btn.className = 'filter-btn' + (cat === 'All' ? ' active' : '');
-    btn.setAttribute('role', 'tab');
-    btn.setAttribute('aria-selected', cat === 'All' ? 'true' : 'false');
-    const count = cat === 'All' ? allProducts.length : counts[cat];
-    btn.innerHTML = `${cat} <span class="filter-count">${count}</span>`;
-    btn.addEventListener('click', () => {
-      activeCategory = cat;
-      document.querySelectorAll('.filter-btn').forEach(b => {
-        b.classList.remove('active');
-        b.setAttribute('aria-selected', 'false');
+        dotsEl.innerHTML += `<div class="dot${i===0?' active':''}" onclick="goToSlide(${i})"></div>`;
       });
-      btn.classList.add('active');
-      btn.setAttribute('aria-selected', 'true');
-      renderProducts();
-      // Also sync category grid
-      document.querySelectorAll('.category-card').forEach(c => {
-        c.classList.toggle('active', c.dataset.category === cat);
+    }
+
+    function goToSlide(idx) {
+      currentSlide = idx;
+      document.getElementById('slidesWrapper').style.transform = `translateX(-${idx * 100}%)`;
+      document.querySelectorAll('.dot').forEach((d, i) => {
+        d.classList.toggle('active', i === idx);
       });
-    });
-    container.appendChild(btn);
-  });
-}
+      resetInterval();
+    }
 
-// ---- Build category visual grid ----
-function buildCategoryGrid() {
-  const counts = getCategoryCounts();
-  const container = document.getElementById('categoriesGrid');
-  container.innerHTML = '';
+    function nextSlide() { goToSlide((currentSlide + 1) % bannerBrands.length); }
+    function prevSlide() { goToSlide((currentSlide - 1 + bannerBrands.length) % bannerBrands.length); }
 
-  const allCard = document.createElement('div');
-  allCard.className = 'category-card active';
-  allCard.dataset.category = 'All';
-  allCard.innerHTML = `<div class="cat-icon">🚀</div><div class="cat-name">All</div><div class="cat-count">${allProducts.length} items</div>`;
-  allCard.addEventListener('click', () => activateCategory('All', allCard));
-  container.appendChild(allCard);
+    function resetInterval() {
+      clearInterval(slideInterval);
+      slideInterval = setInterval(nextSlide, 2000);
+    }
 
-  Object.entries(counts).forEach(([cat, count]) => {
-    const card = document.createElement('div');
-    card.className = 'category-card';
-    card.dataset.category = cat;
-    card.innerHTML = `<div class="cat-icon">${CATEGORY_ICONS[cat] || '📦'}</div><div class="cat-name">${cat}</div><div class="cat-count">${count} items</div>`;
-    card.addEventListener('click', () => activateCategory(cat, card));
-    container.appendChild(card);
-  });
-}
+    // ── Brand Grid ──
+    function buildGrid() {
+      const grid = document.getElementById('brandGrid');
+      grid.innerHTML = BRANDS.map(brand => {
+        const uuid = BRAND_UUIDS[brand.slug];
+        const url = AFFILIATE_URLS[uuid] || `https://www.amazon.com/stores/${brand.slug}`;
+        const imgSrc = brand.favicon || `https://placehold.co/88x88/1a1a1a/E8FF47?text=${encodeURIComponent(brand.brand.slice(0,2))}&font=roboto`;
+        return `
+          <a class="brand-card" href="${url}" target="_blank" rel="noopener noreferrer nofollow">
+            <div class="brand-card-top">
+              <img class="brand-card-img" src="${imgSrc}" alt="${brand.brand}" loading="lazy">
+              <div>
+                <div class="brand-card-name">${brand.brand}</div>
+                <div class="brand-card-cat">${brand.category_zh}</div>
+              </div>
+            </div>
+            <p class="brand-card-desc">${brand.description}</p>
+            <span class="brand-card-cta">Shop on Amazon →</span>
+          </a>`;
+      }).join('');
 
-function activateCategory(cat, cardEl) {
-  activeCategory = cat;
-  document.querySelectorAll('.category-card').forEach(c => c.classList.remove('active'));
-  cardEl.classList.add('active');
-  // Sync filter buttons
-  document.querySelectorAll('.filter-btn').forEach(b => {
-    const isActive = b.textContent.trim().startsWith(cat);
-    b.classList.toggle('active', isActive);
-    b.setAttribute('aria-selected', isActive ? 'true' : 'false');
-  });
-  renderProducts();
-  // Scroll to products
-  document.getElementById('products').scrollIntoView({ behavior: 'smooth', block: 'start' });
-}
+      document.getElementById('brandCount').textContent = `${BRANDS.length} brands`;
+    }
 
-// ---- Build footer categories ----
-function buildFooterCategories() {
-  const counts = getCategoryCounts();
-  const ul = document.getElementById('footerCategories');
-  ul.innerHTML = '';
-  Object.keys(counts).slice(0, 8).forEach(cat => {
-    const li = document.createElement('li');
-    li.innerHTML = `<a href="#products" onclick="activateCategory('${cat}', document.querySelector('[data-category=\\'${cat}\\']'))">${CATEGORY_ICONS[cat] || ''} ${cat}</a>`;
-    ul.appendChild(li);
-  });
-}
-
-// ---- Filter & sort products ----
-function getFilteredProducts() {
-  let list = [...allProducts];
-
-  if (activeCategory !== 'All') {
-    list = list.filter(p => p.category === activeCategory);
-  }
-
-  if (searchQuery) {
-    list = list.filter(p =>
-      p.name.toLowerCase().includes(searchQuery) ||
-      p.tagline.toLowerCase().includes(searchQuery) ||
-      p.description.toLowerCase().includes(searchQuery) ||
-      p.tags.some(t => t.toLowerCase().includes(searchQuery)) ||
-      p.category.toLowerCase().includes(searchQuery)
-    );
-  }
-
-  if (sortMode === 'name-asc') list.sort((a, b) => a.name.localeCompare(b.name));
-  else if (sortMode === 'name-desc') list.sort((a, b) => b.name.localeCompare(a.name));
-  else if (sortMode === 'funded') list.sort((a, b) => (b.fundingPercent || 0) - (a.fundingPercent || 0));
-
-  return list;
-}
-
-// ---- Render product cards ----
-function renderProducts() {
-  const products = getFilteredProducts();
-  const grid = document.getElementById('productsGrid');
-  const countEl = document.getElementById('productCount');
-  countEl.textContent = `${products.length} product${products.length !== 1 ? 's' : ''} found`;
-
-  if (products.length === 0) {
-    grid.innerHTML = `
-      <div class="no-results">
-        <div class="icon">🔍</div>
-        <h3>No products found</h3>
-        <p>Try a different category or search term.</p>
-      </div>`;
-    return;
-  }
-
-  grid.innerHTML = products.map((p, i) => buildCard(p, i)).join('');
-}
-
-function buildCard(p, idx) {
-  const delay = Math.min(idx * 50, 300);
-  const fundBadge = p.fundingPercent ? `<div class="card-funding-badge">🔥 ${p.fundingPercent.toLocaleString()}% Funded</div>` : '';
-  const detailUrl = `products/${p.slug}.html`;
-
-  const imageHtml = p.imageUrl
-    ? `<img class="card-image" src="${p.imageUrl}" alt="${p.name} – ${p.tagline}" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">`
-    + `<div class="card-image-placeholder" style="display:none">${CATEGORY_ICONS[p.category] || '📦'}</div>`
-    : `<div class="card-image-placeholder">${CATEGORY_ICONS[p.category] || '📦'}</div>`;
-
-  return `
-<article class="product-card" role="listitem" style="animation-delay:${delay}ms" itemscope itemtype="https://schema.org/Product">
-  <a href="${detailUrl}" aria-label="Read more about ${p.name}">
-    ${imageHtml}
-  </a>
-  ${fundBadge}
-  <div class="card-body">
-    <div class="card-tags">
-      <span class="tag">${p.category}</span>
-      ${p.fundingPercent ? '<span class="tag tag-funded">Trending</span>' : ''}
-    </div>
-    <h3 class="card-name" itemprop="name"><a href="${detailUrl}" style="color:inherit;text-decoration:none">${p.name}</a></h3>
-    <p class="card-tagline" itemprop="description">${p.tagline}</p>
-    <p class="card-desc">${p.description.substring(0, 160)}${p.description.length > 160 ? '…' : ''}</p>
-    ${p.highlight ? `<div class="card-highlight">✨ ${p.highlight}</div>` : ''}
-    <a href="${detailUrl}" class="card-cta">
-      Learn More &amp; Back It →
-    </a>
-    <p class="card-cta-sub">View details · Affiliate link</p>
-  </div>
-</article>`;
-}
-
-// ---- Update hero stats ----
-function updateStats() {
-  const counts = getCategoryCounts();
-  document.getElementById('statProducts').textContent = allProducts.length;
-  document.getElementById('statCategories').textContent = Object.keys(counts).length;
-}
-
-// ---- Init ----
-loadProducts();
-</script>
-
+    buildBanner();
+    buildGrid();
+    slideInterval = setInterval(nextSlide, 2000);
+  </script>
 </body>
 </html>
