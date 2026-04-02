@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="VinceMedia — Curated lifestyle brands on Amazon. Find the best products in health, home, beauty, tech and more. Commission-free discovery.">
+  <meta name="description" content="VinceMedia — Curated lifestyle brands on Amazon. Discover trusted products across health, home, beauty, tech and more.">
   <meta name="keywords" content="Amazon brands, lifestyle products, health tech, smart home, beauty tools, Amazon store">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://vincemedia.store/">
@@ -36,7 +36,8 @@
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='12' fill='%230f0f0f'/><text y='.9em' font-size='72' x='50%' text-anchor='middle' dominant-baseline='middle' fill='%23E8FF47' font-family='serif'>V</text></svg>">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=Cormorant+Garamond:wght@500;600&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://m.media-amazon.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&family=Cormorant+Garamond:wght@500;600&display=swap" rel="stylesheet">
 
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -75,6 +76,7 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
+      gap: 24px;
     }
 
     .logo {
@@ -84,23 +86,61 @@
       letter-spacing: -0.01em;
       color: var(--text);
       text-decoration: none;
+      flex-shrink: 0;
     }
 
-    .logo span {
-      color: var(--accent);
+    .logo span { color: var(--accent); }
+
+    .header-right {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    /* ─── Search ─── */
+    .search-wrap {
+      position: relative;
+      width: 280px;
+    }
+
+    .search-input {
+      width: 100%;
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 8px 36px 8px 14px;
+      color: var(--text);
+      font-family: inherit;
+      font-size: 0.85rem;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    .search-input::placeholder { color: var(--text2); }
+    .search-input:focus { border-color: var(--accent); }
+
+    .search-icon {
+      position: absolute;
+      right: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--text2);
+      pointer-events: none;
+      font-size: 0.85rem;
     }
 
     .tagline {
-      font-size: 0.8rem;
+      font-size: 0.78rem;
       color: var(--text2);
       letter-spacing: 0.08em;
       text-transform: uppercase;
+      flex-shrink: 0;
     }
 
     /* ─── Hero Banner ─── */
     .hero {
       position: relative;
-      height: 480px;
+      height: 520px;
       overflow: hidden;
       background: var(--bg2);
     }
@@ -120,57 +160,79 @@
       padding: 60px;
       text-decoration: none;
       position: relative;
+      background-size: cover;
+      background-position: center;
     }
 
     .slide::before {
       content: '';
       position: absolute;
       inset: 0;
-      background: radial-gradient(ellipse at 30% 50%, rgba(232,255,71,0.06) 0%, transparent 65%);
+      background: linear-gradient(135deg, rgba(15,15,15,0.7) 0%, rgba(15,15,15,0.3) 60%, rgba(232,255,71,0.04) 100%);
+      pointer-events: none;
+    }
+
+    .slide::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 30% 50%, rgba(232,255,71,0.07) 0%, transparent 65%);
       pointer-events: none;
     }
 
     .slide-content {
       text-align: center;
-      max-width: 560px;
+      max-width: 520px;
       position: relative;
       z-index: 1;
     }
 
-    .slide-brand-img {
-      width: 80px;
-      height: 80px;
+    .slide-logo-wrap {
+      width: 72px;
+      height: 72px;
       border-radius: 16px;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.12);
+      margin: 0 auto 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      backdrop-filter: blur(8px);
+    }
+
+    .slide-logo {
+      width: 44px;
+      height: 44px;
       object-fit: contain;
-      background: rgba(255,255,255,0.06);
-      padding: 12px;
-      margin: 0 auto 28px;
-      display: block;
+      border-radius: 6px;
     }
 
     .slide-brand {
       font-family: 'Cormorant Garamond', Georgia, serif;
-      font-size: 3.2rem;
+      font-size: 3.4rem;
       font-weight: 600;
       letter-spacing: -0.02em;
-      color: var(--text);
-      line-height: 1.1;
-      margin-bottom: 12px;
+      color: #fff;
+      line-height: 1.05;
+      margin-bottom: 10px;
+      text-shadow: 0 2px 20px rgba(0,0,0,0.5);
     }
 
     .slide-category {
-      font-size: 0.8rem;
-      letter-spacing: 0.12em;
+      font-size: 0.78rem;
+      letter-spacing: 0.14em;
       text-transform: uppercase;
       color: var(--accent);
-      margin-bottom: 16px;
+      margin-bottom: 14px;
+      font-weight: 500;
     }
 
     .slide-desc {
-      font-size: 1rem;
-      color: var(--text2);
-      margin-bottom: 32px;
+      font-size: 0.95rem;
+      color: rgba(255,255,255,0.65);
+      margin-bottom: 28px;
       font-weight: 300;
+      line-height: 1.5;
     }
 
     .slide-cta {
@@ -180,8 +242,8 @@
       background: var(--accent);
       color: #0f0f0f;
       font-weight: 600;
-      font-size: 0.9rem;
-      letter-spacing: 0.04em;
+      font-size: 0.88rem;
+      letter-spacing: 0.03em;
       padding: 12px 28px;
       border-radius: 6px;
       text-decoration: none;
@@ -226,19 +288,23 @@
       width: 44px;
       height: 44px;
       border-radius: 50%;
-      background: rgba(15,15,15,0.7);
-      border: 1px solid var(--border);
+      background: rgba(15,15,15,0.65);
+      border: 1px solid rgba(255,255,255,0.12);
       display: flex;
       align-items: center;
       justify-content: center;
       cursor: pointer;
       z-index: 10;
-      color: var(--text);
-      transition: background 0.2s;
+      color: rgba(255,255,255,0.8);
+      transition: background 0.2s, color 0.2s;
       font-size: 1.1rem;
     }
 
-    .nav-arrow:hover { background: var(--bg3); }
+    .nav-arrow:hover {
+      background: rgba(15,15,15,0.9);
+      color: var(--accent);
+    }
+
     .nav-arrow.prev { left: 20px; }
     .nav-arrow.next { right: 20px; }
 
@@ -246,26 +312,26 @@
     .section {
       max-width: 1200px;
       margin: 0 auto;
-      padding: 72px 40px;
+      padding: 64px 40px;
     }
 
     .section-header {
       display: flex;
       align-items: baseline;
       justify-content: space-between;
-      margin-bottom: 40px;
+      margin-bottom: 32px;
     }
 
     .section-title {
       font-family: 'Cormorant Garamond', Georgia, serif;
-      font-size: 2rem;
+      font-size: 1.9rem;
       font-weight: 500;
       letter-spacing: -0.02em;
       color: var(--text);
     }
 
     .section-sub {
-      font-size: 0.85rem;
+      font-size: 0.82rem;
       color: var(--text2);
     }
 
@@ -276,80 +342,99 @@
       gap: 1px;
       background: var(--border);
       border: 1px solid var(--border);
-      border-radius: 12px;
+      border-radius: 14px;
       overflow: hidden;
     }
 
     .brand-card {
       background: var(--bg2);
-      padding: 32px 28px;
       text-decoration: none;
       display: flex;
       flex-direction: column;
-      gap: 8px;
       transition: background 0.2s;
       position: relative;
       overflow: hidden;
     }
 
-    .brand-card::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      height: 2px;
-      background: var(--accent);
-      transform: scaleX(0);
-      transform-origin: left;
-      transition: transform 0.3s ease;
-    }
-
     .brand-card:hover { background: var(--bg3); }
-    .brand-card:hover::after { transform: scaleX(1); }
 
-    .brand-card-top {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      margin-bottom: 8px;
-    }
-
-    .brand-card-img {
-      width: 44px;
-      height: 44px;
-      border-radius: 10px;
-      object-fit: contain;
-      background: rgba(255,255,255,0.05);
-      padding: 8px;
+    .card-img-wrap {
+      width: 100%;
+      height: 160px;
+      overflow: hidden;
+      position: relative;
       flex-shrink: 0;
     }
 
-    .brand-card-name {
+    .card-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+      display: block;
+    }
+
+    .brand-card:hover .card-img { transform: scale(1.04); }
+
+    .card-body {
+      padding: 20px 20px 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      flex: 1;
+    }
+
+    .card-top {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 4px;
+    }
+
+    .card-logo-wrap {
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.08);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      overflow: hidden;
+    }
+
+    .card-logo {
+      width: 26px;
+      height: 26px;
+      object-fit: contain;
+    }
+
+    .card-name {
       font-weight: 600;
-      font-size: 1rem;
+      font-size: 0.95rem;
       color: var(--text);
       letter-spacing: -0.01em;
     }
 
-    .brand-card-cat {
-      font-size: 0.72rem;
+    .card-cat {
+      font-size: 0.7rem;
       letter-spacing: 0.1em;
       text-transform: uppercase;
       color: var(--accent);
       font-weight: 500;
     }
 
-    .brand-card-desc {
-      font-size: 0.85rem;
+    .card-desc {
+      font-size: 0.82rem;
       color: var(--text2);
       line-height: 1.5;
       flex: 1;
     }
 
-    .brand-card-cta {
-      margin-top: 12px;
-      font-size: 0.82rem;
+    .card-cta {
+      margin-top: 10px;
+      font-size: 0.8rem;
       font-weight: 500;
       color: var(--accent);
       display: flex;
@@ -358,7 +443,18 @@
       letter-spacing: 0.02em;
     }
 
-    .brand-card:hover .brand-card-cta { gap: 8px; }
+    .brand-card:hover .card-cta { gap: 8px; }
+
+    /* ─── No results ─── */
+    .no-results {
+      text-align: center;
+      padding: 60px 20px;
+      color: var(--text2);
+      font-size: 0.9rem;
+      display: none;
+    }
+
+    .no-results.visible { display: block; }
 
     /* ─── Footer ─── */
     footer {
@@ -376,20 +472,61 @@
 
     footer a:hover { text-decoration: underline; }
 
-    /* ─── Responsive ─── */
-    @media (max-width: 768px) {
-      header { padding: 0 20px; }
-      .tagline { display: none; }
-      .hero { height: 400px; }
-      .slide-brand { font-size: 2.4rem; }
-      .section { padding: 48px 20px; }
-      .section-header { flex-direction: column; gap: 6px; }
-      .brand-grid { grid-template-columns: 1fr 1fr; gap: 1px; }
+    /* ─── Back to top ─── */
+    .back-to-top {
+      position: fixed;
+      bottom: 32px;
+      right: 32px;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--accent);
+      color: #0f0f0f;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      z-index: 200;
+      opacity: 0;
+      transform: translateY(12px);
+      transition: opacity 0.3s, transform 0.3s, background 0.2s;
+      pointer-events: none;
+      box-shadow: 0 4px 16px rgba(232,255,71,0.25);
     }
 
-    @media (max-width: 480px) {
-      .brand-grid { grid-template-columns: 1fr; }
+    .back-to-top.visible {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+
+    .back-to-top:hover {
+      background: var(--accent-dim);
+    }
+
+    /* ─── Responsive ─── */
+    @media (max-width: 900px) {
+      header { padding: 0 20px; }
+      .tagline { display: none; }
+      .search-wrap { width: 200px; }
+    }
+
+    @media (max-width: 640px) {
+      .hero { height: 420px; }
+      .slide-brand { font-size: 2.6rem; }
       .slide { padding: 40px 24px; }
+      .section { padding: 48px 20px; }
+      .section-header { flex-direction: column; gap: 4px; }
+      .brand-grid { grid-template-columns: 1fr 1fr; }
+      .search-wrap { width: 160px; }
+      .back-to-top { bottom: 20px; right: 20px; }
+    }
+
+    @media (max-width: 420px) {
+      .brand-grid { grid-template-columns: 1fr; }
+      .search-wrap { width: 120px; }
     }
   </style>
 </head>
@@ -397,19 +534,28 @@
 
   <header>
     <a href="/" class="logo">Vince<span>Media</span></a>
-    <span class="tagline">Curated Brands on Amazon</span>
+    <div class="header-right">
+      <div class="search-wrap">
+        <input
+          class="search-input"
+          id="searchInput"
+          type="search"
+          placeholder="Search brands..."
+          autocomplete="off"
+          aria-label="Search brands"
+        >
+        <span class="search-icon" aria-hidden="true">⌕</span>
+      </div>
+      <span class="tagline">Curated Brands on Amazon</span>
+    </div>
   </header>
 
   <!-- Hero Banner -->
   <section class="hero" id="banner">
-    <div class="slides-wrapper" id="slidesWrapper">
-      <!-- Slides injected by JS -->
-    </div>
+    <div class="slides-wrapper" id="slidesWrapper"></div>
     <button class="nav-arrow prev" onclick="prevSlide()" aria-label="Previous">&#8592;</button>
     <button class="nav-arrow next" onclick="nextSlide()" aria-label="Next">&#8594;</button>
-    <div class="dots" id="dots">
-      <!-- Dots injected by JS -->
-    </div>
+    <div class="dots" id="dots"></div>
   </section>
 
   <!-- Brand Grid -->
@@ -418,43 +564,137 @@
       <h2 class="section-title">All Brands</h2>
       <span class="section-sub" id="brandCount"></span>
     </div>
-    <div class="brand-grid" id="brandGrid">
-      <!-- Cards injected by JS -->
-    </div>
+    <div class="brand-grid" id="brandGrid"></div>
+    <div class="no-results" id="noResults">No brands match your search.</div>
   </section>
 
   <footer>
     <p>As an Amazon Associate, VinceMedia earns from qualifying purchases.</p>
-    <p style="margin-top:6px;">
-      <a href="https://www.amazon.com/stores/page/E2A21CE0-037D-47DE-8EAF-445B25A8875A">RENPHO</a> ·
-      <a href="https://www.amazon.com/stores/REOLINK">REOLINK</a> ·
-      <a href="https://www.amazon.com/stores/AIPER">AIPER</a> ·
-      <a href="https://www.amazon.com/stores/OLIGHT">OLIGHT</a> ·
-      <a href="https://www.amazon.com/stores/Plaud">Plaud</a>
-    </p>
   </footer>
 
+  <!-- Back to top -->
+  <button class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">↑</button>
+
   <script>
-    // ── Brand data (from manifest.json) ──
+    // ── Brand data ──
     const BRANDS = [
-      { slug:"renpho",    brand:"RENPHO",       category:"Health & Wellness",    category_zh:"健康生活", description:"Fitness trackers, massage guns, smart scales",       favicon:"https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/0cb89e86-a71e-4bff-b46e-e4295b6cc6f1.png" },
-      { slug:"reolink",   brand:"REOLINK",       category:"Smart Home & Security",category_zh:"智能安防", description:"Security cameras, doorbells, battery-powered cams", favicon:null },
-      { slug:"halova",    brand:"HaloVa",        category:"Baby & Mother Care",  category_zh:"母婴用品", description:"Baby carriers, nursing pillows, postpartum care",  favicon:null },
-      { slug:"grownsy",   brand:"GROWNSY",       category:"Baby Care",           category_zh:"婴儿用品", description:"Baby feeding kits, care sets, parenting tools",    favicon:null },
-      { slug:"it-cosmetics", brand:"IT Cosmetics", category:"Beauty & Cosmetics",category_zh:"美妆护肤", description:"Makeup and skincare powered by skin-care science",   favicon:null },
-      { slug:"horow",     brand:"HOROW",         category:"Home & Bathroom",     category_zh:"家居卫浴", description:"Toilets, vanities, bathroom fixtures",             favicon:"https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/c442ad67-1d07-4e42-ab61-4c34cf10cd7f.jpg" },
-      { slug:"yitamotor",  brand:"YITAMOTOR",    category:"Automotive",          category_zh:"汽车配件", description:"Floor mats, running boards, LED light bars",       favicon:null },
-      { slug:"aiper",     brand:"AIPER",         category:"Smart Cleaning",      category_zh:"智能清洁", description:"Pool robots, cordless vacuums, cleaning devices", favicon:"https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/3b1f2888-3f4c-461b-9878-3ff799375379.jpg" },
-      { slug:"plaud",     brand:"Plaud",         category:"AI Devices",          category_zh:"AI设备",   description:"AI voice recorders with GPT transcription",          favicon:null },
-      { slug:"cute-stone",brand:"CUTE STONE",    category:"Kids & Toys",         category_zh:"儿童玩具", description:"Kids toys, play sets, educational games",            favicon:"https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/43e65b8a-b15c-4f0f-9a29-1e6d8895bd08.jpg" },
-      { slug:"running-girl", brand:"RUNNING GIRL",category:"Athletic Apparel",   category_zh:"运动服饰", description:"Athletic wear and sports apparel for women",       favicon:"https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/cdb61fab-2e74-460c-97ae-3c998f739c6c.jpg" },
-      { slug:"mescomb",   brand:"MESCOMB",       category:"Beauty & Hair",       category_zh:"美发工具", description:"Hot air stylers, curling irons, travel dryers",     favicon:null },
-      { slug:"hittiona",  brand:"HITTIONA",      category:"Beauty & Home",       category_zh:"美容家居", description:"Hair dryers, stylers, pickleball paddles",          favicon:"https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/e31cdde7-be34-47a2-a5f8-4528630189a7.jpg" },
-      { slug:"aurzen",    brand:"Aurzen",         category:"Consumer Electronics",category_zh:"消费电子", description:"Smart projectors, Roku TVs, Eazze & Boom series",  favicon:null },
-      { slug:"prudiut",   brand:"Prudiut",        category:"Craft & Kitchen",    category_zh:"手工厨具", description:"Watercolor paper, craft supplies, coffee filters",  favicon:"https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/0bc98899-aaf2-48a9-815f-b38145bc5712.jpg" },
-      { slug:"livebox",   brand:"LIVEBOX",        category:"Home Decor",          category_zh:"家居装饰", description:"Area rugs, carpets, living room textiles",           favicon:null },
-      { slug:"imarku",    brand:"imarku",         category:"Kitchen",            category_zh:"厨房用品", description:"Chef knives, cookware, kitchen tools",              favicon:"https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/294676d0-c9b3-472c-92f5-c3779c16e4b0.jpg" },
-      { slug:"olight",    brand:"OLIGHT",         category:"Lighting & Tools",   category_zh:"照明工具", description:"EDC flashlights, headlamps, weapon lights",         favicon:null }
+      {
+        slug:"renpho", brand:"RENPHO", category:"Health & Wellness",
+        description:"Fitness trackers, massage guns, smart scales and health monitors",
+        favicon:"https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/0cb89e86-a71e-4bff-b46e-e4295b6cc6f1.png",
+        bg:"https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/0cb89e86-a71e-4bff-b46e-e4295b6cc6f1.png",
+        gradient:"linear-gradient(135deg,#0d2f2f 0%,#0f1f1f 100%)"
+      },
+      {
+        slug:"reolink", brand:"REOLINK", category:"Smart Home & Security",
+        description:"Security cameras, doorbells, battery-powered cams and NVR systems",
+        favicon:"https://m.media-amazon.com/images/S/aplus-media-library-service-media/3b6263ea-52bc-4c44-8cf7-3278b1b15b1f.__CR0,0,1464,625_PT0_SX1464_V1___.jpg",
+        bg:"https://m.media-amazon.com/images/S/aplus-media-library-service-media/3b6263ea-52bc-4c44-8cf7-3278b1b15b1f.__CR0,0,1464,625_PT0_SX1464_V1___.jpg",
+        gradient:"linear-gradient(135deg,#0a1f3f 0%,#0f1f2f 100%)"
+      },
+      {
+        slug:"halova", brand:"HaloVa", category:"Baby & Mother Care",
+        description:"Baby carriers, nursing pillows, postpartum recovery products",
+        favicon:null, bg:null,
+        gradient:"linear-gradient(135deg,#2d1a3a 0%,#1f1228 100%)"
+      },
+      {
+        slug:"grownsy", brand:"GROWNSY", category:"Baby Care",
+        description:"Baby feeding kits, care sets, bottle warmers and parenting tools",
+        favicon:null, bg:null,
+        gradient:"linear-gradient(135deg,#1a2a1a 0%,#0f1a0f 100%)"
+      },
+      {
+        slug:"it-cosmetics", brand:"IT Cosmetics", category:"Beauty & Cosmetics",
+        description:"Makeup and skincare powered by skin-care science and dermatology",
+        favicon:null, bg:null,
+        gradient:"linear-gradient(135deg,#3a1a2a 0%,#2a1020 100%)"
+      },
+      {
+        slug:"horow", brand:"HOROW", category:"Home & Bathroom",
+        description:"Smart toilets, vanities, bathroom fixtures and modern home essentials",
+        favicon:"https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/c442ad67-1d07-4e42-ab61-4c34cf10cd7f.jpg",
+        bg:"https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/c442ad67-1d07-4e42-ab61-4c34cf10cd7f.jpg",
+        gradient:"linear-gradient(135deg,#1a1a2f 0%,#0f0f1f 100%)"
+      },
+      {
+        slug:"yitamotor", brand:"YITAMOTOR", category:"Automotive",
+        description:"Floor mats, running boards, LED light bars and truck accessories",
+        favicon:null, bg:null,
+        gradient:"linear-gradient(135deg,#1f1a0a 0%,#15120a 100%)"
+      },
+      {
+        slug:"aiper", brand:"AIPER", category:"Smart Cleaning",
+        description:"Pool robots, cordless vacuums and smart cleaning devices",
+        favicon:"https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/3b1f2888-3f4c-461b-9878-3ff799375379.jpg",
+        bg:"https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/3b1f2888-3f4c-461b-9878-3ff799375379.jpg",
+        gradient:"linear-gradient(135deg,#0a2a3a 0%,#061820 100%)"
+      },
+      {
+        slug:"plaud", brand:"Plaud", category:"AI Devices",
+        description:"AI voice recorders with GPT-powered transcription and summarization",
+        favicon:null, bg:null,
+        gradient:"linear-gradient(135deg,#1a0a2f 0%,#100620 100%)"
+      },
+      {
+        slug:"cute-stone", brand:"CUTE STONE", category:"Kids & Toys",
+        description:"Kids toys, play sets, educational games and building blocks",
+        favicon:"https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/43e65b8a-b15c-4f0f-9a29-1e6d8895bd08.jpg",
+        bg:"https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/43e65b8a-b15c-4f0f-9a29-1e6d8895bd08.jpg",
+        gradient:"linear-gradient(135deg,#2a1a0a 0%,#1a1008 100%)"
+      },
+      {
+        slug:"running-girl", brand:"RUNNING GIRL", category:"Athletic Apparel",
+        description:"Athletic wear and sports apparel designed for active women",
+        favicon:"https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/cdb61fab-2e74-460c-97ae-3c998f739c6c.jpg",
+        bg:"https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/cdb61fab-2e74-460c-97ae-3c998f739c6c.jpg",
+        gradient:"linear-gradient(135deg,#2a0f0a 0%,#1a0806 100%)"
+      },
+      {
+        slug:"mescomb", brand:"MESCOMB", category:"Beauty & Hair",
+        description:"Hot air stylers, curling irons, hair dryers and ionic hair tools",
+        favicon:null, bg:null,
+        gradient:"linear-gradient(135deg,#2a1a2a 0%,#1a101a 100%)"
+      },
+      {
+        slug:"hittiona", brand:"HITTIONA", category:"Beauty & Home",
+        description:"Hair dryers, stylers, ionic beauty tools and home fitness gear",
+        favicon:"https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/e31cdde7-be34-47a2-a5f8-4528630189a7.jpg",
+        bg:"https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/e31cdde7-be34-47a2-a5f8-4528630189a7.jpg",
+        gradient:"linear-gradient(135deg,#2a1020 0%,#1a0815 100%)"
+      },
+      {
+        slug:"aurzen", brand:"Aurzen", category:"Consumer Electronics",
+        description:"Smart projectors, Roku TVs, Eazze & Boom portable projectors",
+        favicon:null, bg:"https://m.media-amazon.com/images/S/aplus-media-library-service-media/49a2e018-e229-4997-98e7-defcddf0e30c.__CR0,0,2928,1250_PT0_SX1464_V1___.jpg",
+        gradient:"linear-gradient(135deg,#0a0a2a 0%,#06061a 100%)"
+      },
+      {
+        slug:"prudiut", brand:"Prudiut", category:"Craft & Kitchen",
+        description:"Watercolor paper, craft supplies, kitchen tools and accessories",
+        favicon:"https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/0bc98899-aaf2-48a9-815f-b38145bc5712.jpg",
+        bg:"https://m.media-amazon.com/images/S/aplus-media-library-service-media/49aa-bd2e-879a82c4b24b.__CR0,0,1464,600_PT0_SX1464_V1___.jpg",
+        gradient:"linear-gradient(135deg,#1a1a0a 0%,#0f0f08 100%)"
+      },
+      {
+        slug:"livebox", brand:"LIVEBOX", category:"Home Decor",
+        description:"Area rugs, carpets, living room textiles and home furnishings",
+        favicon:null, bg:null,
+        gradient:"linear-gradient(135deg,#0a1a0a 0%,#051005 100%)"
+      },
+      {
+        slug:"imarku", brand:"imarku", category:"Kitchen",
+        description:"Chef knives, cookware, kitchen tools and professional-grade utensils",
+        favicon:"https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/294676d0-c9b3-472c-92f5-c3779c16e4b0.jpg",
+        bg:"https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/294676d0-c9b3-472c-92f5-c3779c16e4b0.jpg",
+        gradient:"linear-gradient(135deg,#2a0a0a 0%,#1a0505 100%)"
+      },
+      {
+        slug:"olight", brand:"OLIGHT", category:"Lighting & Tools",
+        description:"EDC flashlights, headlamps, weapon lights and outdoor illumination",
+        favicon:null, bg:null,
+        gradient:"linear-gradient(135deg,#2a1a0a 0%,#1a1008 100%)"
+      }
     ];
 
     // Affiliate URLs (from landingpages.txt, indexed by UUID)
@@ -482,7 +722,6 @@
       "098E844F-88E8-45DC-901F-203F35540649": "https://www.amazon.com/stores/page/098E844F-88E8-45DC-901F-203F35540649?maas=maas_adg_api_578262113212164655_static_9_258&ref_=aa_maas&tag=maas&aa_campaignid=aa_d73a5e1e2cd7e9734a88a02ef8f41da7&aa_adgroupid=aa_a3b3a69cce88e6ad31ee407ee8dc6f6b&aa_creativeid=aa_793902831884ef82d3f6059ac72301fc"
     };
 
-    // UUID for each brand (primary/canonical)
     const BRAND_UUIDS = {
       "renpho":     "E2A21CE0-037D-47DE-8EAF-445B25A8875A",
       "reolink":    "201E3A4F-C63F-48A6-87B7-524F985330DA",
@@ -526,15 +765,24 @@
 
       bannerBrands.forEach((brand, i) => {
         const uuid = BRAND_UUIDS[brand.slug];
-        const url = AFFILIATE_URLS[uuid] || brand.favicon ? `https://www.amazon.com/stores/${brand.slug}` : '#';
-        const imgSrc = brand.favicon || `https://placehold.co/160x160/1a1a1a/E8FF47?text=${encodeURIComponent(brand.brand)}&font=roboto`;
+        const url = AFFILIATE_URLS[uuid] || '#';
+        const bgStyle = brand.bg
+          ? `background-image: url('${brand.bg}'); background-size: cover; background-position: center;`
+          : `background: ${brand.gradient};`;
+
+        let logoHtml = '';
+        if (brand.favicon) {
+          logoHtml = `<div class="slide-logo-wrap">
+            <img class="slide-logo" src="${brand.favicon}" alt="${brand.brand}" loading="${i===0?'eager':'lazy'}">
+          </div>`;
+        }
 
         wrapper.innerHTML += `
-          <a class="slide" href="${url}" target="_blank" rel="noopener noreferrer nofollow">
+          <a class="slide" href="${url}" target="_blank" rel="noopener noreferrer nofollow" style="${bgStyle}">
             <div class="slide-content">
-              <img class="slide-brand-img" src="${imgSrc}" alt="${brand.brand} logo" loading="${i===0?'eager':'lazy'}">
-              <p class="slide-category">${brand.category_zh} · ${brand.category}</p>
+              ${logoHtml}
               <h1 class="slide-brand">${brand.brand}</h1>
+              <p class="slide-category">${brand.category}</p>
               <p class="slide-desc">${brand.description}</p>
               <span class="slide-cta">Shop Now →</span>
             </div>
@@ -562,29 +810,90 @@
     }
 
     // ── Brand Grid ──
-    function buildGrid() {
+    function buildGrid(filter) {
       const grid = document.getElementById('brandGrid');
-      grid.innerHTML = BRANDS.map(brand => {
+      const noResults = document.getElementById('noResults');
+      const countEl = document.getElementById('brandCount');
+
+      const q = filter ? filter.toLowerCase().trim() : '';
+
+      let visible = BRANDS;
+
+      if (q) {
+        visible = BRANDS.filter(b =>
+          b.brand.toLowerCase().includes(q) ||
+          b.category.toLowerCase().includes(q) ||
+          b.description.toLowerCase().includes(q) ||
+          b.slug.toLowerCase().includes(q)
+        );
+      }
+
+      if (visible.length === 0) {
+        grid.innerHTML = '';
+        noResults.classList.add('visible');
+        countEl.textContent = '';
+        return;
+      }
+
+      noResults.classList.remove('visible');
+      countEl.textContent = `${visible.length} brand${visible.length !== 1 ? 's' : ''}`;
+
+      grid.innerHTML = visible.map(brand => {
         const uuid = BRAND_UUIDS[brand.slug];
         const url = AFFILIATE_URLS[uuid] || `https://www.amazon.com/stores/${brand.slug}`;
-        const imgSrc = brand.favicon || `https://placehold.co/88x88/1a1a1a/E8FF47?text=${encodeURIComponent(brand.brand.slice(0,2))}&font=roboto`;
+
+        const cardBgStyle = brand.bg
+          ? `background-image: url('${brand.bg}'); background-size: cover; background-position: center;`
+          : `background: ${brand.gradient};`;
+
+        let logoHtml = '';
+        if (brand.favicon) {
+          logoHtml = `<div class="card-logo-wrap">
+            <img class="card-logo" src="${brand.favicon}" alt="${brand.brand}">
+          </div>`;
+        }
+
         return `
           <a class="brand-card" href="${url}" target="_blank" rel="noopener noreferrer nofollow">
-            <div class="brand-card-top">
-              <img class="brand-card-img" src="${imgSrc}" alt="${brand.brand}" loading="lazy">
-              <div>
-                <div class="brand-card-name">${brand.brand}</div>
-                <div class="brand-card-cat">${brand.category_zh}</div>
-              </div>
+            <div class="card-img-wrap" style="${cardBgStyle}">
+              <img class="card-img" src="${brand.bg || 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7'}" alt="" loading="lazy" style="opacity:0;position:absolute;" onerror="this.style.display='none'">
             </div>
-            <p class="brand-card-desc">${brand.description}</p>
-            <span class="brand-card-cta">Shop on Amazon →</span>
+            <div class="card-body">
+              <div class="card-top">
+                ${logoHtml}
+                <div>
+                  <div class="card-name">${brand.brand}</div>
+                  <div class="card-cat">${brand.category}</div>
+                </div>
+              </div>
+              <p class="card-desc">${brand.description}</p>
+              <span class="card-cta">Shop on Amazon →</span>
+            </div>
           </a>`;
       }).join('');
-
-      document.getElementById('brandCount').textContent = `${BRANDS.length} brands`;
     }
 
+    // ── Fuzzy Search ──
+    const searchInput = document.getElementById('searchInput');
+    let searchTimeout;
+    searchInput.addEventListener('input', () => {
+      clearTimeout(searchTimeout);
+      searchTimeout = setTimeout(() => {
+        buildGrid(searchInput.value);
+      }, 150);
+    });
+
+    // ── Back to Top ──
+    const backToTop = document.getElementById('backToTop');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 400) {
+        backToTop.classList.add('visible');
+      } else {
+        backToTop.classList.remove('visible');
+      }
+    }, { passive: true });
+
+    // ── Init ──
     buildBanner();
     buildGrid();
     slideInterval = setInterval(nextSlide, 2000);

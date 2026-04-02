@@ -87,39 +87,45 @@ manifest.json → brands[].affiliateLinks[] 中的所有 UUID
 {
   "version": "YYYY-MM-DD",
   "updated": "ISO8601时间戳",
-  "description": "说明用途",
+  "description": "VinceMedia brand-to-affiliate-link mapping",
   "brands": [
     {
-      "slug": "品牌缩写（用于 URL）",
-      "brand": "品牌全名",
-      "category": "英文分类",
-      "category_zh": "中文分类",
-      "description": "品牌描述（英文，简洁）",
+      "slug": "brand-slug",
+      "brand": "Brand Full Name",
+      "category": "Category",
+      "description": "Brand description (English only)",
       "affiliateLinks": ["UUID1", "UUID2"],
       "storeUrl": "https://www.amazon.com/stores/SLUG",
-      "favicon": "Amazon CDN 图片 URL 或 null",
-      "inactive": false  // true = 已从 landingpages.txt 删除
+      "favicon": "Amazon CDN logo URL or null",
+      "bg": "Amazon CDN product/hero image URL or null",
+      "gradient": "CSS gradient fallback when no bg image",
+      "inactive": false
     }
   ]
 }
 ```
+
+**关键字段**：
+- `favicon`: Amazon CDN 品牌 Logo（仅在有值时显示，无则不占位）
+- `bg`: Banner/卡片背景产品图（Amazon CDN URL，有则优先使用，无则用 gradient）
+- `gradient`: CSS 渐变备选背景（品牌特色色调，无图片时使用）
 
 ---
 
 ## index.html 中的对应数据结构
 
 ```javascript
-// manifest → BRANDS[]（品牌信息，不含链接）
+// BRANDS[] — manifest → 品牌信息
 const BRANDS = [
-  { slug, brand, category, category_zh, description, favicon }
+  { slug, brand, category, description, favicon, bg, gradient }
 ];
 
-// landingpages.txt → AFFILIATE_URLS{}（UUID → 完整联盟链接）
+// AFFILIATE_URLS{} — landingpages.txt → UUID → 完整联盟链接
 const AFFILIATE_URLS = {
   "UUID": "https://...&tag=maas&..."
 };
 
-// BRAND_UUIDS{}（slug → 首选 UUID）
+// BRAND_UUIDS{} — slug → 首选 UUID
 const BRAND_UUIDS = {
   "renpho": "E2A21CE0-037D-47DE-8EAF-445B25A8875A"
 };

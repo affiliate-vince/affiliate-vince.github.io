@@ -1,194 +1,205 @@
 {
   "version": "2026-04-02",
-  "updated": "2026-04-02T18:55:00Z",
-  "description": "VinceMedia 联盟链接映射表 — 维护 landingpages.txt 时对比此文件识别新增/删除的链接",
+  "updated": "2026-04-02T19:35:00Z",
+  "description": "VinceMedia brand-to-affiliate-link mapping — compare against landingpages.txt to detect added/removed links",
   "brands": [
     {
       "slug": "renpho",
       "brand": "RENPHO",
       "category": "Health & Wellness",
-      "category_zh": "健康生活",
-      "description": "Fitness equipment, massage devices, health monitors",
+      "description": "Fitness trackers, massage guns, smart scales and health monitors",
       "affiliateLinks": ["E2A21CE0-037D-47DE-8EAF-445B25A8875A"],
       "storeUrl": "https://www.amazon.com/stores/RENPHO",
-      "favicon": "https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/0cb89e86-a71e-4bff-b46e-e4295b6cc6f1.png"
+      "favicon": "https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/0cb89e86-a71e-4bff-b46e-e4295b6cc6f1.png",
+      "bg": null,
+      "gradient": "linear-gradient(135deg,#0d2f2f 0%,#0f1f1f 100%)"
     },
     {
       "slug": "reolink",
       "brand": "REOLINK",
       "category": "Smart Home & Security",
-      "category_zh": "智能家居",
-      "description": "Security cameras, battery cams, PoE systems, doorbells",
+      "description": "Security cameras, doorbells, battery-powered cams and NVR systems",
       "affiliateLinks": ["201E3A4F-C63F-48A6-87B7-524F985330DA"],
       "storeUrl": "https://www.amazon.com/stores/REOLINK",
-      "favicon": null
+      "favicon": null,
+      "bg": "https://m.media-amazon.com/images/S/aplus-media-library-service-media/3b6263ea-52bc-4c44-8cf7-3278b1b15b1f.__CR0,0,1464,625_PT0_SX1464_V1___.jpg",
+      "gradient": "linear-gradient(135deg,#0a1f3f 0%,#0f1f2f 100%)"
     },
     {
       "slug": "halova",
       "brand": "HaloVa",
       "category": "Baby & Mother Care",
-      "category_zh": "母婴用品",
       "description": "Baby carriers, nursing pillows, postpartum recovery products",
-      "affiliateLinks": [
-        "9BEBE13D-0781-43DE-967B-26CF95746E59",
-        "95BB274A-2557-452C-8DA8-2AFF64377113",
-        "0C357483-A7C6-4D03-9B65-D135AFC7D8D9"
-      ],
+      "affiliateLinks": ["9BEBE13D-0781-43DE-967B-26CF95746E59","95BB274A-2557-452C-8DA8-2AFF64377113","0C357483-A7C6-4D03-9B65-D135AFC7D8D9"],
       "storeUrl": "https://www.amazon.com/stores/HaloVa",
-      "favicon": null
+      "favicon": null,
+      "bg": null,
+      "gradient": "linear-gradient(135deg,#2d1a3a 0%,#1f1228 100%)"
     },
     {
       "slug": "grownsy",
       "brand": "GROWNSY",
       "category": "Baby Care",
-      "category_zh": "婴儿用品",
-      "description": "Baby feeding, care kits, parenting solutions",
-      "affiliateLinks": [
-        "0AB1F9B4-B199-4694-9D81-B5AFE725E08B",
-        "7A947F79-0AD8-4391-8FB5-99734DAC4973"
-      ],
+      "description": "Baby feeding kits, care sets, bottle warmers and parenting tools",
+      "affiliateLinks": ["0AB1F9B4-B199-4694-9D81-B5AFE725E08B","7A947F79-0AD8-4391-8FB5-99734DAC4973"],
       "storeUrl": "https://www.amazon.com/stores/GROWNSY",
-      "favicon": null
+      "favicon": null,
+      "bg": null,
+      "gradient": "linear-gradient(135deg,#1a2a1a 0%,#0f1a0f 100%)"
     },
     {
       "slug": "it-cosmetics",
       "brand": "IT Cosmetics",
       "category": "Beauty & Cosmetics",
-      "category_zh": "美妆护肤",
-      "description": "Makeup, skincare, beauty products with skin-care technology",
+      "description": "Makeup and skincare powered by skin-care science and dermatology",
       "affiliateLinks": ["F8D9521C-6961-43F8-BB2F-2963DF3E2207"],
       "storeUrl": "https://www.amazon.com/stores/ITCosmetics",
-      "favicon": null
+      "favicon": null,
+      "bg": null,
+      "gradient": "linear-gradient(135deg,#3a1a2a 0%,#2a1020 100%)"
     },
     {
       "slug": "horow",
       "brand": "HOROW",
       "category": "Home & Bathroom",
-      "category_zh": "家居卫浴",
-      "description": "Toilets, bathroom fixtures, vanities",
+      "description": "Smart toilets, vanities, bathroom fixtures and modern home essentials",
       "affiliateLinks": ["A09341BE-FA66-4BD9-80CC-1A75964A8DC1"],
       "storeUrl": "https://www.amazon.com/stores/HOROW",
-      "favicon": "https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/c442ad67-1d07-4e42-ab61-4c34cf10cd7f.jpg"
+      "favicon": "https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/c442ad67-1d07-4e42-ab61-4c34cf10cd7f.jpg",
+      "bg": null,
+      "gradient": "linear-gradient(135deg,#1a1a2f 0%,#0f0f1f 100%)"
     },
     {
       "slug": "yitamotor",
       "brand": "YITAMOTOR",
       "category": "Automotive",
-      "category_zh": "汽车配件",
-      "description": "Car floor mats, towing mirrors, running boards, LED light bars",
+      "description": "Floor mats, running boards, LED light bars and truck accessories",
       "affiliateLinks": ["E28BDCDE-D661-43BC-AB00-DB89F391DACE"],
       "storeUrl": "https://www.amazon.com/stores/YITAMOTOR",
-      "favicon": null
+      "favicon": null,
+      "bg": null,
+      "gradient": "linear-gradient(135deg,#1f1a0a 0%,#15120a 100%)"
     },
     {
       "slug": "aiper",
       "brand": "AIPER",
       "category": "Smart Cleaning",
-      "category_zh": "智能清洁",
-      "description": "Pool robots, cordless vacuums, smart cleaning devices",
+      "description": "Pool robots, cordless vacuums and smart cleaning devices",
       "affiliateLinks": ["C03611E3-CC8B-44F0-9326-059AAF46A0B1"],
       "storeUrl": "https://www.amazon.com/stores/AIPER",
-      "favicon": "https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/3b1f2888-3f4c-461b-9878-3ff799375379.jpg"
+      "favicon": "https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/3b1f2888-3f4c-461b-9878-3ff799375379.jpg",
+      "bg": null,
+      "gradient": "linear-gradient(135deg,#0a2a3a 0%,#061820 100%)"
     },
     {
       "slug": "plaud",
       "brand": "Plaud",
       "category": "AI Devices",
-      "category_zh": "AI设备",
-      "description": "AI voice recorders, Note series with GPT-powered transcription",
+      "description": "AI voice recorders with GPT-powered transcription and summarization",
       "affiliateLinks": ["8CF9A795-D789-4562-874A-43E632222F8C"],
       "storeUrl": "https://www.amazon.com/stores/Plaud",
-      "favicon": null
+      "favicon": null,
+      "bg": null,
+      "gradient": "linear-gradient(135deg,#1a0a2f 0%,#100620 100%)"
     },
     {
       "slug": "cute-stone",
       "brand": "CUTE STONE",
       "category": "Kids & Toys",
-      "category_zh": "儿童玩具",
-      "description": "Kids toys, play sets, educational toys",
+      "description": "Kids toys, play sets, educational games and building blocks",
       "affiliateLinks": ["033F62C5-1A33-4D7B-AFF4-1C359716322A"],
       "storeUrl": "https://www.amazon.com/stores/CUTESTONE",
-      "favicon": "https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/43e65b8a-b15c-4f0f-9a29-1e6d8895bd08.jpg"
+      "favicon": "https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/43e65b8a-b15c-4f0f-9a29-1e6d8895bd08.jpg",
+      "bg": null,
+      "gradient": "linear-gradient(135deg,#2a1a0a 0%,#1a1008 100%)"
     },
     {
       "slug": "running-girl",
       "brand": "RUNNING GIRL",
       "category": "Athletic Apparel",
-      "category_zh": "运动服饰",
-      "description": "Athletic wear, sports apparel for women",
+      "description": "Athletic wear and sports apparel designed for active women",
       "affiliateLinks": ["B7ACC67E-2539-43EF-98B5-E77ACC4F1B02"],
       "storeUrl": "https://www.amazon.com/stores/RUNNINGGIRL",
-      "favicon": "https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/cdb61fab-2e74-460c-97ae-3c998f739c6c.jpg"
+      "favicon": "https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/cdb61fab-2e74-460c-97ae-3c998f739c6c.jpg",
+      "bg": null,
+      "gradient": "linear-gradient(135deg,#2a0f0a 0%,#1a0806 100%)"
     },
     {
       "slug": "mescomb",
       "brand": "MESCOMB",
       "category": "Beauty & Hair",
-      "category_zh": "美发工具",
-      "description": "Hot air stylers, curling irons, hair dryers",
+      "description": "Hot air stylers, curling irons, hair dryers and ionic hair tools",
       "affiliateLinks": ["A34677B1-CC9F-4EC5-8660-F6F5A5E75FE0"],
       "storeUrl": "https://www.amazon.com/stores/MESCOMB",
-      "favicon": null
+      "favicon": null,
+      "bg": null,
+      "gradient": "linear-gradient(135deg,#2a1a2a 0%,#1a101a 100%)"
     },
     {
       "slug": "hittiona",
       "brand": "HITTIONA",
       "category": "Beauty & Home",
-      "category_zh": "美容家居",
-      "description": "Hair dryers, stylers, pickleball paddles",
+      "description": "Hair dryers, stylers, ionic beauty tools and home fitness gear",
       "affiliateLinks": ["07B15259-3BD4-47D6-B682-B431AF66F916"],
       "storeUrl": "https://www.amazon.com/stores/HITTIONA",
-      "favicon": "https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/e31cdde7-be34-47a2-a5f8-4528630189a7.jpg"
+      "favicon": "https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/e31cdde7-be34-47a2-a5f8-4528630189a7.jpg",
+      "bg": null,
+      "gradient": "linear-gradient(135deg,#2a1020 0%,#1a0815 100%)"
     },
     {
       "slug": "aurzen",
       "brand": "Aurzen",
       "category": "Consumer Electronics",
-      "category_zh": "消费电子",
-      "description": "Smart TVs, projectors, Eazze/Boom/Zip series",
+      "description": "Smart projectors, Roku TVs, Eazze and Boom portable projectors",
       "affiliateLinks": ["16ED44A3-DF5C-4C3D-A734-FFD961269E97"],
       "storeUrl": "https://www.amazon.com/stores/Aurzen",
-      "favicon": null
+      "favicon": null,
+      "bg": "https://m.media-amazon.com/images/S/aplus-media-library-service-media/49a2e018-e229-4997-98e7-defcddf0e30c.__CR0,0,2928,1250_PT0_SX1464_V1___.jpg",
+      "gradient": "linear-gradient(135deg,#0a0a2a 0%,#06061a 100%)"
     },
     {
       "slug": "prudiut",
       "brand": "Prudiut",
       "category": "Craft & Kitchen",
-      "category_zh": "手工厨具",
-      "description": "Watercolor paper, craft supplies, coffee filters",
+      "description": "Watercolor paper, craft supplies, kitchen tools and accessories",
       "affiliateLinks": ["0198132F-1713-4A28-8AD9-D313AC6E08CB"],
       "storeUrl": "https://www.amazon.com/stores/Prudiut",
-      "favicon": "https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/0bc98899-aaf2-48a9-815f-b38145bc5712.jpg"
+      "favicon": "https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/0bc98899-aaf2-48a9-815f-b38145bc5712.jpg",
+      "bg": "https://m.media-amazon.com/images/S/aplus-media-library-service-media/49aa-bd2e-879a82c4b24b.__CR0,0,1464,600_PT0_SX1464_V1___.jpg",
+      "gradient": "linear-gradient(135deg,#1a1a0a 0%,#0f0f08 100%)"
     },
     {
       "slug": "livebox",
       "brand": "LIVEBOX",
       "category": "Home Decor",
-      "category_zh": "家居装饰",
-      "description": "Area rugs, carpets, home textile",
+      "description": "Area rugs, carpets, living room textiles and home furnishings",
       "affiliateLinks": ["C714345E-E401-4BB9-9617-C7A8F20B3FFA"],
       "storeUrl": "https://www.amazon.com/stores/LIVEBOX",
-      "favicon": null
+      "favicon": null,
+      "bg": null,
+      "gradient": "linear-gradient(135deg,#0a1a0a 0%,#051005 100%)"
     },
     {
       "slug": "imarku",
       "brand": "imarku",
       "category": "Kitchen",
-      "category_zh": "厨房用品",
-      "description": "Kitchen knives, cookware, chef knives",
+      "description": "Chef knives, cookware, kitchen tools and professional-grade utensils",
       "affiliateLinks": ["6CFD9621-C8D8-47AB-951B-1010C39E5757"],
       "storeUrl": "https://www.amazon.com/stores/imarku",
-      "favicon": "https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/294676d0-c9b3-472c-92f5-c3779c16e4b0.jpg"
+      "favicon": "https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/294676d0-c9b3-472c-92f5-c3779c16e4b0.jpg",
+      "bg": null,
+      "gradient": "linear-gradient(135deg,#2a0a0a 0%,#1a0505 100%)"
     },
     {
       "slug": "olight",
       "brand": "OLIGHT",
       "category": "Lighting & Tools",
-      "category_zh": "照明工具",
-      "description": "Flashlights, headlamps, weapon lights, EDC lights",
+      "description": "EDC flashlights, headlamps, weapon lights and outdoor illumination",
       "affiliateLinks": ["098E844F-88E8-45DC-901F-203F35540649"],
       "storeUrl": "https://www.amazon.com/stores/OLIGHT",
-      "favicon": null
+      "favicon": null,
+      "bg": null,
+      "gradient": "linear-gradient(135deg,#2a1a0a 0%,#1a1008 100%)"
     }
   ]
 }
