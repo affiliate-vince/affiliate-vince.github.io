@@ -5,4 +5,4 @@ Allow: /
 Disallow: /manifest.json
 Disallow: /landingpages.txt
 
-Sitemap: https://vincemedia.store/sitemap.xml
+Sitemap: https://affiliate-vince.github.io/sitemap.xml
