@@ -21,6 +21,15 @@ const BRANDS = [
     gradient:"linear-gradient(135deg,#0a0a2a 0%,#06061a 100%)" 
   },
   { 
+    slug:"brondell",
+    brand:"Brondell",       
+    category:"Home & Living",      
+    description:"Premium bidets, toilet seats and bathroom accessories",  
+    favicon:null,                          
+    bg:"https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/4d9fe11c-65ac-44a2-bd2c-1b02d23bc9ab._CR0%2C0%2C3000%2C600_SX1500_.png",  
+    gradient:"linear-gradient(135deg,#1a2a3a 0%,#0f1a20 100%)" 
+  },
+  { 
     slug:"cute-stone",  
     brand:"CUTE STONE",   
     category:"Baby & Kids",     
@@ -30,6 +39,15 @@ const BRANDS = [
     gradient:"linear-gradient(135deg,#2a1a0a 0%,#1a1008 100%)" 
   },
   { 
+    slug:"fitpolo",
+    brand:"Fitpolo",       
+    category:"Beauty & Care",      
+    description:"Fitness trackers, smartwatches and health monitoring devices",  
+    favicon:null,                          
+    bg:"https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/4be6297f-e628-42f1-9caf-519f85ddbd6a._CR0%2C0%2C3000%2C600_SX1500_.png",  
+    gradient:"linear-gradient(135deg,#0a2a1a 0%,#051a10 100%)" 
+  },
+  { 
     slug:"gys",         
     brand:"GYS",          
     category:"Fashion",         
@@ -37,6 +55,15 @@ const BRANDS = [
     favicon:"https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/55df7d1c-0eb4-4add-a068-16b1bf76aa33._CR0%2C0%2C420%2C400_SX100_.jpg", 
     bg:"https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/1078e418-66d1-449c-945e-42939f229c80._CR0%2C0%2C3000%2C600_SX1500_.gif", 
     gradient:"linear-gradient(135deg,#1a2a1a 0%,#0f1a0f 100%)" 
+  },
+  { 
+    slug:"hoto",
+    brand:"HOTO Tools",       
+    category:"Home & Living",      
+    description:"Professional hand tools, power tool accessories and DIY equipment",  
+    favicon:"https://m.media-amazon.com/images/S/stores-image-uploads-na-prod/9/AmazonStores/ATVPDKIKX0DER/20358d113f9fbdb34e31c097982aaefa.w920.h920._CR0%2C0%2C920%2C920_SX100_.jpg",                          
+    bg:"https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/41ec95a7-1bbc-40f6-b82b-c3bdfc34718d._CR0%2C1%2C3000%2C600_SX1500_.png",  
+    gradient:"linear-gradient(135deg,#2a1a0a 0%,#1a1008 100%)" 
   },
   { 
     slug:"grownsy",     
@@ -111,6 +138,15 @@ const BRANDS = [
     gradient:"linear-gradient(135deg,#3a1a2a 0%,#2a1020 100%)" 
   },
   { 
+    slug:"lahome",
+    brand:"Lahome",       
+    category:"Home & Living",      
+    description:"Area rugs, home decor and decorative textiles",  
+    favicon:"https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/fb3082ee-4119-401d-869e-df1583e18780._CR0%2C0%2C400%2C400_SX100_.jpg",                          
+    bg:"https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/5726a892-6543-4333-bd0b-99370121a4a0._CR0%2C0%2C2268%2C446_SX1500_.jpg",  
+    gradient:"linear-gradient(135deg,#1a1a2a 0%,#0f0f1a 100%)" 
+  },
+  { 
     slug:"livebox",     
     brand:"LIVEBOX",      
     category:"Home & Living",   
@@ -136,6 +172,24 @@ const BRANDS = [
     favicon:null,                          
     bg:"https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/33943581-0942-4754-9c4d-61df5b866afd._CR0%2C0%2C3000%2C600_SX1500_.jpg", 
     gradient:"linear-gradient(135deg,#2a1a2a 0%,#1a101a 100%)" 
+  },
+  { 
+    slug:"nelko",
+    brand:"NELKO",       
+    category:"Beauty & Care",      
+    description:"Hair styling tools, hair dryers and beauty accessories",  
+    favicon:"https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/8a6bcda1-828f-4b51-b352-1bd6de1b80e0._CR0%2C0%2C400%2C400_SX100_.jpg",                          
+    bg:"https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/d61ad24d-540f-4f89-8a76-934406b20c6e._CR0%2C0%2C3000%2C600_SX1500_.jpg",  
+    gradient:"linear-gradient(135deg,#2a1a2a 0%,#1a1015 100%)" 
+  },
+  { 
+    slug:"obsbot",
+    brand:"OBSBOT",       
+    category:"Electronics",      
+    description:"AI-powered PTZ cameras, streaming webcams and video production equipment",  
+    favicon:"https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/63b57ebd-291b-461f-8f03-f2040cf01376._CR0%2C0%2C1000%2C1000_SX100_.png",                          
+    bg:"https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/ebe120da-e800-473c-b8e5-19a4aba8db04._CR0%2C0%2C3000%2C600_SX1500_.png",  
+    gradient:"linear-gradient(135deg,#0a1a2a 0%,#050f1a 100%)" 
   },
   { 
     slug:"olight",      
