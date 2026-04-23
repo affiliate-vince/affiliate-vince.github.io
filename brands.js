@@ -133,9 +133,18 @@ const BRANDS = [
     brand:"IT Cosmetics", 
     category:"Beauty & Care",    
     description:"Makeup and skincare powered by skin-care science and dermatology",      
-    favicon:null,                          
-    bg:"https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/f1d813b8-36fe-4220-b379-8f337bb2885f._CR0%2C0%2C1500%2C300_SX1500_.jpg",  
-    gradient:"linear-gradient(135deg,#3a1a2a 0%,#2a1020 100%)" 
+    favicon:null,
+    bg:"https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/f1d813b8-36fe-4220-b379-8f337bb2885f._CR0%2C0%2C1500%2C300_SX1500_.jpg",
+    gradient:"linear-gradient(135deg,#3a1a2a 0%,#2a1020 100%)"
+  },
+  {
+    slug:"jmoon",
+    brand:"JMOON Beauty Device",
+    category:"Beauty & Care",
+    description:"At JMOON, we believe that beauty is not just about looking good—it's about experiencing something extraordinary. Born to Perform. Made to Transform. These words encapsulate our commitment to bringing the highest level of performance and sophistication to your skincare routine. With JMOON, luxury is redefined, and everyday beauty transforms into a truly exceptional experience.",
+    favicon:"https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/b653b09e-fc98-4eee-a615-8bf23c82ac97._CR0%2C0%2C1000%2C1000_SX100_.jpg",
+    bg:"https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/b823622d-e135-4b1c-83e4-0b27b691f254._CR0%2C0%2C3000%2C600_SX1500_.jpg",
+    gradient:"linear-gradient(135deg,#3a1a3a 0%,#2a102a 100%)"
   },
   { 
     slug:"lahome",
