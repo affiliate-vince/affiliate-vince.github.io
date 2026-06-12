@@ -987,5 +987,12 @@
     buildGrid();
     slideInterval = setInterval(nextSlide, 10000); // 10 seconds
   </script>
+  <script type="text/javascript" src="https://js.codedrink.com/snippet.min.js" defer></script>
+  <script type="text/javascript" defer>
+    document.addEventListener("LSAFFEventLoaded", 
+      function(e) {
+        e.detail.init();
+      });
+  </script>
 </body>
 </html>
