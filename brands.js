@@ -1,266 +1,87 @@
-// ══════════════════════════════════════════════════════════════
-// 品牌数据文件 — 可手动编辑
-// 字段说明：
-//   slug        : URL slug，唯一标识
-//   brand       : 品牌显示名称
-//   category    : 粗分类（与侧边栏页签对应）
-//   description : 品牌描述
-//   favicon     : Logo 图片 URL（null = 无 Logo，显示首字母），Amazon页面中<a title="brand-logo">的<img>子标签src属性
-//   bg          : Banner 背景图 URL（null = 使用 gradient），Amazon页面中<div data-testid="hero-image">的<img>子标签src属性
-//   gradient    : 无 bg 时的 CSS 背景渐变
-//
-// ══════════════════════════════════════════════════════════════
+// VinceMedia — Brand Data
 const BRANDS = [
-  { 
-    slug:"aurzen",
-    brand:"Aurzen",       
-    category:"Electronics",      
-    description:"Smart projectors, Roku TVs, Eazze & Boom portable projectors",  
-    favicon:null,                          
-    bg:"https://m.media-amazon.com/images/S/aplus-media-library-service-media/49a2e018-e229-4997-98e7-defcddf0e30c.__CR0,0,2928,1250_PT0_SX1464_V1___.jpg",  
-    gradient:"linear-gradient(135deg,#0a0a2a 0%,#06061a 100%)" 
-  },
-  { 
-    slug:"brondell",
-    brand:"Brondell",       
-    category:"Home & Living",      
-    description:"Premium bidets, toilet seats and bathroom accessories",  
-    favicon:null,                          
-    bg:"https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/4d9fe11c-65ac-44a2-bd2c-1b02d23bc9ab._CR0%2C0%2C3000%2C600_SX1500_.png",  
-    gradient:"linear-gradient(135deg,#1a2a3a 0%,#0f1a20 100%)" 
-  },
-  { 
-    slug:"cute-stone",  
-    brand:"CUTE STONE",   
-    category:"Baby & Kids",     
-    description:"Kids toys, play sets, educational games and building blocks",       
-    favicon:"https://m.media-amazon.com/images/S/abs-image-upload-na/9/AmazonStores/ATVPDKIKX0DER/d130fb992154923b4b844a8ded370266.w398.h248._CR0%2C0%2C398%2C248_SX100_.png",  
-    bg:"https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/43e65b8a-b15c-4f0f-9a29-1e6d8895bd08.jpg", 
-    gradient:"linear-gradient(135deg,#2a1a0a 0%,#1a1008 100%)" 
-  },
-  { 
-    slug:"fitpolo",
-    brand:"Fitpolo",       
-    category:"Beauty & Care",      
-    description:"Fitness trackers, smartwatches and health monitoring devices",  
-    favicon:null,                          
-    bg:"https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/4be6297f-e628-42f1-9caf-519f85ddbd6a._CR0%2C0%2C3000%2C600_SX1500_.png",  
-    gradient:"linear-gradient(135deg,#0a2a1a 0%,#051a10 100%)" 
-  },
-  { 
-    slug:"gys",         
-    brand:"GYS",          
-    category:"Fashion",         
-    description:"Bamboo viscose sleepwear, pajamas and loungewear for women and men",  
-    favicon:"https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/55df7d1c-0eb4-4add-a068-16b1bf76aa33._CR0%2C0%2C420%2C400_SX100_.jpg", 
-    bg:"https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/1078e418-66d1-449c-945e-42939f229c80._CR0%2C0%2C3000%2C600_SX1500_.gif", 
-    gradient:"linear-gradient(135deg,#1a2a1a 0%,#0f1a0f 100%)" 
-  },
-  { 
-    slug:"hoto",
-    brand:"HOTO Tools",       
-    category:"Home & Living",      
-    description:"Professional hand tools, power tool accessories and DIY equipment",  
-    favicon:"https://m.media-amazon.com/images/S/stores-image-uploads-na-prod/9/AmazonStores/ATVPDKIKX0DER/20358d113f9fbdb34e31c097982aaefa.w920.h920._CR0%2C0%2C920%2C920_SX100_.jpg",                          
-    bg:"https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/41ec95a7-1bbc-40f6-b82b-c3bdfc34718d._CR0%2C1%2C3000%2C600_SX1500_.png",  
-    gradient:"linear-gradient(135deg,#2a1a0a 0%,#1a1008 100%)" 
-  },
-  { 
-    slug:"grownsy",     
-    brand:"GROWNSY",      
-    category:"Beauty & Care",   
-    description:"Baby feeding kits, care sets, bottle warmers and parenting tools",    
-    favicon:"https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/fcd3ccf5-daa9-4430-8fed-bf32b9ca8f4a._CR0%2C0%2C600%2C600_SX100_.png", 
-    bg:"https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/739120ca-aa06-446f-9fa0-4fdab2b96d48._CR0%2C0%2C3000%2C600_SX1500_.jpg", 
-    gradient:"linear-gradient(135deg,#1a2a1a 0%,#0f1a0f 100%)" 
-  },
-  { 
-    slug:"allswifit",   
-    brand:"ALLSWIFIT Sports", 
-    category:"Sports & Outdoors", 
-    description:"Athletic footwear, running shoes, slip-ons and active lifestyle shoes", 
-    favicon:"https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/7c7f253d-3f93-4bc8-aeb2-fca43fd9d7e4._CR0%2C0%2C400%2C400_SX100_.jpg", 
-    bg:"https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/2fccbc3b-e91f-4e05-8ddc-e5be6dedd304._CR0%2C0%2C4500%2C900_SX1500_.jpg", 
-    gradient:"linear-gradient(135deg,#2d1a3a 0%,#1f1228 100%)" 
-  },
-  { 
-    slug:"happrun",     
-    brand:"HAPPRUN",      
-    category:"Electronics",     
-    description:"Smart projectors, Google TV, home theater and Netflix series",        
-    favicon:"https://m.media-amazon.com/images/S/stores-image-uploads-na-prod/2/AmazonStores/ATVPDKIKX0DER/6c8e15a68853fbc22f59aa617496eda4.w400.h400._CR0%2C0%2C400%2C400_SX100_.jpg", 
-    bg:"https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/810be0cd-67cd-4387-907a-d1107621d690._CR0%2C0%2C3000%2C600_SX1500_.jpg", 
-    gradient:"linear-gradient(135deg,#0a1a2a 0%,#050f1a 100%)" 
-  },
-  { 
-    slug:"hittiona",    
-    brand:"HITTIONA",     
-    category:"Beauty & Care",   
-    description:"Hair dryers, stylers, ionic beauty tools and home fitness gear",      
-    favicon:"https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/d6372bfc-90f0-4947-8c2d-e85e794fb5ad._CR0%2C0%2C867%2C867_SX100_.png",  
-    bg:"https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/e31cdde7-be34-47a2-a5f8-4528630189a7.jpg", 
-    gradient:"linear-gradient(135deg,#2a1020 0%,#1a0815 100%)" 
-  },
-  { 
-    slug:"horow",       
-    brand:"HOROW",        
-    category:"Home & Living",   
-    description:"Smart toilets, vanities, bathroom fixtures and modern home essentials",
-    favicon:"https://m.media-amazon.com/images/S/stores-image-uploads-na-prod/0/AmazonStores/ATVPDKIKX0DER/0885bfa0d2a0da11838b4fe8d7d534fb.w1500.h1500._CR0%2C0%2C1500%2C1500_SX100_.jpg",  
-    bg:"https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/c442ad67-1d07-4e42-ab61-4c34cf10cd7f.jpg", 
-    gradient:"linear-gradient(135deg,#1a1a2f 0%,#0f0f1f 100%)" 
-  },
-  { 
-    slug:"aiper",       
-    brand:"AIPER",        
-    category:"Home & Living",   
-    description:"Pool robots, cordless vacuums and smart cleaning devices",            
-    favicon:"https://m.media-amazon.com/images/S/stores-image-uploads-na-prod/2/AmazonStores/ATVPDKIKX0DER/56c8d362c7389ded31574766c90bf2c7.w400.h400._CR0%2C0%2C400%2C400_SX100_.jpg",  
-    bg:"https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/3b1f2888-3f4c-461b-9878-3ff799375379.jpg", 
-    gradient:"linear-gradient(135deg,#0a2a3a 0%,#061820 100%)" 
-  },
-  { 
-    slug:"imarku",      
-    brand:"imarku",       
-    category:"Kitchen",         
-    description:"Chef knives, cookware, kitchen tools and professional-grade utensils", 
-    favicon:"https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/69ca4512-7eea-44b2-a9bc-a94d087d28be._CR0%2C0%2C600%2C600_SX100_.png",  
-    bg:"https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/294676d0-c9b3-472c-92f5-c3779c16e4b0.jpg", 
-    gradient:"linear-gradient(135deg,#2a0a0a 0%,#1a0505 100%)" 
-  },
-  { 
-    slug:"it-cosmetics",
-    brand:"IT Cosmetics", 
-    category:"Beauty & Care",    
-    description:"Makeup and skincare powered by skin-care science and dermatology",      
-    favicon:null,
-    bg:"https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/f1d813b8-36fe-4220-b379-8f337bb2885f._CR0%2C0%2C1500%2C300_SX1500_.jpg",
-    gradient:"linear-gradient(135deg,#3a1a2a 0%,#2a1020 100%)"
-  },
-  {
-    slug:"jmoon",
-    brand:"JMOON Beauty Device",
-    category:"Beauty & Care",
-    description:"At JMOON, we believe that beauty is not just about looking good—it's about experiencing something extraordinary. Born to Perform. Made to Transform. These words encapsulate our commitment to bringing the highest level of performance and sophistication to your skincare routine. With JMOON, luxury is redefined, and everyday beauty transforms into a truly exceptional experience.",
-    favicon:"https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/b653b09e-fc98-4eee-a615-8bf23c82ac97._CR0%2C0%2C1000%2C1000_SX100_.jpg",
-    bg:"https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/b823622d-e135-4b1c-83e4-0b27b691f254._CR0%2C0%2C3000%2C600_SX1500_.jpg",
-    gradient:"linear-gradient(135deg,#3a1a3a 0%,#2a102a 100%)"
-  },
-  { 
-    slug:"lahome",
-    brand:"Lahome",       
-    category:"Home & Living",      
-    description:"Area rugs, home decor and decorative textiles",  
-    favicon:"https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/fb3082ee-4119-401d-869e-df1583e18780._CR0%2C0%2C400%2C400_SX100_.jpg",                          
-    bg:"https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/5726a892-6543-4333-bd0b-99370121a4a0._CR0%2C0%2C2268%2C446_SX1500_.jpg",  
-    gradient:"linear-gradient(135deg,#1a1a2a 0%,#0f0f1a 100%)" 
-  },
-  { 
-    slug:"livebox",     
-    brand:"LIVEBOX",      
-    category:"Home & Living",   
-    description:"Area rugs, carpets, living room textiles and home furnishings",        
-    favicon:"https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/063eaa5a-4e7c-4182-b173-f0944e750467._CR0%2C0%2C1771%2C1771_SX100_.png", 
-    bg:"https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/ab4db008-e0e0-4321-8498-805355c5483b._CR0%2C0%2C3000%2C600_SX1500_.jpg", 
-    gradient:"linear-gradient(135deg,#0a1a0a 0%,#051005 100%)" 
-  },
-  { 
-    slug:"maono",       
-    brand:"MAONO",        
-    category:"Electronics",     
-    description:"Microphones, audio interfaces, mixers for content creators",           
-    favicon:null,                          
-    bg:"https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/69fc836e-b6a4-4915-abc5-11a352a30d31._CR0%2C0%2C3000%2C600_SX1500_.jpg",  
-    gradient:"linear-gradient(135deg,#1a1a2a 0%,#0f0f1a 100%)" 
-  },
-  { 
-    slug:"mescomb",     
-    brand:"MESCOMB",      
-    category:"Beauty & Care",   
-    description:"Hot air stylers, curling irons, hair dryers and ionic hair tools",     
-    favicon:null,                          
-    bg:"https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/33943581-0942-4754-9c4d-61df5b866afd._CR0%2C0%2C3000%2C600_SX1500_.jpg", 
-    gradient:"linear-gradient(135deg,#2a1a2a 0%,#1a101a 100%)" 
-  },
-  { 
-    slug:"nelko",
-    brand:"NELKO",       
-    category:"Beauty & Care",      
-    description:"Hair styling tools, hair dryers and beauty accessories",  
-    favicon:"https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/8a6bcda1-828f-4b51-b352-1bd6de1b80e0._CR0%2C0%2C400%2C400_SX100_.jpg",                          
-    bg:"https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/d61ad24d-540f-4f89-8a76-934406b20c6e._CR0%2C0%2C3000%2C600_SX1500_.jpg",  
-    gradient:"linear-gradient(135deg,#2a1a2a 0%,#1a1015 100%)" 
-  },
-  { 
-    slug:"obsbot",
-    brand:"OBSBOT",       
-    category:"Electronics",      
-    description:"AI-powered PTZ cameras, streaming webcams and video production equipment",  
-    favicon:"https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/63b57ebd-291b-461f-8f03-f2040cf01376._CR0%2C0%2C1000%2C1000_SX100_.png",                          
-    bg:"https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/ebe120da-e800-473c-b8e5-19a4aba8db04._CR0%2C0%2C3000%2C600_SX1500_.png",  
-    gradient:"linear-gradient(135deg,#0a1a2a 0%,#050f1a 100%)" 
-  },
-  { 
-    slug:"olight",      
-    brand:"OLIGHT",       
-    category:"Home & Living",   
-    description:"EDC flashlights, headlamps, weapon lights and outdoor illumination",   
-    favicon:"https://m.media-amazon.com/images/S/abs-image-upload-na/f/AmazonStores/ATVPDKIKX0DER/eb846883fe013132cff813d189930ed9.w600.h600._CR0%2C0%2C600%2C600_SX100_.jpg", 
-    bg:"https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/722c934e-d453-4a1f-bc9b-564320af0eef._SL5000_CR0%2C0%2C5000%2C1000_SX1500_.png", 
-    gradient:"linear-gradient(135deg,#2a1a0a 0%,#1a1008 100%)" 
-  },
-  { 
-    slug:"plaud",       
-    brand:"Plaud",        
-    category:"Electronics",     
-    description:"AI voice recorders with GPT-powered transcription and summarization",  
-    favicon:"https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/3ef5efdb-5f98-41be-9dd5-d8f6a01ca7b1._CR0%2C0%2C400%2C400_SX100_.png", 
-    bg:"https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/d90a4993-2634-4217-9d63-fe428cf76a06._CR0%2C0%2C3000%2C600_SX1500_.jpg", 
-    gradient:"linear-gradient(135deg,#1a0a2f 0%,#100620 100%)" 
-  },
-  { 
-    slug:"prudiut",     
-    brand:"Prudiut",      
-    category:"Home & Living",   
-    description:"Watercolor paper, craft supplies, kitchen tools and accessories",      
-    favicon:"https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/7ecd732d-6e38-466d-9bf9-551592cbdb77._CR0%2C0%2C1200%2C1200_SX100_.jpg",  
-    bg:"https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/0bc98899-aaf2-48a9-815f-b38145bc5712._CR0%2C0%2C3000%2C600_SX1500_.jpg", 
-    gradient:"linear-gradient(135deg,#1a1a0a 0%,#0f0f08 100%)" 
-  },
-  { 
-    slug:"renpho",      
-    brand:"RENPHO",       
-    category:"Beauty & Care",   
-    description:"Fitness trackers, massage guns, smart scales and health monitors",     
-    favicon:"https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/02ecd33d-cfaf-421e-a525-af7e00db51c1._CR0,0,400,400_SX100_.jpg", 
-    bg:"https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/035d5a62-b3ae-4cf4-82a0-d92d880ade4d._CR0%2C0%2C1500%2C300_SX1500_.png", 
-    gradient:"linear-gradient(135deg,#0d2f2f 0%,#0f1f1f 100%)" 
-  },
-  { 
-    slug:"reolink",     
-    brand:"REOLINK",      
-    category:"Electronics",     
-    description:"Security cameras, doorbells, battery-powered cams and NVR systems",    
-    favicon:"https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/e12f7aa6-c3e8-4959-9f03-bdd3e43a42f7._CR0%2C0%2C800%2C800_SX100_.png",                          
-    bg:"https://m.media-amazon.com/images/S/aplus-media-library-service-media/3b6263ea-52bc-4c44-8cf7-3278b1b15b1f.__CR0,0,1464,625_PT0_SX1464_V1___.jpg", 
-    gradient:"linear-gradient(135deg,#0a1f3f 0%,#0f1f2f 100%)" 
-  },
-  { 
-    slug:"running-girl",
-    brand:"RUNNING GIRL", 
-    category:"Sports & Outdoors",
-    description:"Athletic wear and sports apparel designed for active women",            
-    favicon:"https://m.media-amazon.com/images/S/stores-image-uploads-na-prod/7/AmazonStores/ATVPDKIKX0DER/fc5b533546fbc23137897086cd7665e9.w400.h400._CR0%2C0%2C400%2C400_SX100_.jpg",  
-    bg:"https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/cdb61fab-2e74-460c-97ae-3c998f739c6c.jpg", 
-    gradient:"linear-gradient(135deg,#2a0f0a 0%,#1a0806 100%)" 
-  },
-  { 
-    slug:"yitamotor",   
-    brand:"YITAMOTOR",    
-    category:"Automotive",      
-    description:"Floor mats, running boards, LED light bars and truck accessories",     
-    favicon:null,                          
-    bg:"https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/354c1db0-781e-4c6f-b63c-858bd2659744._CR0%2C0%2C1920%2C384_SX1500_.jpg", 
-    gradient:"linear-gradient(135deg,#1f1a0a 0%,#15120a 100%)" 
-  },
+  { slug:"pocket-hose", brand:"Pocket Hose", category:"Home & Living", description:"The original expanding garden hose — 126+ patents, 23K+ reviews. No kinks, no tangles, just water.", favicon:"https://m.media-amazon.com/images/S/abs-image-upload-na/d/AmazonStores/ATVPDKIKX0DER/038c30643e0a1ffe02d25bde5e5b1336.w400.h400._CR0%2C0%2C400%2C400_SX100_.jpg", bg:"https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/e4693d78-4409-43c8-9b00-17743a4aec84.jpg", gradient:"linear-gradient(135deg,#1a1a2a 0%,#0f0f1a 100%)", isCore:true },
+  { slug:"veradek", brand:"Veradek", category:"Home & Living", description:"Modern outdoor planters that look like they cost 3x more. Steel construction, weather-resistant.", favicon:"https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/e7e0a36b-d1af-4e7d-be87-a2fe618346c2._CR0%2C0%2C1268%2C1268_SX100_.png", bg:"https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/5b61a0ee-cb74-4303-842d-6a8bf789bbf3.jpg", gradient:"linear-gradient(135deg,#0a2a1a 0%,#051a10 100%)", isCore:true },
+  { slug:"hexclad", brand:"HexClad", category:"Kitchen", description:"Hybrid cookware trusted by Gordon Ramsay. Non-stick + stainless steel, induction-ready, built to last.", favicon:"https://m.media-amazon.com/images/S/stores-image-uploads-na-prod/4/AmazonStores/ATVPDKIKX0DER/863e383ac52af9a826da239096c29164.w1200.h991._CR315%2C16%2C644%2C609_SX100_.jpg", bg:"https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/f75bcec3-adf1-4ae9-a483-00cf843614d6.png", gradient:"linear-gradient(135deg,#2a1a0a 0%,#1a1008 100%)", isCore:true },
+  { slug:"shibumi-shade", brand:"Shibumi Shade", category:"Sports & Outdoors", description:"The beach shade that uses the wind to float. Sets up in 2 minutes, covers the whole family.", favicon:null, bg:"https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/3844694f-c7cf-469a-b15b-6dbffa93f432.jpg", gradient:"linear-gradient(135deg,#1a0a2a 0%,#0f0620 100%)", isCore:true },
+  { slug:"hawaiian-shaved-ice", brand:"Hawaiian Shaved Ice", category:"Kitchen", description:"Real shaved ice machines — fine, fluffy snow at home. 6,000+ reviews, family favorite.", favicon:"https://m.media-amazon.com/images/S/abs-image-upload-na/e/AmazonStores/ATVPDKIKX0DER/68ff734374e0b741f34b88e44dd02f4b.w1200.h1200._CR0%2C0%2C1200%2C1200_SX100_.jpg", bg:"https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/8160dbec-df8c-4546-9362-2c42b77aeb30.png", gradient:"linear-gradient(135deg,#1a1a2a 0%,#0f0f1a 100%)", isCore:true },
+  { slug:"jack-rose", brand:"Jack & Rose", category:"Home & Living", description:"Affordable home decor that looks expensive. Tableware, linens, accessories for a curated home.", favicon:"https://m.media-amazon.com/images/S/stores-image-uploads-na-prod/2/AmazonStores/ATVPDKIKX0DER/6fd2a42b83b425269efa7fa4fa829bdc.w400.h400._CR0%2C0%2C400%2C400_SX100_.png", bg:"https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/4f3d771a-e8bd-4094-9721-724413762b7a.jpg", gradient:"linear-gradient(135deg,#0a2a1a 0%,#051a10 100%)", isCore:true },
+  { slug:"hoverair-self-flying-camera", brand:"HoverAir - self flying camera", category:"Electronics", description:"HoverAir - self flying camera on Amazon", favicon:"https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/1e6e0b88-0396-4750-98be-d271979bc1f5._CR0%2C0%2C2000%2C2000_SX100_.png", bg:"https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/69a665a1-27db-4edc-8f26-c4e8f32068a7.jpg", gradient:"linear-gradient(135deg,#2a1a0a 0%,#1a1008 100%)", isCore:false },
+  { slug:"bull-shot", brand:"Bull Shot", category:"Sports & Outdoors", description:"Clean energy shots — no sugar, no jitters. B vitamins and caffeine, 11.5% conversion rate.", favicon:"https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/f4575260-4d92-47ba-b6ef-305689673031._CR0%2C0%2C400%2C400_SX100_.png", bg:"https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/bd88e65f-62ad-4264-aabe-51cb39bf7bca.jpg", gradient:"linear-gradient(135deg,#1a0a2a 0%,#0f0620 100%)", isCore:true },
+  { slug:"hempvana", brand:"Hempvana", category:"Beauty & Care", description:"Hemp-based pain relief that actually works. No grease, no odor. 15K+ reviews, real results.", favicon:null, bg:"https://images-na.ssl-images-amazon.com/images/S/stores-image-uploads-na-prod/0/AmazonStores/ATVPDKIKX0DER/410296b1306d0f50020303a4b8a7c398.w3000.h600.jpg", gradient:"linear-gradient(135deg,#1a1a2a 0%,#0f0f1a 100%)", isCore:true },
+  { slug:"moshlife", brand:"MOSHLIFE", category:"Beauty & Care", description:"Natural deodorant that works. Aluminum-free, lasts all day. Finally, a natural deo that delivers.", favicon:"https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/56c9cb16-8f36-44d6-9b43-fdc01090f1d9._CR0%2C0%2C1200%2C1200_SX100_.png", bg:"https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/7740fc50-e49c-4d48-a15e-dd22d0145364.jpg", gradient:"linear-gradient(135deg,#0a2a1a 0%,#051a10 100%)", isCore:true },
+  { slug:"thermal-master-official", brand:"Thermal Master Official", category:"Electronics", description:"Thermal Master Official on Amazon", favicon:"https://m.media-amazon.com/images/G/01/follow/follow_button_sprite.png", bg:"https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/89cee3df-aa7e-4988-91a6-d28a7d057cb4.jpg", gradient:"linear-gradient(135deg,#2a1a0a 0%,#1a1008 100%)", isCore:false },
+  { slug:"wayplus-us", brand:"WAYPLUS-US", category:"Home & Living", description:"WAYPLUS-US on Amazon", favicon:"https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/1bd9dc96-7c2a-4a38-8806-4840317733e9._CR0%2C0%2C2480%2C2480_SX100_.jpg", bg:"https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/64a7a493-ae29-44b7-8719-0fb4c46c72b1.png", gradient:"linear-gradient(135deg,#1a0a2a 0%,#0f0620 100%)", isCore:false },
+  { slug:"prequel-skin", brand:"Prequel Skin", category:"Beauty & Care", description:"Dermatologist-developed skincare for sensitive skin. Science-backed, gentle, results-driven.", favicon:"https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/eb2ec4fd-adea-4f53-8d60-8d2c2c75bc28._CR0%2C667%2C2000%2C659_SX100_.png", bg:"https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/1d7a6f3b-0ca9-4c58-a13b-4229be71189f.png", gradient:"linear-gradient(135deg,#1a1a2a 0%,#0f0f1a 100%)", isCore:true },
+  { slug:"skin-grip", brand:"Skin Grip", category:"Beauty & Care", description:"Waterproof adhesive patches for CGMs and medical devices. 10+ day hold, sweat-proof, swim-proof.", favicon:"https://m.media-amazon.com/images/G/01/follow/follow_button_sprite.png", bg:"https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/5d6041b0-edb5-472c-bf61-0bc201af7fff.jpg", gradient:"linear-gradient(135deg,#0a2a1a 0%,#051a10 100%)", isCore:true },
+  { slug:"sunnydaze-decor", brand:"Sunnydaze Decor", category:"Home & Living", description:"Sunnydaze Decor on Amazon", favicon:"https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/b3a7ef7f-1873-4833-a38b-247d7e0600f7._CR0%2C0%2C600%2C600_SX100_.jpg", bg:"https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/40a7fe0b-056f-494c-892e-97965fc64d8f.jpg", gradient:"linear-gradient(135deg,#2a1a0a 0%,#1a1008 100%)", isCore:false },
+  { slug:"made-by-dentists", brand:"Made By Dentists", category:"Beauty & Care", description:"Oral care designed by actual dentists. Charcoal brushes, whitening, dental-grade tools.", favicon:"https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/f8c49bb4-cae4-46d0-b4a6-ac2eede554d9._CR0%2C0%2C500%2C500_SX100_.png", bg:"https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/6613e019-9d27-4b13-b87e-037ce3ea9fbc.jpg", gradient:"linear-gradient(135deg,#1a0a2a 0%,#0f0620 100%)", isCore:true },
+  { slug:"rtty", brand:"RTTY", category:"Electronics", description:"RTTY on Amazon", favicon:"https://m.media-amazon.com/images/S/stores-image-uploads-na-prod/a/AmazonStores/ATVPDKIKX0DER/333095d9110f526c728538dee0db42dd.w500.h500._CR0%2C0%2C500%2C500_SX100_.jpg", bg:"https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/c68914b3-678a-4113-a706-b6fa98addd63.png", gradient:"linear-gradient(135deg,#1a1a2a 0%,#0f0f1a 100%)", isCore:false },
+  { slug:"isonic-inc", brand:"iSonic Inc.", category:"Home & Living", description:"Ultrasonic cleaners for glasses, jewelry, and small items. Industrial-grade cleaning at home.", favicon:null, bg:"https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/30ad9b0a-5ee5-455a-aefc-471925960861.png", gradient:"linear-gradient(135deg,#0a2a1a 0%,#051a10 100%)", isCore:true },
+  { slug:"snailax", brand:"Snailax", category:"Beauty & Care", description:"Snailax on Amazon", favicon:"https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/e1cff15b-eada-4c28-a5e7-d48c22cc166d._CR0%2C0%2C500%2C500_SX100_.jpg", bg:"https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/5d9e110e-bf39-43f8-b4b6-ba5c4b5deacf.jpg", gradient:"linear-gradient(135deg,#2a1a0a 0%,#1a1008 100%)", isCore:false },
+  { slug:"azuna-fresh", brand:"Azuna Fresh", category:"Home & Living", description:"Azuna Fresh on Amazon", favicon:"https://m.media-amazon.com/images/G/01/follow/follow_button_sprite.png", bg:"https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/d7d9e285-a6e9-4bd9-85d4-8cafefdebbfd.png", gradient:"linear-gradient(135deg,#1a0a2a 0%,#0f0620 100%)", isCore:false },
+  { slug:"niimbot", brand:"NIIMBOT", category:"Electronics", description:"NIIMBOT on Amazon", favicon:"https://m.media-amazon.com/images/S/stores-image-uploads-na-prod/6/AmazonStores/ATVPDKIKX0DER/beafc822f016b4cf0a4218e27537ba0b.w400.h400._CR0%2C0%2C400%2C400_SX100_.jpg", bg:"https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/6860555f-c0b0-4892-b4fe-9ec2838bdefb.jpg", gradient:"linear-gradient(135deg,#1a1a2a 0%,#0f0f1a 100%)", isCore:false },
+  { slug:"simply-filters", brand:"Simply Filters", category:"Home & Living", description:"Simply Filters on Amazon", favicon:"https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/05a14032-cbfb-41ca-9cd3-4249cc1ca3c7._CR0%2C0%2C1200%2C1200_SX100_.jpeg", bg:"https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/a0efa238-0cdc-4dae-8d8d-e6dc6ef149e6.jpg", gradient:"linear-gradient(135deg,#0a2a1a 0%,#051a10 100%)", isCore:false },
+  { slug:"ez-outlet:-outlet-extender", brand:"EZ Outlet: Outlet Extender", category:"Home & Living", description:"EZ Outlet: Outlet Extender on Amazon", favicon:"https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/a0abaa24-47c5-4bcb-9b90-63f48d238aae._CR0%2C0%2C2700%2C2700_SX100_.PNG", bg:"https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/20b66458-7769-4a42-8385-21f725a01a57.jpg", gradient:"linear-gradient(135deg,#2a1a0a 0%,#1a1008 100%)", isCore:false },
+  { slug:"malk-organics-llc", brand:"MALK Organics LLC", category:"Kitchen", description:"MALK Organics LLC on Amazon", favicon:"https://m.media-amazon.com/images/G/01/follow/follow_button_sprite.png", bg:"https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/22df6ef2-d8dc-4f13-bb4b-2be864ff3c7f.png", gradient:"linear-gradient(135deg,#1a0a2a 0%,#0f0620 100%)", isCore:false },
+  { slug:"zeagoo", brand:"ZEAGOO", category:"Fashion", description:"ZEAGOO on Amazon", favicon:"https://m.media-amazon.com/images/S/stores-image-uploads-na-prod/5/AmazonStores/ATVPDKIKX0DER/8d316a3e675493ba72685b6f78ad2875.w600.h600._CR0%2C0%2C600%2C600_SX100_.png", bg:"https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/896e55df-d493-4d4d-b402-856628f79482.jpg", gradient:"linear-gradient(135deg,#1a1a2a 0%,#0f0f1a 100%)", isCore:false },
+  { slug:"ukoke", brand:"Ukoke", category:"Kitchen", description:"Ukoke on Amazon", favicon:"https://m.media-amazon.com/images/G/01/follow/follow_button_sprite.png", bg:"https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/3844694f-c7cf-469a-b15b-6dbffa93f432.jpg", gradient:"linear-gradient(135deg,#0a2a1a 0%,#051a10 100%)", isCore:false },
+  { slug:"wdcozy", brand:"WDCOZY", category:"Home & Living", description:"WDCOZY on Amazon", favicon:"https://m.media-amazon.com/images/S/stores-image-uploads-na-prod/2/AmazonStores/ATVPDKIKX0DER/352a71421a459b866c97c34b5216beea.w1416.h471._CR0%2C0%2C1416%2C471_SX100_.jpg", bg:"https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/4ed02b71-a32f-488e-99db-c7e726bbe9f9.jpg", gradient:"linear-gradient(135deg,#2a1a0a 0%,#1a1008 100%)", isCore:false },
+  { slug:"skymd", brand:"SkyMD", category:"Beauty & Care", description:"SkyMD on Amazon", favicon:"https://m.media-amazon.com/images/S/stores-image-uploads-na-prod/6/AmazonStores/ATVPDKIKX0DER/e64ea5e2d14d8a041483052bb7684055.w401.h401._CR0%2C0%2C401%2C401_SX100_.jpg", bg:"https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/06c4088a-0623-4711-bb66-5c5b98e69d23.png", gradient:"linear-gradient(135deg,#1a0a2a 0%,#0f0620 100%)", isCore:false },
+  { slug:"dinklysports", brand:"DinklySports", category:"Sports & Outdoors", description:"DinklySports on Amazon", favicon:"https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/fd59dd7e-ae66-432b-9b32-ab8ff735a95d._CR0%2C0%2C1042%2C1043_SX100_.png", bg:"https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/ea9eb632-8276-4c27-a65d-8c02e8f3166c.png", gradient:"linear-gradient(135deg,#1a1a2a 0%,#0f0f1a 100%)", isCore:false },
+  { slug:"flexispot", brand:"FlexiSpot", category:"Home & Living", description:"FlexiSpot on Amazon", favicon:"https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/4e2079dc-392f-4bad-a7d6-3cb79f9c6fb2._CR0%2C0%2C600%2C600_SX100_.png", bg:"https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/5ce9155c-4091-43e5-b7da-ccd41ed876e3.jpg", gradient:"linear-gradient(135deg,#0a2a1a 0%,#051a10 100%)", isCore:false },
+  { slug:"tanita", brand:"TANITA", category:"Beauty & Care", description:"TANITA on Amazon", favicon:"https://m.media-amazon.com/images/S/stores-image-uploads-na-prod/b/AmazonStores/ATVPDKIKX0DER/9913f27954085937c913bf6c24056a64.w2282.h859._CR0%2C0%2C2282%2C859_SX100_.jpg", bg:"https://images-na.ssl-images-amazon.com/images/S/stores-image-uploads-na-prod/c/AmazonStores/ATVPDKIKX0DER/bb157a7d51c9858bb1c2fcfdb73cf17c.w14000.h3339.jpg", gradient:"linear-gradient(135deg,#2a1a0a 0%,#1a1008 100%)", isCore:false },
+  { slug:"tagry", brand:"Tagry", category:"Electronics", description:"Tagry on Amazon", favicon:"https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/fb97f2e1-e5b0-4098-8c53-a9452f8c699a._CR0%2C0%2C600%2C600_SX100_.jpg", bg:"https://images-na.ssl-images-amazon.com/images/S/stores-image-uploads-na-prod/2/AmazonStores/ATVPDKIKX0DER/d3a5970daef371b4a422e49b2319b31e.w3000.h600.jpg", gradient:"linear-gradient(135deg,#1a0a2a 0%,#0f0620 100%)", isCore:false },
+  { slug:"alien-sunshade", brand:"Alien Sunshade", category:"Sports & Outdoors", description:"Alien Sunshade on Amazon", favicon:"https://m.media-amazon.com/images/S/abs-image-upload-na/7/AmazonStores/ATVPDKIKX0DER/5ee3b6c3ef926abd510602aeb895e437.w903.h799._CR0%2C0%2C903%2C799_SX100_.png", bg:"https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/2ebcfe92-8755-49b4-8638-d4896bd5d13c.jpg", gradient:"linear-gradient(135deg,#1a1a2a 0%,#0f0f1a 100%)", isCore:false },
+  { slug:"midland-radio", brand:"Midland Radio", category:"Electronics", description:"Midland Radio on Amazon", favicon:"https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/3d861198-882e-481e-921e-ede34a51e6b1._CR0%2C0%2C500%2C500_SX100_.png", bg:"https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/4c923ba9-a6a0-42a9-8395-030d54de4d1e.jpg", gradient:"linear-gradient(135deg,#0a2a1a 0%,#051a10 100%)", isCore:false },
+  { slug:"leroys-rocky-mountain", brand:"Leroy's Rocky Mountain", category:"Home & Living", description:"Leroy's Rocky Mountain on Amazon", favicon:"https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/a8b4af16-3745-4bf5-a0ac-ff990aea692b._CR1411%2C1217%2C3284%2C2831_SX100_.png", bg:"https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/3071280a-7151-4c6b-a24a-b2f39fc41e68.jpg", gradient:"linear-gradient(135deg,#2a1a0a 0%,#1a1008 100%)", isCore:false },
+  { slug:"dbc", brand:"DBC", category:"Automotive", description:"DBC on Amazon", favicon:"https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/d4830a7c-e7fa-4652-aa71-f7b8c06fbb35._CR0%2C0%2C1871%2C1323_SX100_.png", bg:"https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/a6731ad1-de60-4821-984d-7e554b3394fe.jpeg", gradient:"linear-gradient(135deg,#1a0a2a 0%,#0f0620 100%)", isCore:false },
+  { slug:"colour-mill", brand:"Colour Mill", category:"Kitchen", description:"Colour Mill on Amazon", favicon:"https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/63d4c602-92f6-441d-b660-42dd680872cc._CR0%2C0%2C600%2C600_SX100_.png", bg:"https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/186c1a94-e2e2-46f6-9733-bb86228908b0.png", gradient:"linear-gradient(135deg,#1a1a2a 0%,#0f0f1a 100%)", isCore:false },
+  { slug:"beetles-gel-polish", brand:"Beetles Gel Polish", category:"Beauty & Care", description:"Beetles Gel Polish on Amazon", favicon:"https://m.media-amazon.com/images/S/stores-image-uploads-na-prod/4/AmazonStores/ATVPDKIKX0DER/33d4dedf64c998ca50d360802b06f9a9.w541.h504._CR0%2C0%2C541%2C504_SX100_.png", bg:"https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/afd9ff57-c2df-40d4-b568-14d29907faf8.jpg", gradient:"linear-gradient(135deg,#0a2a1a 0%,#051a10 100%)", isCore:false },
+  { slug:"closemate-us", brand:"CLOSEMATE-US", category:"Home & Living", description:"CLOSEMATE-US on Amazon", favicon:"https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/b75ec96a-9c32-4df1-8489-8e37ffe89f5d._CR0%2C0%2C400%2C400_SX100_.jpg", bg:"https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/80db7e8e-e953-4bf5-ac5b-b83531d352b6.jpg", gradient:"linear-gradient(135deg,#2a1a0a 0%,#1a1008 100%)", isCore:false },
+  { slug:"blue-summit-supplies", brand:"Blue Summit Supplies", category:"Home & Living", description:"Blue Summit Supplies on Amazon", favicon:"https://m.media-amazon.com/images/S/abs-image-upload-na/2/AmazonStores/ATVPDKIKX0DER/153eeb986ed867922baba1e0a4458103.w2500.h2500._CR0%2C0%2C2500%2C2500_SX100_.png", bg:"https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/44f440f8-4d6a-4634-8133-357d304926a5.jpg", gradient:"linear-gradient(135deg,#1a0a2a 0%,#0f0620 100%)", isCore:false },
+  { slug:"clean-car-usa-foam-king", brand:"Clean Car USA // Foam King", category:"Automotive", description:"Clean Car USA // Foam King on Amazon", favicon:"https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/83ff61f2-772b-483c-a729-44ad9f23f669._CR0%2C0%2C600%2C600_SX100_.png", bg:"https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/714ec9ce-9a6b-4401-9f3b-10d0fc7f5322.jpg", gradient:"linear-gradient(135deg,#1a1a2a 0%,#0f0f1a 100%)", isCore:false },
+  { slug:"dog-friendly-co", brand:"Dog Friendly Co.", category:"Pet Supplies", description:"Dog Friendly Co. on Amazon", favicon:"https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/ac9c3b5c-0b18-45ce-9b0b-e021442bf9dd._CR0%2C0%2C670%2C625_SX100_.jpg", bg:"https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/685d8138-2401-4e09-9e7b-17458b2c816f.png", gradient:"linear-gradient(135deg,#0a2a1a 0%,#051a10 100%)", isCore:false },
+  { slug:"diamond-dotz庐-us", brand:"Diamond Dotz庐 - US", category:"Beauty & Care", description:"Diamond Dotz庐 - US on Amazon", favicon:null, bg:null, gradient:"linear-gradient(135deg,#2a1a0a 0%,#1a1008 100%)", isCore:false },
+  { slug:"tirtir-inc", brand:"TIRTIR. INC", category:"Beauty & Care", description:"TIRTIR. INC on Amazon", favicon:"https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/0e822de7-bea7-4259-b546-cc9da61ad25f._CR0%2C0%2C600%2C600_SX100_.png", bg:"https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/ac5842b5-607c-4bc3-85b3-df2b45ad88bf.png", gradient:"linear-gradient(135deg,#1a0a2a 0%,#0f0620 100%)", isCore:false },
+  { slug:"kiki-milk", brand:"Kiki Milk", category:"Kitchen", description:"Kiki Milk on Amazon", favicon:"https://m.media-amazon.com/images/G/01/follow/follow_button_sprite.png", bg:"https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/7dd6f31d-d7ea-460a-8733-cffb63889530.png", gradient:"linear-gradient(135deg,#1a1a2a 0%,#0f0f1a 100%)", isCore:false },
+  { slug:"alpha-grillers", brand:"Alpha Grillers", category:"Kitchen", description:"Alpha Grillers on Amazon", favicon:"https://m.media-amazon.com/images/S/stores-image-uploads-na-prod/b/AmazonStores/ATVPDKIKX0DER/e69581c4505f696ccc55ee36057bdb86.w400.h400._CR0%2C0%2C400%2C400_SX100_.jpg", bg:"https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/b075cc11-8ea1-46c6-a8f6-cd908b06b2d2.jpg", gradient:"linear-gradient(135deg,#0a2a1a 0%,#051a10 100%)", isCore:false },
+  { slug:"comfier", brand:"Comfier", category:"Beauty & Care", description:"Comfier on Amazon", favicon:"https://m.media-amazon.com/images/S/abs-image-upload-na/a/AmazonStores/ATVPDKIKX0DER/122ee19c178e70daea2dcc69da77c885.w400.h400._CR0%2C0%2C400%2C400_SX100_.jpg", bg:"https://m.media-amazon.com/images/S/stores-image-uploads-na-prod/4/AmazonStores/ATVPDKIKX0DER/e27288efe1091c4d3703a31be820cabb.w3000.h600.jpg", gradient:"linear-gradient(135deg,#2a1a0a 0%,#1a1008 100%)", isCore:false },
+  { slug:"hollywood-fashion-secrets", brand:"Hollywood Fashion Secrets", category:"Fashion", description:"Hollywood Fashion Secrets on Amazon", favicon:"https://m.media-amazon.com/images/S/abs-image-upload-na/1/AmazonStores/ATVPDKIKX0DER/c7f0894c73b2a04dd0accae8b0e77d09.w400.h400._CR0%2C0%2C400%2C400_SX100_.jpg", bg:"https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/617302a3-dc89-4177-8656-b029ed4b9290.png", gradient:"linear-gradient(135deg,#1a0a2a 0%,#0f0620 100%)", isCore:false },
+  { slug:"gaialoop", brand:"Gaialoop", category:"Home & Living", description:"Gaialoop on Amazon", favicon:"https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/2c59b63e-8bd9-453e-b92c-661248949852._CR0%2C0%2C1455%2C614_SX100_.png", bg:"https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/7032222e-dacb-44c8-b5b4-d08361bb0823.jpg", gradient:"linear-gradient(135deg,#1a1a2a 0%,#0f0f1a 100%)", isCore:false },
+  { slug:"sleek-socket", brand:"sleek socket", category:"Home & Living", description:"sleek socket on Amazon", favicon:"https://m.media-amazon.com/images/G/01/follow/follow_button_sprite.png", bg:"https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/13110199-bd1b-4d52-b488-e43290e8fb9e.jpg", gradient:"linear-gradient(135deg,#0a2a1a 0%,#051a10 100%)", isCore:false },
+  { slug:"shiseido", brand:"Shiseido", category:"Beauty & Care", description:"Shiseido on Amazon", favicon:"https://m.media-amazon.com/images/G/01/follow/follow_button_sprite.png", bg:"https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/474e0a1a-5d0d-44e6-9f8c-3e65d52f0375.jpg", gradient:"linear-gradient(135deg,#2a1a0a 0%,#1a1008 100%)", isCore:false },
+  { slug:"wulcea", brand:"Wulcea", category:"Beauty & Care", description:"Wulcea on Amazon", favicon:"https://m.media-amazon.com/images/S/stores-image-uploads-na-prod/9/AmazonStores/ATVPDKIKX0DER/74c361fa510fb7805455ee4b3b62aa8b.w4694.h3270._CR895%2C950%2C2972%2C1420_SX100_.jpg", bg:"https://m.media-amazon.com/images/S/stores-image-uploads-na-prod/2/AmazonStores/ATVPDKIKX0DER/b1ef0715846557985a4029afa2aa9657.w3000.h600.jpg", gradient:"linear-gradient(135deg,#1a0a2a 0%,#0f0620 100%)", isCore:false },
+  { slug:"typhur-us", brand:"Typhur US", category:"Kitchen", description:"Typhur US on Amazon", favicon:"https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/7aafff7f-43c1-4849-8227-db909fad6605._CR0%2C0%2C400%2C400_SX100_.jpg", bg:"https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/b1149945-ccce-42ff-a4cc-f7b5169df68f.jpg", gradient:"linear-gradient(135deg,#1a1a2a 0%,#0f0f1a 100%)", isCore:false },
+  { slug:"sawyer", brand:"Sawyer", category:"Sports & Outdoors", description:"Sawyer on Amazon", favicon:"https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/0db5ae19-6b70-428d-9b3e-08eb96e43d3b._CR13%2C4%2C1944%2C592_SX100_.png", bg:"https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/62c655aa-13d7-40ef-8d0d-7985071a38a3.jpg", gradient:"linear-gradient(135deg,#0a2a1a 0%,#051a10 100%)", isCore:false },
+  { slug:"diveblues", brand:"Diveblues", category:"Electronics", description:"Diveblues on Amazon", favicon:"https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/5738b752-24a7-4f2a-8435-ad087e6cc817._CR0%2C0%2C400%2C400_SX100_.jpg", bg:"https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/f9ce36dd-45aa-43bc-8810-f061fafd5eae.jpg", gradient:"linear-gradient(135deg,#2a1a0a 0%,#1a1008 100%)", isCore:false },
+  { slug:"punky", brand:"Punky", category:"Beauty & Care", description:"Punky on Amazon", favicon:"https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/361f0f3b-fb49-4fc6-9013-97ba8cb741b6._CR0%2C0%2C1080%2C1080_SX100_.jpg", bg:"https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/4ed5d4c8-eefe-4335-bce5-90bce60661fa.jpg", gradient:"linear-gradient(135deg,#1a0a2a 0%,#0f0620 100%)", isCore:false },
+  { slug:"california-design-den", brand:"California Design Den", category:"Home & Living", description:"California Design Den on Amazon", favicon:"https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/bb899b56-aecd-4d4f-95ca-016e514ac931._CR0%2C0%2C400%2C400_SX100_.png", bg:"https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/932ebde3-e105-4673-ab74-f82ad73e7609.jpg", gradient:"linear-gradient(135deg,#1a1a2a 0%,#0f0f1a 100%)", isCore:false },
+  { slug:"zoey-supplies", brand:"Zoey Supplies", category:"Home & Living", description:"Zoey Supplies on Amazon", favicon:"https://m.media-amazon.com/images/G/01/follow/follow_button_sprite.png", bg:"https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/7761a007-d475-4a7b-8d4a-cd986efd5043.jpg", gradient:"linear-gradient(135deg,#0a2a1a 0%,#051a10 100%)", isCore:false },
+  { slug:"duri-cosmetics", brand:"duri cosmetics", category:"Beauty & Care", description:"duri cosmetics on Amazon", favicon:"https://m.media-amazon.com/images/G/01/follow/follow_button_sprite.png", bg:"https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/246b1cff-1bad-4253-9457-8208cb4a915d.jpg", gradient:"linear-gradient(135deg,#2a1a0a 0%,#1a1008 100%)", isCore:false },
+  { slug:"dry-idea", brand:"Dry Idea", category:"Beauty & Care", description:"Dry Idea on Amazon", favicon:"https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/028f7f9b-ff8a-4ca8-91ac-79e5cb683d05._CR0%2C0%2C2271%2C1920_SX100_.png", bg:"https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/358b03aa-0677-44e9-86fa-f68b43fae4f6.jpg", gradient:"linear-gradient(135deg,#1a0a2a 0%,#0f0620 100%)", isCore:false },
+  { slug:"eamti-jewelry", brand:"EAMTI Jewelry", category:"Fashion", description:"EAMTI Jewelry on Amazon", favicon:"https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/7376ae80-1406-4292-8728-0c8da0b6929c._CR0%2C0%2C886%2C886_SX100_.png", bg:"https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/17290ff9-8bba-4713-9e44-636e2a8f0c14.jpg", gradient:"linear-gradient(135deg,#1a1a2a 0%,#0f0f1a 100%)", isCore:false },
+  { slug:"morepro-amazoncom", brand:"MorePro / amazon.com", category:"Beauty & Care", description:"MorePro / amazon.com on Amazon", favicon:"https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/a69eff80-b6d8-47c6-ba42-dddeb53b15cb._CR0%2C0%2C600%2C600_SX100_.jpg", bg:"https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/c2f73f9f-37f5-42b2-82f0-06694c06f1ca.jpg", gradient:"linear-gradient(135deg,#0a2a1a 0%,#051a10 100%)", isCore:false },
+  { slug:"lumineux", brand:"Lumineux", category:"Beauty & Care", description:"Lumineux on Amazon", favicon:"https://m.media-amazon.com/images/G/01/follow/follow_button_sprite.png", bg:"https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/3eb0fd83-2c50-47fe-80e0-fb1d9efe2cb8.jpg", gradient:"linear-gradient(135deg,#2a1a0a 0%,#1a1008 100%)", isCore:false },
+  { slug:"hometop", brand:"HomeTop", category:"Home & Living", description:"HomeTop on Amazon", favicon:"https://m.media-amazon.com/images/G/01/follow/follow_button_sprite.png", bg:"https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/3844694f-c7cf-469a-b15b-6dbffa93f432.jpg", gradient:"linear-gradient(135deg,#1a0a2a 0%,#0f0620 100%)", isCore:false },
+  { slug:"gray-bunny", brand:"Gray Bunny", category:"Home & Living", description:"Gray Bunny on Amazon", favicon:"https://m.media-amazon.com/images/G/01/follow/follow_button_sprite.png", bg:"https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/809a9edf-0e5e-4e84-b2f5-0344ba4148cf.jpg", gradient:"linear-gradient(135deg,#1a1a2a 0%,#0f0f1a 100%)", isCore:false },
+  { slug:"winpro-performance-products", brand:"WINPRO PERFORMANCE PRODUCTS", category:"Pet Supplies", description:"WINPRO PERFORMANCE PRODUCTS on Amazon", favicon:"https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/ecbbeae7-9826-4370-bf1f-f6421c7fe787._CR0%2C0%2C0%2C0_SX1000_SY380_.png", bg:"https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/a5baf2d7-5ed7-4e8c-86dc-1b69ee820f76.png", gradient:"linear-gradient(135deg,#0a2a1a 0%,#051a10 100%)", isCore:false },
+  { slug:"clean-skin-club", brand:"CLEAN SKIN CLUB", category:"Beauty & Care", description:"CLEAN SKIN CLUB on Amazon", favicon:"https://m.media-amazon.com/images/G/01/follow/follow_button_sprite.png", bg:"https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/c0045c35-fe83-4e43-b0e8-9a59e5a843c8.jpg", gradient:"linear-gradient(135deg,#2a1a0a 0%,#1a1008 100%)", isCore:false },
+  { slug:"smash-foods", brand:"Smash Foods", category:"Kitchen", description:"Smash Foods on Amazon", favicon:"https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/a0640eb1-dbc3-41d9-87c0-a514ec5fef4f._CR0%2C0%2C2400%2C900_SX100_.png", bg:"https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/b4ce93cc-d517-4f83-a0c0-aef28fa68f9c.jpg", gradient:"linear-gradient(135deg,#1a0a2a 0%,#0f0620 100%)", isCore:false },
+  { slug:"chike-nutrition", brand:"CHIKE NUTRITION", category:"Kitchen", description:"CHIKE NUTRITION on Amazon", favicon:"https://m.media-amazon.com/images/G/01/follow/follow_button_sprite.png", bg:"https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/a98d026c-1984-47dc-83a9-78a16cb3ed03.jpg", gradient:"linear-gradient(135deg,#1a1a2a 0%,#0f0f1a 100%)", isCore:false },
+  { slug:"qcoq", brand:"QCOQ", category:"Home & Living", description:"QCOQ on Amazon", favicon:"https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/a4b2bf58-c699-49bc-a94f-8f08d37556f7._CR0%2C0%2C400%2C400_SX100_.jpg", bg:"https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/812df430-3a00-4021-b4b3-ea35238b4420.jpg", gradient:"linear-gradient(135deg,#0a2a1a 0%,#051a10 100%)", isCore:false },
+  { slug:"maxpower-planet", brand:"Maxpower Planet", category:"Home & Living", description:"Maxpower Planet on Amazon", favicon:"https://m.media-amazon.com/images/S/stores-image-uploads-na-prod/5/AmazonStores/ATVPDKIKX0DER/766914c5b9f24d0abe2935cc473143d5.w5184.h3456._SL5000_CR0%2C0%2C5000%2C3333_SX100_.jpg", bg:"https://images-na.ssl-images-amazon.com/images/S/stores-image-uploads-na-prod/5/AmazonStores/ATVPDKIKX0DER/314ad2d2043124b863a9867bc6497dec.w2807.h1001.png", gradient:"linear-gradient(135deg,#2a1a0a 0%,#1a1008 100%)", isCore:false },
+  { slug:"sunkissed-by-heaven-founded-by-jay-alvarrez", brand:"Sunkissed By Heaven - Founded By Jay Alvarrez", category:"Beauty & Care", description:"Sunkissed By Heaven - Founded By Jay Alvarrez on Amazon", favicon:"https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/cefad1aa-6311-4219-a6e3-bd28cfe5847a._CR0%2C0%2C724%2C724_SX100_.png", bg:"https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/1e638ce3-0695-4853-a468-9c76d8012735.png", gradient:"linear-gradient(135deg,#1a0a2a 0%,#0f0620 100%)", isCore:false },
+  { slug:"hoto-tools-us", brand:"HOTO TOOLS US", category:"Home & Living", description:"HOTO TOOLS US on Amazon", favicon:"https://m.media-amazon.com/images/S/stores-image-uploads-na-prod/9/AmazonStores/ATVPDKIKX0DER/20358d113f9fbdb34e31c097982aaefa.w920.h920._CR0%2C0%2C920%2C920_SX100_.jpg", bg:"https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/84974d07-faac-4f99-895b-36ee0c5f5325.png", gradient:"linear-gradient(135deg,#1a1a2a 0%,#0f0f1a 100%)", isCore:false },
+  { slug:"doctor-hoys-natural-pain-relief", brand:"Doctor Hoy's Natural Pain Relief", category:"Beauty & Care", description:"Doctor Hoy's Natural Pain Relief on Amazon", favicon:"https://m.media-amazon.com/images/S/stores-image-uploads-na-prod/7/AmazonStores/ATVPDKIKX0DER/e6ef6c17132a7a2e557e04c0d9a2f79d.w750.h750._CR0%2C0%2C750%2C750_SX100_.jpg", bg:"https://m.media-amazon.com/images/S/stores-image-uploads-na-prod/3/AmazonStores/ATVPDKIKX0DER/95b78b0b269d1b926efc850a92eb0af9.w3000.h600.jpg", gradient:"linear-gradient(135deg,#0a2a1a 0%,#051a10 100%)", isCore:false },
+  { slug:"creative-green-life", brand:"Creative Green Life", category:"Home & Living", description:"Creative Green Life on Amazon", favicon:"https://m.media-amazon.com/images/G/01/follow/follow_button_sprite.png", bg:"https://m.media-amazon.com/images/S/stores-image-uploads-na-prod/1/AmazonStores/ATVPDKIKX0DER/e945e55ebeed9e4ce4ba7634923c1972.w3000.h600.png", gradient:"linear-gradient(135deg,#2a1a0a 0%,#1a1008 100%)", isCore:false },
+  { slug:"my-sign-center", brand:"My Sign Center", category:"Home & Living", description:"My Sign Center on Amazon", favicon:"https://m.media-amazon.com/images/G/01/follow/follow_button_sprite.png", bg:"https://m.media-amazon.com/images/S/stores-image-uploads-na-prod/5/AmazonStores/ATVPDKIKX0DER/75dfb9baa0516aa345d8375fa623a83f.w3000.h600.jpg", gradient:"linear-gradient(135deg,#1a0a2a 0%,#0f0620 100%)", isCore:false },
+  { slug:"excelmark", brand:"ExcelMark", category:"Home & Living", description:"ExcelMark on Amazon", favicon:"https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/71f9c352-4034-48f1-b6b1-10d0a6048a7c._CR0%2C0%2C0%2C0_SX1000_SY380_.jpg", bg:"https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/dcb6f2f0-936d-4675-9611-a9f4687a0675.jpg", gradient:"linear-gradient(135deg,#1a1a2a 0%,#0f0f1a 100%)", isCore:false },
+  { slug:"bazic-products", brand:"Bazic Products", category:"Home & Living", description:"Bazic Products on Amazon", favicon:"https://m.media-amazon.com/images/G/01/follow/follow_button_sprite.png", bg:"https://images-na.ssl-images-amazon.com/images/S/stores-image-uploads-na-prod/b/AmazonStores/ATVPDKIKX0DER/15fedeed550c856db9f048eadb7f9bf0.w4800.h820.png", gradient:"linear-gradient(135deg,#0a2a1a 0%,#051a10 100%)", isCore:false },
+  { slug:"besnoow", brand:"BESNOOW", category:"Beauty & Care", description:"BESNOOW on Amazon", favicon:"https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/a68821a4-cbb0-4f3d-9deb-488cdc8470b7._CR0%2C0%2C870%2C400_SX100_.jpg", bg:"https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/a0b4de3c-b12f-4726-9023-a31679bcc7e0.jpg", gradient:"linear-gradient(135deg,#2a1a0a 0%,#1a1008 100%)", isCore:false },
+  { slug:"duo", brand:"DUO", category:"Beauty & Care", description:"DUO on Amazon", favicon:"https://m.media-amazon.com/images/S/abs-image-upload-na/8/AmazonStores/ATVPDKIKX0DER/ead86c7276a3872c4fe23cdd9f40e812.w300.h300._CR0%2C0%2C300%2C300_SX100_.jpg", bg:"https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/182da782-624d-4545-9c2a-616494852344.jpg", gradient:"linear-gradient(135deg,#1a0a2a 0%,#0f0620 100%)", isCore:false },
+  { slug:"bushbalm-skincare", brand:"Bushbalm Skincare", category:"Beauty & Care", description:"Bushbalm Skincare on Amazon", favicon:"https://m.media-amazon.com/images/S/stores-image-uploads-na-prod/d/AmazonStores/ATVPDKIKX0DER/48247d90ab1935fb70d7fc3291e11afc.w1125.h1125._CR0%2C0%2C1125%2C1125_SX100_.png", bg:"https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/2b3aa27f-74f0-4c64-8a9d-a5f5ca3d2bce.png", gradient:"linear-gradient(135deg,#1a1a2a 0%,#0f0f1a 100%)", isCore:false },
+  { slug:"bulletproof-360", brand:"Bulletproof 360", category:"Kitchen", description:"Bulletproof 360 on Amazon", favicon:"https://m.media-amazon.com/images/G/01/follow/follow_button_sprite.png", bg:"https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/e983414d-d811-406f-8b8a-e641bb5b0256.jpg", gradient:"linear-gradient(135deg,#0a2a1a 0%,#051a10 100%)", isCore:false },
+  { slug:"ardell", brand:"Ardell", category:"Home & Living", description:"Ardell on Amazon", favicon:"https://m.media-amazon.com/images/S/abs-image-upload-na/6/AmazonStores/ATVPDKIKX0DER/6c516358cb0dcab5d38e9ed3277ae3c9.w400.h400._CR0%2C0%2C400%2C400_SX100_.jpg", bg:"https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/362f37b1-93c1-45f4-aedf-1e451b24ed88.jpg", gradient:"linear-gradient(135deg,#2a1a0a 0%,#1a1008 100%)", isCore:false },
+  { slug:"scrubzz", brand:"Scrubzz", category:"Beauty & Care", description:"Scrubzz on Amazon", favicon:"https://m.media-amazon.com/images/G/01/follow/follow_button_sprite.png", bg:"https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/7ef173c2-268a-459f-8d55-862f95e10715.jpg", gradient:"linear-gradient(135deg,#1a0a2a 0%,#0f0620 100%)", isCore:false }
 ];
