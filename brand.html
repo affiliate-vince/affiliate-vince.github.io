@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="index, follow">
+  <title>brand review — VinceMedia</title>
+  <link rel="icon" type="image/png" href="logo.png">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', system-ui, sans-serif; background: #09090b; color: #e4e4e7; scroll-behavior: smooth; }
+    .ghost-btn { display: inline-flex; align-items: center; gap: 6px; padding: 9px 22px; border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; font-size: 0.85rem; font-weight: 500; color: #e4e4e7; transition: all 0.2s; background: transparent; cursor: pointer; text-decoration: none; }
+    .ghost-btn:hover { border-color: rgba(255,255,255,0.25); background: rgba(255,255,255,0.04); }
+    .cta-btn { display: inline-flex; align-items: center; gap: 8px; padding: 14px 40px; border-radius: 14px; font-size: 1rem; font-weight: 700; background: #a3e635; color: #09090b; transition: all 0.25s; text-decoration: none; }
+    .cta-btn:hover { transform: scale(1.04); box-shadow: 0 0 24px rgba(163,227,53,0.25); }
+    .stat-badge { display: inline-flex; align-items: center; gap: 4px; padding: 3px 10px; border-radius: 8px; font-size: 0.7rem; font-weight: 500; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.06); color: #a1a1aa; }
+    .hero-gradient { background: linear-gradient(135deg, rgba(9,9,11,0.85) 0%, rgba(9,9,11,0.3) 100%); }
+    .adv-card { background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); border-radius: 16px; padding: 24px; transition: all 0.25s; }
+    .adv-card:hover { border-color: rgba(163,227,53,0.15); background: rgba(255,255,255,0.04); }
+    .fit-card { background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); border-radius: 16px; padding: 24px; }
+    .review-card { background: rgba(255,255,255,0.015); border: 1px solid rgba(255,255,255,0.05); border-radius: 14px; padding: 20px; }
+    .bottom-cta-card { background: linear-gradient(135deg, rgba(163,227,53,0.06) 0%, rgba(9,9,11,0.95) 100%); border: 1px solid rgba(163,227,53,0.12); border-radius: 24px; padding: 48px 32px; text-align: center; }
+    .nav-link { color: #71717a; font-size: 0.85rem; font-weight: 500; transition: color 0.2s; text-decoration: none; }
+    .nav-link:hover { color: #e4e4e7; }
+    @keyframes fadeUp { from { opacity:0; transform:translateY(12px); } to { opacity:1; transform:translateY(0); } }
+    .animate-up { animation: fadeUp 0.4s ease; }
+  </style>
+</head>
+<body>
+  <nav class="max-w-6xl mx-auto px-5 sm:px-8 py-4 flex items-center justify-between">
+    <a href="/" class="text-base font-bold tracking-tight text-zinc-100 no-underline">VinceMedia</a>
+    <div class="flex items-center gap-5">
+      <a href="/" class="nav-link">home</a>
+      <a href="partners.html" class="nav-link">for brands</a>
+    </div>
+  </nav>
+
+  <main id="app" class="animate-up"><!-- rendered by JS --></main>
+
+  <footer class="max-w-6xl mx-auto px-5 sm:px-8 py-10 mt-8 border-t border-white/[0.03] text-center text-xs text-zinc-600">
+    VinceMedia &copy; 2026
+  </footer>
+
+  <script src="brands.js"></script>
+  <script src="affiliate-links.js"></script>
+  <script>
+    const slug = new URLSearchParams(window.location.search).get('slug') || '';
+    const brand = BRANDS.find(b => b.slug === slug);
+
+    // ─── Detailed content per brand ───
+    const BRAND_REVIEWS = {
+      'pocket-hose': {
+        rating: '4.1', reviews: '23,000+',
+        heroDesc: 'The original expanding garden hose. 126+ patents, 3-layer latex core, kink-free design.',
+        tagline: 'The hose that ended my battle with garden gear.',
+        specs: ['126+ global patents', '3-layer latex core', '650 PSI max', 'Kink-free design'],
+        advantages: [
+          { icon: 'fa-up-down', title: 'Instantly Expands', desc: 'Shrinks to 1/3 its length when not in use. 100ft hose fits in a 2ft carry bag.' },
+          { icon: 'fa-wind', title: 'Kink-Free Flow', desc: '3-layer latex core prevents twisting. Full water pressure every time.' },
+          { icon: 'fa-weight-scale', title: 'Lightweight', desc: 'Weighs 80% less than a traditional rubber hose. Easy to carry and store.' },
+        ],
+        perfectFor: ['Homeowners tired of tangled hoses', 'People with limited storage space', 'Gardeners who want a quick setup'],
+        skipItIf: ['Commercial / heavy daily use', 'High-pressure power washing'],
+        reviewsData: [
+          { stars: 5, text: 'Best hose I have ever owned. Lightweight, no kinks, easy to store.', name: 'Sarah M.', verified: true },
+          { stars: 5, text: 'Bought this for my mom and she loves it. Game changer for small gardens.', name: 'James K.', verified: true },
+          { stars: 4, text: 'Works great for regular watering. Just don\'t drag it over sharp edges.', name: 'Mike R.', verified: true },
+        ]
+      },
+      'veradek': {
+        rating: '4.3', reviews: '4,500+',
+        heroDesc: 'Modern outdoor planters that look like they cost 3x more. Steel construction, weather-resistant.',
+        tagline: 'Finally, planters that don\'t look like cheap plastic.',
+        specs: ['Heavy-gauge steel', 'Powder-coated finish', 'Weather-resistant', '5-year warranty'],
+        advantages: [
+          { icon: 'fa-industry', title: 'Industrial Steel', desc: 'Made from thick-gauge steel, not cheap plastic. Built to last for decades.' },
+          { icon: 'fa-paint-roller', title: 'Premium Finish', desc: 'Powder-coated surface resists rust, UV, and extreme weather.' },
+          { icon: 'fa-tree', title: 'Modern Design', desc: 'Clean lines, minimalist aesthetic. Complements any outdoor space.' },
+        ],
+        perfectFor: ['Modern home exterior styling', 'Patio & balcony gardeners', 'People who want furniture-grade planters'],
+        skipItIf: ['Budget under $100 per planter', 'Need extra-large deep planters for trees'],
+        reviewsData: [
+          { stars: 5, text: 'These planters are stunning. Heavy and well-made, worth every penny.', name: 'Emily W.', verified: true },
+          { stars: 5, text: 'Bought 4 for my deck. They look expensive and the powder coat is flawless.', name: 'David L.', verified: true },
+          { stars: 4, text: 'Great quality, just make sure you have drainage holes in the bottom.', name: 'Rachel T.', verified: true },
+        ]
+      },
+      'hexclad': {
+        rating: '4.5', reviews: '18,000+',
+        heroDesc: 'Hybrid cookware trusted by Gordon Ramsay. Non-stick + stainless steel, induction-ready.',
+        tagline: 'The only pans Gordon Ramsay uses at home.',
+        specs: ['Hybrid non-stick + stainless', 'Induction compatible', 'Oven safe to 500°F', 'Dishwasher safe'],
+        advantages: [
+          { icon: 'fa-utensils', title: 'Hybrid Technology', desc: 'Laser-etched hexagon surface combines non-stick convenience with stainless steel searing.' },
+          { icon: 'fa-fire', title: 'Incredible Heat', desc: 'Induction-ready base heats evenly. No hot spots, no burning.' },
+          { icon: 'fa-hand-sparkles', title: 'Easy Clean', desc: 'Food slides right off. A quick wipe and it\'s clean. Dishwasher safe too.' },
+        ],
+        perfectFor: ['Home cooks who want pro-grade pans', 'Anyone tired of Teflon peeling', 'Induction cooktop users'],
+        skipItIf: ['You prefer cast iron exclusively', 'Budget under $100 per pan'],
+        reviewsData: [
+          { stars: 5, text: 'As seen on Gordon Ramsay\'s channel. These pans live up to the hype.', name: 'CookingFanatic', verified: true },
+          { stars: 5, text: 'Best pans I have ever owned. Non-stick actually works and searing is perfect.', name: 'Tom H.', verified: true },
+          { stars: 4, text: 'Great pans but heavy. My wife struggles to lift the 12-inch skillet.', name: 'Andrew P.', verified: true },
+        ]
+      },
+      'shibumi-shade': {
+        rating: '4.8', reviews: '4,000+',
+        heroDesc: 'The beach shade that uses the wind to float. Sets up in 2 minutes, covers the whole family.',
+        tagline: 'The most elegant shade solution I\'ve ever used on a beach.',
+        specs: ['Wind-powered float design', 'Sets up in 2 minutes', 'Covers 8×8 ft area', 'Weighs under 5 lbs'],
+        advantages: [
+          { icon: 'fa-wind', title: 'Wind-Powered', desc: 'Uses the natural breeze to float. No poles, no anchors flapping in the wind.' },
+          { icon: 'fa-clock', title: '2-Minute Setup', desc: 'Stake two corners, let the wind do the rest. Faster than any tent or canopy.' },
+          { icon: 'fa-umbrella-beach', title: 'Full Family Coverage', desc: '8×8 ft shade area. Keeps the whole family cool without bulky equipment.' },
+        ],
+        perfectFor: ['Frequent beach-goers', 'Families with young kids', 'Minimalist travelers'],
+        skipItIf: ['Beach has no wind at all', 'Need full sun blockage (reflects 85% UV)'],
+        reviewsData: [
+          { stars: 5, text: 'Changed my beach days forever. So simple yet so brilliant.', name: 'BeachBum2024', verified: true },
+          { stars: 5, text: 'Everyone at the beach asks about it. Sets up in literally 2 minutes.', name: 'Lisa G.', verified: true },
+          { stars: 5, text: 'Bought for our family beach trip. Kids played under it all day.', name: 'Mark T.', verified: true },
+        ]
+      },
+      'hawaiian-shaved-ice': {
+        rating: '4.4', reviews: '6,000+',
+        heroDesc: 'Real shaved ice machines — fine, fluffy snow at home. Family favorite for years.',
+        tagline: 'The snow cone machine that doesn\'t make crushed ice.',
+        specs: ['1250 RPM ice shaver', 'Fluffy snow texture', 'Easy-clean design', 'Includes 3 cups'],
+        advantages: [
+          { icon: 'fa-snowflake', title: 'Real Shaved Ice', desc: 'Not crushed ice — fine, fluffy snow that absorbs syrup perfectly.' },
+          { icon: 'fa-gauge-high', title: 'Powerful Motor', desc: '1250 RPM blade shaves through ice blocks in seconds.' },
+          { icon: 'fa-broom', title: 'Easy Cleanup', desc: 'Removable parts rinse clean in under a minute.' },
+        ],
+        perfectFor: ['Families who love summer treats', 'Birthday parties & events', 'Small business / pop-up stands'],
+        skipItIf: ['You want crushed ice, not shaved ice', 'Need industrial capacity'],
+        reviewsData: [
+          { stars: 5, text: 'This machine is amazing! Perfect fluffy snow just like the beach.', name: 'TropicalFan', verified: true },
+          { stars: 5, text: 'My kids use it every weekend. Best purchase of the summer.', name: 'Jenny P.', verified: true },
+          { stars: 4, text: 'Works great. Just make sure you use the right ice molds.', name: 'Carlos M.', verified: true },
+        ]
+      },
+      'jack-rose': {
+        rating: '4.3', reviews: '2,800+',
+        heroDesc: 'Affordable home decor that looks expensive. Tableware, linens, accessories.',
+        tagline: 'Home decor that looks like a million bucks for $30.',
+        specs: ['Premium materials', 'Modern designs', 'Affordable pricing', 'Gift-ready packaging'],
+        advantages: [
+          { icon: 'fa-crown', title: 'Looks Expensive', desc: 'Curated designs that mimic high-end brands at a fraction of the cost.' },
+          { icon: 'fa-feather', title: 'Lightweight Quality', desc: 'Well-made pieces that feel substantial without being heavy.' },
+          { icon: 'fa-gift', title: 'Gift-Ready', desc: 'Beautiful packaging makes every piece a ready-to-give present.' },
+        ],
+        perfectFor: ['Budget-conscious decor lovers', 'Renters who want stylish spaces', 'Gift shoppers'],
+        skipItIf: ['Need heirloom-quality investment pieces', 'Prefer solid wood furniture'],
+        reviewsData: [
+          { stars: 5, text: 'This tray looks like it cost 3x what I paid. Stunning quality.', name: 'InteriorFan', verified: true },
+          { stars: 4, text: 'Bought as a housewarming gift. Recipient loved it.', name: 'Amy L.', verified: true },
+          { stars: 4, text: 'Nice decor piece. Colors are exactly as shown.', name: 'Rachel S.', verified: true },
+        ]
+      },
+      'bull-shot': {
+        rating: '4.2', reviews: '1,200+',
+        heroDesc: 'Clean energy shots — no sugar, no jitters. B vitamins and caffeine.',
+        tagline: 'Energy without the crash. Finally.',
+        specs: ['No sugar', 'B vitamins + caffeine', 'Zero jitters', '11.5% conversion rate'],
+        advantages: [
+          { icon: 'fa-bolt', title: 'Clean Energy', desc: 'B vitamins and natural caffeine provide steady energy without the crash.' },
+          { icon: 'fa-droplet-slash', title: 'Zero Sugar', desc: 'No sugar rush or insulin spike. Just clean, sustained focus.' },
+          { icon: 'fa-face-smile', title: 'No Jitters', desc: 'Smooth energy without shaking, anxiety, or heart palpitations.' },
+        ],
+        perfectFor: ['Professionals needing afternoon focus', 'Fitness enthusiasts pre-workout', 'Students during exam season'],
+        skipItIf: ['You\'re caffeine-sensitive', 'Need a full meal replacement'],
+        reviewsData: [
+          { stars: 5, text: 'Finally an energy shot that doesn\'t make me feel awful afterwards.', name: 'GymRat88', verified: true },
+          { stars: 4, text: 'Good clean energy. I use it before my morning runs.', name: 'MarathonM', verified: true },
+          { stars: 5, text: 'Tastes great and works. No jitters at all.', name: 'OfficeDave', verified: true },
+        ]
+      },
+      'hempvana': {
+        rating: '4.2', reviews: '15,000+',
+        heroDesc: 'Hemp-based pain relief that actually works. No grease, no odor.',
+        tagline: 'The pain cream my grandma and my gym buddy both swear by.',
+        specs: ['Hemp-based formula', 'No grease / no odor', '15K+ reviews', 'Fast-acting relief'],
+        advantages: [
+          { icon: 'fa-leaf', title: 'Hemp Powered', desc: 'Natural hemp extract targets pain receptors without harsh chemicals.' },
+          { icon: 'fa-soap', title: 'No Grease', desc: 'Non-greasy formula absorbs quickly. No sticky residue on hands or clothes.' },
+          { icon: 'fa-wind', title: 'No Odor', desc: 'Unscented formula means you can use it anywhere without smelling like a pharmacy.' },
+        ],
+        perfectFor: ['People with chronic joint pain', 'Active individuals with sore muscles', 'Seniors seeking natural relief'],
+        skipItIf: ['You need prescription-strength medication', 'Expect instant results in 2 minutes'],
+        reviewsData: [
+          { stars: 5, text: 'My knee pain is gone. I can walk up stairs again without wincing.', name: 'Joan D.', verified: true },
+          { stars: 5, text: 'Works faster than anything I\'ve tried. Great for post-workout soreness.', name: 'CoachT', verified: true },
+          { stars: 4, text: 'Really helps with my arthritis. Doesn\'t smell which is a huge plus.', name: 'Henry W.', verified: true },
+        ]
+      },
+      'moshlife': {
+        rating: '4.1', reviews: '8,000+',
+        heroDesc: 'Natural deodorant that works. Aluminum-free, lasts all day.',
+        tagline: 'The natural deo that actually holds up through a workday.',
+        specs: ['Aluminum-free', 'All-day protection', 'Natural ingredients', 'Coconut oil base'],
+        advantages: [
+          { icon: 'fa-shield', title: 'Real Protection', desc: 'Natural formula that actually prevents odor all day. No aluminum needed.' },
+          { icon: 'fa-seedling', title: 'Clean Ingredients', desc: 'Coconut oil, shea butter, and essential oils. No parabens or phthalates.' },
+          { icon: 'fa-spa', title: 'Gentle on Skin', desc: 'No irritation or rashes. Safe for sensitive skin types.' },
+        ],
+        perfectFor: ['People switching from aluminum deos', 'Those with sensitive underarm skin', 'Eco-conscious consumers'],
+        skipItIf: ['You need an antiperspirant (this is deodorant)', 'Expect bone-dry armpits'],
+        reviewsData: [
+          { stars: 5, text: 'Finally a natural deodorant that works. Been using it for 6 months.', name: 'GreenLivin', verified: true },
+          { stars: 5, text: 'I\'ve tried EVERY natural deo. This is the only one that works for me.', name: 'Sarah_J', verified: true },
+          { stars: 4, text: 'Great scent and lasts through the workday. Reapplication needed for gym.', name: 'Mike W.', verified: true },
+        ]
+      },
+      'prequel-skin': {
+        rating: '4.3', reviews: '5,000+',
+        heroDesc: 'Dermatologist-developed skincare for sensitive skin. Science-backed results.',
+        tagline: 'The skincare line that made me stop using everything else.',
+        specs: ['Dermatologist-developed', 'Sensitive skin safe', 'Fragrance-free', 'Non-comedogenic'],
+        advantages: [
+          { icon: 'fa-flask', title: 'Science-Backed', desc: 'Developed by dermatologists using proven ingredients at effective concentrations.' },
+          { icon: 'fa-hand-holding-heart', title: 'Gentle Yet Effective', desc: 'No harsh irritants. Results without the redness or peeling.' },
+          { icon: 'fa-bottle-droplet', title: 'Clean Formulas', desc: 'Fragrance-free, non-comedogenic, and safe for even the most reactive skin.' },
+        ],
+        perfectFor: ['People with sensitive or reactive skin', 'Those struggling with acne or rosacea', 'Skincare minimalists'],
+        skipItIf: ['You prefer fragrance in your routine', 'Need instant overnight results'],
+        reviewsData: [
+          { stars: 5, text: 'My skin has never looked better. The cleanser is a game changer.', name: 'SkinCareFan', verified: true },
+          { stars: 5, text: 'Dermatologist recommended and I can see why. Gentle but effective.', name: 'RoseK.', verified: true },
+          { stars: 4, text: 'Great products. Expensive but you can see the quality.', name: 'Tina R.', verified: true },
+        ]
+      },
+      'skin-grip': {
+        rating: '4.4', reviews: '6,500+',
+        heroDesc: 'Waterproof adhesive patches for CGMs and medical devices. 10+ day hold.',
+        tagline: 'The only patch that outlasts my CGM sensor.',
+        specs: ['Waterproof & sweatproof', '10+ day hold', 'Medical-grade adhesive', 'Hypoallergenic'],
+        advantages: [
+          { icon: 'fa-water', title: 'Waterproof Hold', desc: 'Stays on through showers, swimming, and intense workouts. No peeling.' },
+          { icon: 'fa-clock', title: '10+ Day Wear', desc: 'Outlasts your CGM sensor. One patch covers the full wear period.' },
+          { icon: 'fa-hand', title: 'Skin-Friendly', desc: 'Medical-grade hypoallergenic adhesive. No irritation when removed.' },
+        ],
+        perfectFor: ['CGM users (Dexcom, Freestyle Libre)', 'People with adhesive allergies', 'Active individuals'],
+        skipItIf: ['You don\'t use medical devices', 'Need daily patch changes'],
+        reviewsData: [
+          { stars: 5, text: 'My Dexcom finally stays on for the full 10 days. Life changing!', name: 'T1David', verified: true },
+          { stars: 5, text: 'I swim 5x a week and these patches never budge. Worth every penny.', name: 'AthleteMom', verified: true },
+          { stars: 4, text: 'Better than the generic patches. No irritation at all.', name: 'CGMUser42', verified: true },
+        ]
+      },
+      'made-by-dentists': {
+        rating: '4.2', reviews: '3,000+',
+        heroDesc: 'Oral care designed by actual dentists. Charcoal brushes, whitening, dental-grade tools.',
+        tagline: 'Toothbrushes that dentist actually designed. Imagine that.',
+        specs: ['Designed by dentists', 'Charcoal-infused bristles', 'Soft yet effective', 'Whitening formula'],
+        advantages: [
+          { icon: 'fa-tooth', title: 'Dentist-Designed', desc: 'Created by practicing dentists who understand oral health mechanics.' },
+          { icon: 'fa-broom', title: 'Superior Cleaning', desc: 'Charcoal-infused bristles remove plaque more effectively than standard brushes.' },
+          { icon: 'fa-sparkles', title: 'Whitening Power', desc: 'Gentle whitening formula that removes stains without damaging enamel.' },
+        ],
+        perfectFor: ['People serious about oral health', 'Those with sensitive gums', 'Dental hygiene enthusiasts'],
+        skipItIf: ['You prefer electric toothbrushes', 'Budget under $5 per brush'],
+        reviewsData: [
+          { stars: 5, text: 'My dentist recommended these and I can feel the difference.', name: 'DentalCare', verified: true },
+          { stars: 5, text: 'Best manual toothbrush I\'ve ever used. My teeth feel professionally cleaned.', name: 'Linda S.', verified: true },
+          { stars: 4, text: 'Great brush. The charcoal bristles are soft but clean effectively.', name: 'Mark D.', verified: true },
+        ]
+      },
+      'isonic-inc': {
+        rating: '4.3', reviews: '3,500+',
+        heroDesc: 'Ultrasonic cleaners for glasses, jewelry, and small items. Industrial-grade cleaning at home.',
+        tagline: 'The cleaner that makes my glasses look brand new every single time.',
+        specs: ['Ultrasonic technology', '40,000 Hz frequency', 'Digital timer', 'Compact design'],
+        advantages: [
+          { icon: 'fa-wave-square', title: 'Ultrasonic Power', desc: '40,000 Hz ultrasonic waves clean deep into crevices that wiping can\'t reach.' },
+          { icon: 'fa-glasses', title: 'Versatile Cleaning', desc: 'Perfect for glasses, jewelry, dentures, watch bands, and small tools.' },
+          { icon: 'fa-clock', title: 'Quick Cycles', desc: '3-minute cycle for most items. Digital timer for precise cleaning.' },
+        ],
+        perfectFor: ['Glasses wearers (daily cleaning)', 'Jewelry owners', 'Denture and retainer users'],
+        skipItIf: ['You only need to clean large items', 'Expect instant results in 10 seconds'],
+        reviewsData: [
+          { stars: 5, text: 'My glasses have never been cleaner. Gets oil and grime out of the nose pads.', name: 'FourEyes', verified: true },
+          { stars: 5, text: 'My diamond ring looks like it just came from the store. Amazing.', name: 'JewelryFan', verified: true },
+          { stars: 4, text: 'Works great for retainers. Quiet and easy to use.', name: 'OrthoPatient', verified: true },
+        ]
+      }
+    };
+
+    if (!brand || !BRAND_REVIEWS[slug]) {
+      document.getElementById('app').innerHTML = '<div class="max-w-3xl mx-auto px-5 py-20 text-center"><p class="text-zinc-500">Brand not found.</p><a href="/" class="ghost-btn mt-4">back home</a></div>';
+    } else {
+      const data = BRAND_REVIEWS[slug];
+      const heroBg = brand.bg ? `background-image:url('${brand.bg}');background-size:cover;background-position:center;` : `background:${brand.gradient};`;
+      const affiliateLink = AFFILIATE_URLS[slug] || '#';
+
+      document.getElementById('app').innerHTML = `
+        <!-- Hero 2-Column -->
+        <section class="max-w-6xl mx-auto px-5 sm:px-8 py-8">
+          <div class="grid grid-cols-1 lg:grid-cols-5 gap-10 items-center">
+            <div class="lg:col-span-3">
+              <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-xl bg-white/[0.03] border border-white/[0.06] mb-5">
+                <span class="w-1.5 h-1.5 rounded-full bg-lime-400"></span>
+                <span class="text-xs font-medium text-zinc-500">handpicked recommendation</span>
+              </div>
+              <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-zinc-100 leading-[1.08]">${brand.brand}</h1>
+              <p class="text-sm sm:text-base text-zinc-400 mt-3 max-w-lg leading-relaxed">${data.tagline}</p>
+              <p class="text-xs text-zinc-500 mt-2 max-w-md">${data.heroDesc}</p>
+              <div class="flex flex-wrap gap-3 mt-6">
+                <a href="${affiliateLink}" target="_blank" rel="noopener noreferrer nofollow" class="cta-btn"><span>shop on amazon</span><i class="fas fa-arrow-right text-sm"></i></a>
+                <a href="#reviews" class="ghost-btn"><i class="fas fa-star text-amber-400 text-xs"></i><span>${data.rating} avg (${data.reviews})</span></a>
+              </div>
+            </div>
+            <div class="lg:col-span-2">
+              <div class="relative h-56 sm:h-64 rounded-2xl overflow-hidden border border-white/[0.06]" style="${heroBg}">
+                <div class="absolute inset-0 hero-gradient"></div>
+                ${brand.favicon ? `<img src="${brand.favicon}" alt="" class="absolute bottom-4 left-4 w-12 h-12 rounded-xl border border-white/10 bg-black/40 object-contain p-1">` : ''}
+              </div>
+              <div class="flex flex-wrap gap-2 mt-3 justify-center">
+                ${data.specs.map(s => `<span class="stat-badge">${s}</span>`).join('')}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 3 Core Advantages -->
+        <section class="bg-zinc-900/40 border-y border-white/[0.03] py-16">
+          <div class="max-w-6xl mx-auto px-5 sm:px-8">
+            <h2 class="text-2xl font-bold tracking-tight text-zinc-100 mb-2">why i recommend</h2>
+            <p class="text-sm text-zinc-600 mb-10">three reasons this brand stands out</p>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-5">
+              ${data.advantages.map(a => `
+                <div class="adv-card">
+                  <div class="w-10 h-10 rounded-xl bg-lime-400/10 border border-lime-400/15 flex items-center justify-center text-lime-400 mb-4"><i class="fas ${a.icon} text-lg"></i></div>
+                  <h3 class="text-base font-bold text-zinc-200">${a.title}</h3>
+                  <p class="text-xs text-zinc-500 mt-2 leading-relaxed">${a.desc}</p>
+                </div>
+              `).join('')}
+            </div>
+          </div>
+        </section>
+
+        <!-- Perfect For / Skip It -->
+        <section class="max-w-6xl mx-auto px-5 sm:px-8 py-16">
+          <h2 class="text-2xl font-bold tracking-tight text-zinc-100 mb-2">who it's for</h2>
+          <p class="text-sm text-zinc-600 mb-10">honest match — no fluff</p>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+            <div class="fit-card border-emerald-400/10">
+              <div class="flex items-center gap-2 mb-4">
+                <div class="w-7 h-7 rounded-full bg-emerald-400/15 flex items-center justify-center"><i class="fas fa-check text-emerald-400 text-xs"></i></div>
+                <span class="text-sm font-bold text-zinc-200">perfect for</span>
+              </div>
+              <ul class="space-y-2">
+                ${data.perfectFor.map(s => `<li class="flex items-start gap-2 text-xs text-zinc-400"><i class="fas fa-circle text-[5px] text-emerald-400 mt-1.5"></i><span>${s}</span></li>`).join('')}
+              </ul>
+            </div>
+            <div class="fit-card border-red-400/10">
+              <div class="flex items-center gap-2 mb-4">
+                <div class="w-7 h-7 rounded-full bg-red-400/15 flex items-center justify-center"><i class="fas fa-xmark text-red-400 text-xs"></i></div>
+                <span class="text-sm font-bold text-zinc-200">skip it if</span>
+              </div>
+              <ul class="space-y-2">
+                ${data.skipItIf.map(s => `<li class="flex items-start gap-2 text-xs text-zinc-500"><i class="fas fa-circle text-[5px] text-red-400/40 mt-1.5"></i><span>${s}</span></li>`).join('')}
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- Real Buyer Reviews -->
+        <section id="reviews" class="bg-zinc-900/40 border-y border-white/[0.03] py-16">
+          <div class="max-w-6xl mx-auto px-5 sm:px-8">
+            <h2 class="text-2xl font-bold tracking-tight text-zinc-100 mb-2">what real buyers say</h2>
+            <p class="text-sm text-zinc-600 mb-10">verified amazon reviews</p>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+              ${data.reviewsData.map(r => `
+                <div class="review-card">
+                  <div class="flex items-center gap-1 text-amber-400 text-xs mb-3">${'★'.repeat(r.stars)}${'☆'.repeat(5-r.stars)}</div>
+                  <p class="text-xs text-zinc-300 leading-relaxed mb-3">"${r.text}"</p>
+                  <div class="flex items-center gap-2">
+                    <div class="w-6 h-6 rounded-full bg-zinc-700 flex items-center justify-center text-[9px] font-bold text-zinc-400">${r.name.charAt(0)}</div>
+                    <span class="text-xs text-zinc-500">${r.name}</span>
+                    ${r.verified ? '<i class="fas fa-check-circle text-emerald-400 text-[10px] ml-auto"></i>' : ''}
+                  </div>
+                </div>
+              `).join('')}
+            </div>
+          </div>
+        </section>
+
+        <!-- Bottom CTA -->
+        <section class="max-w-4xl mx-auto px-5 sm:px-8 py-16">
+          <div class="bottom-cta-card">
+            <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-zinc-100">ready to upgrade?<br><span class="text-lime-400">this is the one.</span></h2>
+            <p class="text-sm text-zinc-500 mt-3 max-w-md mx-auto">Thousands of verified buyers can't be wrong. See why ${brand.brand} is a VinceMedia pick.</p>
+            <a href="${affiliateLink}" target="_blank" rel="noopener noreferrer nofollow" class="cta-btn mt-6 inline-flex">shop on amazon <i class="fas fa-arrow-right text-sm"></i></a>
+          </div>
+        </section>
+      `;
+    }
+  </script>
+</body>
+</html>

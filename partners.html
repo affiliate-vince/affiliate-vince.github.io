@@ -3,333 +3,182 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Partner with VinceMedia — $25K+ in a single month, 13.4% top conversion rate. Let's grow together.">
+  <meta name="description" content="Partner with VinceMedia — $25K+ in a single month, 13.4% top conversion rate. Affiliate marketing for Amazon brands.">
   <meta name="robots" content="index, follow">
-  <title>VinceMedia — Partner With Me</title>
+  <title>VinceMedia — Partner Program</title>
   <link rel="icon" type="image/png" href="logo.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700;9..40,800&family=Cormorant+Garamond:wght@500;600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="shared.css">
-
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
   <style>
-    body { overflow-x: hidden; }
-
-    /* HERO */
-    .partners-hero {
-      padding: 80px 40px 48px; text-align: center;
-      position: relative; overflow: hidden;
-    }
-    .partners-hero::before {
-      content: ''; position: absolute; inset: 0;
-      background: radial-gradient(ellipse at 50% 0%, rgba(232,255,71,0.08) 0%, transparent 60%);
-      pointer-events: none;
-    }
-    .period-badge {
-      display: inline-flex; align-items: center; gap: 8px;
-      background: var(--accent); color: #0a0a0a;
-      font-size: 0.9rem; font-weight: 700; letter-spacing: 0.12em;
-      padding: 8px 24px; border-radius: 6px; text-transform: uppercase;
-      margin-bottom: 28px;
-    }
-    .period-badge::before { content: '\u26A1'; font-size: 1.1rem; }
-    .partners-hero h1 {
-      font-family: 'Cormorant Garamond', Georgia, serif;
-      font-size: 5rem; font-weight: 900; letter-spacing: -0.04em;
-      color: var(--text); line-height: 1; margin-bottom: 20px;
-      position: relative; z-index: 1;
-    }
-    .partners-hero h1 .highlight { color: var(--accent); text-decoration: underline; text-decoration-thickness: 3px; text-underline-offset: 8px; }
-    .partners-hero .subtitle {
-      font-size: 1.2rem; color: var(--text2); max-width: 520px;
-      margin: 0 auto; line-height: 1.6; position: relative; z-index: 1;
-    }
-
-    /* MEGA STATS */
-    .mega-stats { max-width: 1100px; margin: 0 auto; padding: 0 40px 60px; }
-    .mega-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-    .mega-block {
-      background: var(--bg2); border: 1px solid var(--border);
-      border-radius: 20px; padding: 44px 32px;
-      text-align: center; position: relative; overflow: hidden;
-      transition: transform 0.3s, border-color 0.3s;
-    }
-    .mega-block:hover { transform: translateY(-4px); border-color: var(--accent); }
-    .mega-block::after {
-      content: ''; position: absolute; top: 0; left: 0; right: 0;
-      height: 4px;
-    }
-    .mega-block:nth-child(1)::after { background: linear-gradient(90deg, #E8FF47, #b8cc35); }
-    .mega-block:nth-child(2)::after { background: linear-gradient(90deg, #4ade80, #22c55e); }
-    .mega-block:nth-child(3)::after { background: linear-gradient(90deg, #60a5fa, #3b82f6); }
-    .mega-icon { font-size: 2.2rem; margin-bottom: 8px; }
-    .mega-num {
-      font-family: 'Cormorant Garamond', Georgia, serif;
-      font-size: 5rem; font-weight: 900; line-height: 1;
-      letter-spacing: -0.04em;
-    }
-    .mega-block:nth-child(1) .mega-num { color: var(--accent); }
-    .mega-block:nth-child(2) .mega-num { color: var(--green); }
-    .mega-block:nth-child(3) .mega-num { color: var(--blue); }
-    .mega-label { font-size: 0.9rem; color: var(--text3); margin-top: 10px; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 600; }
-    .mega-sub { font-size: 0.85rem; color: var(--text2); margin-top: 4px; }
-
-    /* RANKINGS CAROUSEL */
-    .rankings-wrap { max-width: 1100px; margin: 0 auto; padding: 0 40px 60px; }
-    .rankings-title {
-      font-family: 'Cormorant Garamond', Georgia, serif;
-      font-size: 2.8rem; font-weight: 800; text-align: center;
-      margin-bottom: 36px; color: var(--text); letter-spacing: -0.03em;
-    }
-    .rank-carousel {
-      background: var(--bg2); border: 1px solid var(--border);
-      border-radius: 20px; overflow: hidden; position: relative;
-      min-height: 380px;
-    }
-    .rank-slide {
-      display: none; padding: 48px 56px;
-      animation: fadeUp 0.5s ease;
-    }
-    .rank-slide.active { display: block; }
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    .rank-header {
-      display: flex; align-items: center; gap: 16px; margin-bottom: 32px;
-    }
-    .rank-icon { font-size: 2.6rem; }
-    .rank-title { font-size: 2rem; font-weight: 800; color: var(--text); font-family: 'Cormorant Garamond', Georgia, serif; letter-spacing: -0.02em; }
-    .rank-sub { font-size: 0.9rem; color: var(--text3); margin-left: auto; }
-    .rank-list { display: flex; flex-direction: column; gap: 8px; }
-    .rank-row {
-      display: flex; align-items: center; gap: 20px;
-      padding: 18px 0; border-bottom: 1px solid rgba(255,255,255,0.04);
-    }
+    body { font-family: 'Inter', system-ui, sans-serif; background: #09090b; color: #e4e4e7; }
+    .ghost-btn { display: inline-flex; align-items: center; gap: 6px; padding: 9px 22px; border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; font-size: 0.85rem; font-weight: 500; color: #e4e4e7; transition: all 0.2s; background: transparent; cursor: pointer; text-decoration: none; }
+    .ghost-btn:hover { border-color: rgba(255,255,255,0.25); background: rgba(255,255,255,0.04); }
+    .ghost-accent { border-color: #a3e635; color: #a3e635; }
+    .ghost-accent:hover { background: rgba(163,227,53,0.08); }
+    .stat-card { background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.06); border-radius: 20px; padding: 28px; text-align: center; position: relative; overflow: hidden; }
+    .stat-card::after { content: ''; position: absolute; bottom: 0; left: 10%; right: 10%; height: 2px; border-radius: 2px; background: linear-gradient(90deg, transparent, rgba(163,227,53,0.4), transparent); }
+    .stat-number { font-size: 3.5rem; font-weight: 900; letter-spacing: -0.04em; line-height: 1; }
+    .rank-card { background: rgba(255,255,255,0.015); border: 1px solid rgba(255,255,255,0.05); border-radius: 16px; padding: 24px; }
+    .rank-row { display: flex; align-items: center; gap: 12px; padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,0.04); }
     .rank-row:last-child { border-bottom: none; }
-    .rank-pos {
-      width: 52px; height: 52px; border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
-      font-family: 'Cormorant Garamond', Georgia, serif;
-      font-size: 1.5rem; font-weight: 800; flex-shrink: 0;
-    }
-    .rank-row:nth-child(1) .rank-pos { background: rgba(232,255,71,0.18); color: var(--accent); font-size: 1.8rem; }
-    .rank-row:nth-child(2) .rank-pos { background: rgba(255,255,255,0.07); color: var(--text); }
-    .rank-row:nth-child(3) .rank-pos { background: rgba(255,255,255,0.04); color: var(--text2); }
-    
-    .rank-brand-icon { font-size: 1.6rem; flex-shrink: 0; display: flex; align-items: center; }
-    .rank-brand-img { width: 28px; height: 28px; border-radius: 6px; object-fit: contain; }
-    .rank-brand { flex: 1; font-size: 1.3rem; font-weight: 600; color: var(--text); letter-spacing: -0.01em; }
-    .rank-stat {
-      font-size: 1.8rem; font-weight: 800; color: var(--accent);
-      font-family: 'Cormorant Garamond', Georgia, serif;
-    }
-    .rank-unit { font-size: 0.85rem; color: var(--text3); font-weight: 400; margin-left: 4px; }
-
-    .carousel-nav {
-      display: flex; justify-content: center; gap: 10px;
-      padding: 20px 0 28px;
-    }
-    .carousel-dot {
-      width: 10px; height: 10px; border-radius: 50%;
-      background: var(--bg4); cursor: pointer; border: none;
-      transition: all 0.3s;
-    }
-    .carousel-dot.active { background: var(--accent); transform: scale(1.4); }
-
-    /* ABOUT */
-    .about-partner {
-      max-width: 700px; margin: 0 auto; padding: 0 40px 48px; text-align: center;
-    }
-    .about-partner h2 {
-      font-family: 'Cormorant Garamond', Georgia, serif;
-      font-size: 2.2rem; font-weight: 800; color: var(--text); margin-bottom: 16px;
-    }
-    .about-partner p { font-size: 1rem; color: var(--text2); line-height: 1.8; margin-bottom: 10px; }
-    .about-partner .highlight { color: var(--accent); font-weight: 600; }
-    .contact-card {
-      max-width: 500px; margin: 36px auto 0;
-      background: linear-gradient(135deg, var(--bg2) 0%, var(--bg) 100%);
-      border: 1px solid var(--accent); border-radius: 20px;
-      padding: 40px; text-align: center;
-    }
-    .contact-card h3 { font-size: 1.1rem; color: var(--text); margin-bottom: 10px; font-weight: 500; }
-    .contact-card .email {
-      font-size: 1.5rem; color: var(--accent); font-weight: 700;
-      text-decoration: none; display: inline-block; margin-top: 4px;
-      transition: opacity 0.2s;
-    }
-    .contact-card .email:hover { opacity: 0.8; text-decoration: underline; }
-
-    @media (max-width: 900px) {
-      .partners-hero h1 { font-size: 3.2rem; }
-      .mega-grid { grid-template-columns: 1fr; gap: 16px; }
-      .mega-num { font-size: 3.5rem; }
-      .rank-slide { padding: 32px 24px; }
-      .rank-title { font-size: 1.5rem; }
-      .rank-brand { font-size: 1rem; }
-      .rank-stat { font-size: 1.3rem; }
-      .rankings-title { font-size: 2rem; }
-    }
-    @media (max-width: 640px) {
-      .partners-hero { padding: 48px 20px 32px; }
-      .partners-hero h1 { font-size: 2.4rem; }
-      .mega-stats { padding: 0 16px 40px; }
-      .mega-block { padding: 28px 20px; }
-      .rankings-wrap { padding: 0 16px 40px; }
-      .rankings-title { font-size: 1.5rem; }
-      .rank-header { flex-wrap: wrap; gap: 8px; }
-      .rank-sub { margin-left: 0; }
-    }
+    .medal-gold { background: linear-gradient(135deg, #fbbf24, #f59e0b); color: #09090b; box-shadow: 0 0 12px rgba(251,191,36,0.3); }
+    .medal-silver { background: rgba(255,255,255,0.08); color: #d4d4d8; }
+    .medal-bronze { background: rgba(255,255,255,0.04); color: #a1a1aa; }
+    .progress-bar { height: 4px; border-radius: 4px; background: rgba(255,255,255,0.06); overflow: hidden; flex: 1; }
+    .progress-fill { height: 100%; border-radius: 4px; background: linear-gradient(90deg, rgba(163,227,53,0.4), #a3e635); }
+    .brand-logo-sm { width: 22px; height: 22px; border-radius: 4px; object-fit: contain; flex-shrink: 0; }
+    .nav-link { color: #71717a; font-size: 0.85rem; font-weight: 500; transition: color 0.2s; text-decoration: none; }
+    .nav-link:hover { color: #e4e4e7; }
+    .founder-card { background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); border-radius: 20px; padding: 28px; }
+    .glow { position: relative; }
+    .glow::before { content: ''; position: absolute; inset: -2px; border-radius: 14px; background: linear-gradient(135deg, rgba(163,227,53,0.15), transparent, rgba(163,227,53,0.08)); z-index: -1; }
+    @keyframes fadeUp { from { opacity:0; transform:translateY(12px); } to { opacity:1; transform:translateY(0); } }
+    .slide-in { animation: fadeUp 0.35s ease; }
   </style>
 </head>
 <body>
-  <header>
-    <a href="/" class="logo" aria-label="VinceMedia home"><img src="logo.png" alt="VinceMedia" width="120" height="36"></a>
-    <span class="header-tagline">Curated Amazon Brand Stores</span>
-    <nav class="header-nav">
-      <a href="/">Home</a>
-      <a href="partners.html" class="active">Partner With Me</a>
-    </nav>
+  <header class="max-w-6xl mx-auto px-5 sm:px-8 py-4 flex items-center justify-between">
+    <a href="/" class="text-base font-bold tracking-tight text-zinc-100 no-underline">VinceMedia</a>
+    <div class="flex items-center gap-5">
+      <a href="/" class="nav-link">home</a>
+      <a href="partners.html" class="nav-link" style="color:#e4e4e7;">for brands</a>
+    </div>
   </header>
 
-  <section class="partners-hero">
-    <div class="period-badge">Single Month Results</div>
-    <h1>Let's <span class="highlight">Grow Together</span></h1>
-    <p class="subtitle">I'm an Amazon affiliate partner with a proven track record. If you're a brand looking for authentic promotion, let's talk.</p>
+  <!-- Hero -->
+  <section class="max-w-6xl mx-auto px-5 sm:px-8 pt-14 pb-8 text-center">
+    <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-xl bg-white/[0.03] border border-white/[0.06] mb-6">
+      <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+      <span class="text-xs font-medium text-zinc-500">verified affiliate · single month results</span>
+    </div>
+    <h1 class="text-5xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-zinc-100 leading-[1.04]">
+      let's <span class="text-lime-400">grow together</span>
+    </h1>
+    <p class="text-sm sm:text-base text-zinc-500 mt-4 max-w-lg mx-auto leading-relaxed">
+      i'm an amazon affiliate partner with a proven track record. 
+      if you're a brand looking for authentic promotion, let's talk.
+    </p>
   </section>
 
-  <div class="mega-stats">
-    <div class="mega-grid">
-      <div class="mega-block">
-        <div class="mega-icon">\uD83D\uDCC8</div>
-        <div class="mega-num">$25K+</div>
-        <div class="mega-label">Tracked Sales</div>
-        <div class="mega-sub">Single month verified revenue</div>
+  <!-- Mega Stats with glow -->
+  <section class="max-w-5xl mx-auto px-5 sm:px-8 pb-8">
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+      <div class="stat-card">
+        <div class="stat-number text-lime-400">$25k<span class="text-2xl font-bold">+</span></div>
+        <div class="text-xs font-medium text-zinc-500 uppercase tracking-wider mt-2">tracked sales</div>
+        <div class="text-[10px] text-zinc-600 mt-1">single month verified</div>
       </div>
-      <div class="mega-block">
-        <div class="mega-icon">\uD83D\uDCE6</div>
-        <div class="mega-num">520+</div>
-        <div class="mega-label">Conversions</div>
-        <div class="mega-sub">Across 114 brands</div>
+      <div class="stat-card">
+        <div class="stat-number text-zinc-100">520<span class="text-2xl font-bold">+</span></div>
+        <div class="text-xs font-medium text-zinc-500 uppercase tracking-wider mt-2">conversions</div>
+        <div class="text-[10px] text-zinc-600 mt-1">across 114 brands</div>
       </div>
-      <div class="mega-block">
-        <div class="mega-icon">\uD83C\uDFAF</div>
-        <div class="mega-num">4.2%</div>
-        <div class="mega-label">Avg Conv Rate</div>
-        <div class="mega-sub">Top performer at 16.3%</div>
+      <div class="stat-card">
+        <div class="stat-number text-zinc-100">4.2<span class="text-2xl font-bold">%</span></div>
+        <div class="text-xs font-medium text-zinc-500 uppercase tracking-wider mt-2">avg conv rate</div>
+        <div class="text-[10px] text-zinc-600 mt-1">top at 16.3%</div>
       </div>
-    </div>
-  </div>
-
-  <div class="rankings-wrap">
-    <h2 class="rankings-title">Top Performers <span style="color:var(--accent)">by the Numbers</span></h2>
-    <div class="rank-carousel" id="rankCarousel"></div>
-    <div class="carousel-nav" id="carouselNav"></div>
-  </div>
-
-  <section class="about-partner">
-    <h2>Hi, I'm Vince</h2>
-    <p>
-      I'm an Amazon affiliate partner focused on <span class="highlight">high-quality brand promotion</span>. I don't just drop links — I create curated content, write honest recommendations, and build pages that convert. Every brand I work with gets real traffic and real sales.
-    </p>
-    <p>
-      These numbers represent <span class="highlight">one month</span> of tracked performance. I'm selective about the brands I promote — quality over quantity, always.
-    </p>
-    <div class="contact-card">
-      <h3>Interested in partnering?</h3>
-      <a class="email" href="mailto:linwizarld@gmail.com">linwizarld@gmail.com</a>
     </div>
   </section>
 
-  <footer>
-    <div class="footer-links">
-      <a href="/">Home</a>
-      <a href="mailto:linwizarld@gmail.com">Contact</a>
+  <!-- Rankings: side by side on desktop -->
+  <section class="max-w-5xl mx-auto px-5 sm:px-8 py-8">
+    <div class="flex items-baseline gap-3 mb-8 justify-center">
+      <h2 class="text-2xl font-bold tracking-tight text-zinc-200">top performers</h2>
+      <span class="text-sm text-zinc-600">by the numbers</span>
+    </div>
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-5">
+      <div id="rankSales"></div>
+      <div id="rankConv"></div>
+    </div>
+  </section>
+
+  <!-- Founder card (concise) -->
+  <section class="max-w-3xl mx-auto px-5 sm:px-8 py-8">
+    <div class="founder-card flex flex-col sm:flex-row items-center gap-6">
+      <div class="w-16 h-16 rounded-full bg-lime-400/10 border border-lime-400/20 flex items-center justify-center text-2xl font-bold text-lime-400 flex-shrink-0">V</div>
+      <div class="text-center sm:text-left">
+        <h3 class="text-base font-bold text-zinc-200">hi, i'm vince</h3>
+        <p class="text-xs sm:text-sm text-zinc-500 leading-relaxed mt-1">
+          i don't just drop links — i create content that converts. every brand i work with gets real traffic and real sales.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Button (click to reveal email) -->
+  <section class="max-w-3xl mx-auto px-5 sm:px-8 py-8 text-center">
+    <div class="glow inline-block">
+      <button id="ctaBtn" onclick="revealEmail()" class="ghost-btn ghost-accent text-base px-10 py-3.5" style="font-size:1rem;padding:14px 40px;">
+        <span id="ctaText">apply for a free brand audit</span>
+        <i class="fas fa-arrow-right text-sm"></i>
+      </button>
+    </div>
+    <div id="emailReveal" class="hidden mt-4 animate-up">
+      <div class="inline-flex items-center gap-3 px-5 py-3 rounded-xl bg-lime-400/5 border border-lime-400/15">
+        <i class="fas fa-envelope text-lime-400 text-sm"></i>
+        <a href="mailto:linwizarld@gmail.com" class="text-base font-medium text-lime-400 hover:underline">linwizarld@gmail.com</a>
+        <button onclick="navigator.clipboard.writeText('linwizarld@gmail.com');this.innerHTML='<i class=\\'fas fa-check\\'></i>'" class="text-xs text-zinc-500 hover:text-zinc-300 ml-2">
+          <i class="far fa-copy"></i>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <footer class="max-w-6xl mx-auto px-5 sm:px-8 py-8 mt-4 border-t border-white/[0.03]">
+    <div class="flex items-center justify-center gap-4 text-xs text-zinc-600">
+      <span>VinceMedia &copy; 2026</span>
+      <a href="/">home</a>
     </div>
   </footer>
 
-  <button class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">&#8593;</button>
-
   <script src="brands.js"></script>
   <script>
-    const backToTop = document.getElementById('backToTop');
-    window.addEventListener('scroll', () => { backToTop.classList.toggle('visible', window.scrollY > 400); }, { passive: true });
+    function revealEmail() {
+      document.getElementById('ctaBtn').classList.add('hidden');
+      document.getElementById('emailReveal').classList.remove('hidden');
+    }
 
-    // Brand icons by name
-    const brandIcons = {
-      'Pocket Hose': '\uD83D\uDCFB',
-      'Veradek': '\uD83C\uDF31',
-      'HexClad': '\uD83C\uDF73',
-      'Made By Dentists': '\uD83E\uDDB7',
-      'Bull Shot': '\u26A1',
-      'Hawaiian Shaved Ice': '\uD83C\uDF68',
-    };
-
-    const slides = [
-      {
-        icon: '\uD83C\uDFC6', title: 'Top 3 by Sales', sub: 'Highest revenue this month',
-        items: [
-          { brand: 'Pocket Hose', stat: '$5,798', unit: '' },
-          { brand: 'Veradek', stat: '$3,577', unit: '' },
-          { brand: 'HexClad', stat: '$2,883', unit: '' }
-        ]
-      },
-      {
-        icon: '\uD83D\uDCC8', title: 'Top 3 by Conversion Rate', sub: 'Best converting brands',
-        items: [
-          { brand: 'Made By Dentists', stat: '16.3', unit: '%' },
-          { brand: 'Veradek', stat: '13.4', unit: '%' },
-          { brand: 'Bull Shot', stat: '11.5', unit: '%' }
-        ]
-      },
-      {
-        icon: '\uD83D\uDD04', title: 'Top 3 by Conversions', sub: 'Most orders placed',
-        items: [
-          { brand: 'Pocket Hose', stat: '107', unit: ' orders' },
-          { brand: 'Hawaiian Shaved Ice', stat: '27', unit: ' orders' },
-          { brand: 'Veradek', stat: '23', unit: ' orders' }
-        ]
-      }
+    // Rank data
+    const bySales = [
+      { brand: 'Pocket Hose', stat: '$5,798', pct: 100 },
+      { brand: 'Veradek', stat: '$3,577', pct: 62 },
+      { brand: 'HexClad', stat: '$2,883', pct: 50 }
+    ];
+    const byConv = [
+      { brand: 'Made By Dentists', stat: '16.3%', pct: 100 },
+      { brand: 'Veradek', stat: '13.4%', pct: 82 },
+      { brand: 'Bull Shot', stat: '11.5%', pct: 71 }
     ];
 
-    let currentSlide = 0;
+    const medals = ['medal-gold', 'medal-silver', 'medal-bronze'];
 
-    function buildCarousel() {
-      const carousel = document.getElementById('rankCarousel');
-      const nav = document.getElementById('carouselNav');
-      slides.forEach(function(s, i) {
-        var div = document.createElement('div');
-        div.className = 'rank-slide' + (i === 0 ? ' active' : '');
-        var html = '<div class="rank-header"><span class="rank-icon">'+s.icon+'</span><span class="rank-title">'+s.title+'</span><span class="rank-sub">'+s.sub+'</span></div><div class="rank-list">';
-        for (var j = 0; j < s.items.length; j++) {
-          var item = s.items[j];
-          var brandData = BRANDS.find(function(b) { return b.brand === item.brand; });
-          var iconHtml = '';
-          if (brandData && brandData.favicon) {
-            iconHtml = '<img class="rank-brand-img" src="'+brandData.favicon+'" alt="" loading="lazy" onerror="this.style.display=\'none\'">';
-          } else {
-            iconHtml = brandIcons[item.brand] || '\uD83C\uDF1F';
-          }
-          html += '<div class="rank-row"><div class="rank-pos">'+(j+1)+'</div><span class="rank-brand-icon">'+iconHtml+'</span><span class="rank-brand">'+item.brand+'</span><span class="rank-stat">'+item.stat+'<span class="rank-unit">'+item.unit+'</span></span></div>';
-        }
-        html += '</div>';
-        div.innerHTML = html;
-        carousel.appendChild(div);
-        var dot = document.createElement('button');
-        dot.className = 'carousel-dot' + (i === 0 ? ' active' : '');
-        dot.onclick = function(idx) { return function() { goToSlide(idx); }; }(i);
-        nav.appendChild(dot);
+    function buildRankSlot(containerId, title, subtitle, data) {
+      const el = document.getElementById(containerId);
+      let h = `<div class="rank-card">
+        <div class="flex items-center gap-2 mb-4">
+          <span class="text-sm font-bold text-zinc-200">${title}</span>
+          <span class="text-[11px] text-zinc-600">${subtitle}</span>
+        </div>`;
+      data.forEach((item, i) => {
+        var bd = BRANDS.find(function(b) { return b.brand === item.brand; });
+        var iconHtml = bd && bd.favicon
+          ? '<img class="brand-logo-sm" src="'+bd.favicon+'" alt="" loading="lazy" onerror="this.style.display=\'none\'">'
+          : '<span class="w-[22px] h-[22px] rounded flex items-center justify-center text-[10px] font-bold text-zinc-600 bg-white/[0.04]">'+item.brand.charAt(0)+'</span>';
+        h += '<div class="rank-row">';
+        h += '<div class="w-9 h-9 rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0 ' + medals[i] + '">' + (i + 1) + '</div>';
+        h += iconHtml;
+        h += '<div class="flex-1 min-w-0"><div class="flex items-center justify-between"><span class="text-sm font-semibold text-zinc-200 truncate">' + item.brand + '</span><span class="text-sm font-bold text-lime-400 ml-2">' + item.stat + '</span></div>';
+        h += '<div class="progress-bar mt-1.5"><div class="progress-fill" style="width:' + item.pct + '%"></div></div></div>';
+        h += '</div>';
       });
+      h += '</div>';
+      el.innerHTML = h;
     }
 
-    function goToSlide(idx) {
-      currentSlide = idx;
-      document.querySelectorAll('.rank-slide').forEach(function(s, i) { s.classList.toggle('active', i === idx); });
-      document.querySelectorAll('.carousel-dot').forEach(function(d, i) { d.classList.toggle('active', i === idx); });
-    }
-
-    buildCarousel();
-    setInterval(function() { goToSlide((currentSlide + 1) % slides.length); }, 4000);
+    buildRankSlot('rankSales', '\uD83D\uDCC8 sales leaders', 'by revenue', bySales);
+    buildRankSlot('rankConv', '\uD83C\uDFAF conversion leaders', 'by rate', byConv);
   </script>
 </body>
 </html>

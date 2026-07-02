@@ -3,427 +3,305 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="VinceMedia — Handpicked Amazon brands that solve real problems. Expert recommendations with curated reviews. Outdoor, kitchen, beauty & more.">
-  <meta name="keywords" content="Amazon brand recommendations, best Amazon stores, HexClad review, Pocket Hose, Veradek, curated brands">
+  <meta name="description" content="VinceMedia — Handpicked Amazon brands that solve real problems. Expert recommendations with curated reviews.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://affiliate-vince.github.io/">
-  <title>VinceMedia — Handpicked Amazon Brands Worth Your Money</title>
-  <meta property="og:title" content="VinceMedia — Handpicked Amazon Brands Worth Your Money">
-  <meta property="og:description" content="Real recommendations from a verified Amazon affiliate. Brands that solve real problems — curated, reviewed, and trusted.">
-  <meta property="og:url" content="https://affiliate-vince.github.io/">
+  <title>VinceMedia — picked for a reason</title>
+  <meta property="og:title" content="VinceMedia — picked for a reason">
+  <meta property="og:description" content="Brands that solve real problems — curated, reviewed, and trusted.">
   <meta property="og:image" content="https://affiliate-vince.github.io/logo.png">
-  <meta name="partnerboostverifycode" content="32dc01246faccb7f5b3cad5016dd5033" />
   <link rel="icon" type="image/png" href="logo.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://m.media-amazon.com">
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&family=Cormorant+Garamond:wght@500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="shared.css">
-
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
   <style>
-    /* ─── Hero ─── */
-    .hero {
-      max-width: 800px; margin: 0 auto;
-      padding: 56px 40px 32px; text-align: center;
-    }
-    .hero h1 {
-      font-family: 'Cormorant Garamond', Georgia, serif;
-      font-size: 2.6rem; font-weight: 700; letter-spacing: -0.02em;
-      color: var(--text); line-height: 1.1; margin-bottom: 12px;
-    }
-    .hero h1 span { color: var(--accent); }
-    .hero p {
-      font-size: 0.95rem; color: var(--text2); max-width: 520px;
-      margin: 0 auto; line-height: 1.7;
-    }
-
-    /* ─── Tab Bar ─── */
-    .tab-bar {
-      max-width: 1200px; margin: 0 auto; padding: 0 40px;
-      display: flex; gap: 0;
-      border-bottom: 1px solid var(--border);
-    }
-    .tab-btn {
-      padding: 12px 24px; font-size: 0.85rem; font-weight: 500;
-      color: var(--text3); background: none; border: none;
-      cursor: pointer; font-family: inherit;
-      border-bottom: 2px solid transparent;
-      transition: color 0.2s, border-color 0.2s;
-      margin-bottom: -1px;
-    }
-    .tab-btn:hover { color: var(--text); }
-    .tab-btn.active { color: var(--accent); border-bottom-color: var(--accent); }
-
-    /* ─── Tab Content ─── */
-    .tab-content { display: none; }
-    .tab-content.active { display: block; }
-
-    /* ─── Featured Brands (Picks Tab) ─── */
-    .picks-wrap { max-width: 1000px; margin: 0 auto; }
-    .picks-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-      gap: 20px; padding: 0;
-    }
-
-    .picks-scene-card {
-      background: var(--bg2); border: 1px solid var(--border);
-      border-radius: var(--radius); overflow: hidden;
-      text-decoration: none; display: flex; flex-direction: column;
-      transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-      position: relative;
-    }
-    .picks-scene-card:hover {
-      border-color: var(--accent);
-      transform: translateY(-4px);
-      box-shadow: 0 12px 40px rgba(232,255,71,0.06);
-    }
-    .picks-scene-card-img {
-      width: 100%; height: 160px; background-size: cover; background-position: center;
-      flex-shrink: 0; position: relative;
-    }
-    .picks-scene-card-img::after {
-      content: ''; position: absolute; inset: 0;
-      background: linear-gradient(180deg, transparent 50%, rgba(10,10,10,0.6) 100%);
-      pointer-events: none;
-    }
-    .picks-scene-card-tag {
-      position: absolute; top: 12px; left: 12px;
-      font-size: 0.62rem; font-weight: 700; letter-spacing: 0.06em;
-      text-transform: uppercase; background: rgba(232,255,71,0.92);
-      color: #0a0a0a; padding: 4px 10px; border-radius: 4px;
-      z-index: 2; backdrop-filter: blur(4px);
-    }
-    .picks-scene-card-body {
-      padding: 18px; flex: 1; display: flex; flex-direction: column; gap: 6px;
-    }
-    .picks-scene-card-name {
-      font-weight: 600; font-size: 1.05rem; color: var(--text);
-      letter-spacing: -0.01em; display: flex; align-items: center; gap: 8px;
-    }
-    .brand-logo-sm {
-      width: 20px; height: 20px; border-radius: 4px; object-fit: contain;
-      flex-shrink: 0;
-    }
-    .picks-scene-card-cat {
-      font-size: 0.65rem; letter-spacing: 0.08em; text-transform: uppercase;
-      color: var(--accent); font-weight: 500;
-    }
-    .picks-scene-card-desc {
-      font-size: 0.8rem; color: var(--text2); line-height: 1.5; flex: 1;
-    }
-    .picks-scene-card-footer {
-      display: flex; align-items: center; justify-content: space-between;
-      margin-top: 10px; padding-top: 10px; border-top: 1px solid var(--border);
-    }
-    .picks-scene-card-scene {
-      font-size: 0.68rem; color: var(--text3); display: flex; align-items: center; gap: 4px;
-    }
-    .picks-scene-card-cta {
-      font-size: 0.72rem; font-weight: 600; color: var(--accent);
-      display: flex; align-items: center; gap: 4px;
-      transition: gap 0.2s;
-    }
-    .picks-scene-card:hover .picks-scene-card-cta {
-      gap: 8px; text-decoration: underline;
-    }
-
-    .picks-section {
-      margin-bottom: 40px;
-    }
-    .picks-section-header {
-      display: flex; align-items: baseline; gap: 12px;
-      margin-bottom: 16px; padding-bottom: 10px;
-      border-bottom: 1px solid var(--border);
-    }
-    .picks-section-title {
-      font-family: 'Cormorant Garamond', Georgia, serif;
-      font-size: 1.5rem; font-weight: 600; color: var(--text);
-      letter-spacing: -0.01em; line-height: 1;
-    }
-    .picks-section-desc {
-      font-size: 0.82rem; color: var(--text3);
-    }
-
-    /* ─── All Brands Tab ─── */
-    .content-layout { display: flex; gap: 36px; align-items: flex-start; }
-    .cat-sidebar { flex-shrink: 0; width: 170px; position: sticky; top: 80px; }
-    .cat-sidebar-title { font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text3); margin-bottom: 8px; font-weight: 500; }
-    .cat-tabs { display: flex; flex-direction: column; gap: 2px; }
-    .cat-tab {
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 8px 12px; border-radius: var(--radius-sm);
-      font-size: 0.8rem; color: var(--text2); cursor: pointer;
-      transition: all 0.15s; border: none; background: none;
-      text-align: left; width: 100%; font-family: inherit; font-weight: 400;
-    }
-    .cat-tab:hover { background: var(--bg2); color: var(--text); }
-    .cat-tab.active { background: var(--bg2); color: var(--accent); font-weight: 500; }
-    .cat-tab-count { font-size: 0.7rem; background: var(--bg3); color: var(--text3); padding: 2px 7px; border-radius: 20px; min-width: 24px; text-align: center; }
-    .cat-tab.active .cat-tab-count { background: rgba(232,255,71,0.1); color: var(--accent); }
-    .brand-area { flex: 1; min-width: 0; }
-
-    .section-header { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: 20px; flex-wrap: wrap; }
-    .section-title { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 1.5rem; font-weight: 500; letter-spacing: -0.02em; color: var(--text); }
-    .search-wrap { position: relative; width: 220px; flex-shrink: 0; }
-    .search-input {
-      width: 100%; background: var(--bg2); border: 1px solid var(--border);
-      border-radius: var(--radius-sm); padding: 8px 34px 8px 14px;
-      color: var(--text); font-family: inherit; font-size: 0.82rem;
-      outline: none; transition: border-color 0.2s;
-    }
-    .search-input::placeholder { color: var(--text3); }
-    .search-input:focus { border-color: var(--accent); }
-    .search-icon { position: absolute; right: 10px; top: 50%; transform: translateY(-50%); color: var(--text3); pointer-events: none; font-size: 0.82rem; }
-    .brand-count { font-size: 0.8rem; color: var(--text3); white-space: nowrap; flex-shrink: 0; }
-
-    .brand-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-      gap: 1px; background: var(--border);
-      border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden;
-    }
-    .brand-card {
-      background: var(--bg2); text-decoration: none; display: flex;
-      flex-direction: column; transition: background 0.2s; position: relative; overflow: hidden;
-    }
-    .brand-card:hover { background: var(--bg3); }
-    .card-img-wrap { width: 100%; height: 140px; overflow: hidden; position: relative; flex-shrink: 0; }
-    .card-img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease; display: block; }
-    .brand-card:hover .card-img { transform: scale(1.04); }
-    .card-body { padding: 14px; display: flex; flex-direction: column; gap: 4px; flex: 1; }
-    .card-name { font-weight: 600; font-size: 0.85rem; color: var(--text); letter-spacing: -0.01em; display: flex; align-items: center; gap: 6px; }
-    .card-cat { font-size: 0.63rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); font-weight: 500; }
-    .card-desc { font-size: 0.76rem; color: var(--text2); line-height: 1.5; flex: 1; }
-    .card-btn {
-      align-self: flex-start; font-size: 0.68rem; font-weight: 600; color: var(--accent);
-      margin-top: 4px; display: flex; align-items: center; gap: 4px;
-    }
-    .brand-card:hover .card-btn { text-decoration: underline; }
-
-    .core-badge {
-      display: inline-block; font-size: 0.55rem; font-weight: 700;
-      background: rgba(232,255,71,0.12); color: var(--accent);
-      padding: 2px 5px; border-radius: 3px; letter-spacing: 0.03em;
-      margin-left: 5px; vertical-align: middle;
-    }
-
-    .no-results { text-align: center; padding: 60px 20px; color: var(--text2); font-size: 0.9rem; display: none; }
-    .no-results.visible { display: block; }
-
-    @media (max-width: 900px) {
-      .hero h1 { font-size: 2rem; }
-      .hero { padding: 40px 20px 24px; }
-      .tab-bar { padding: 0 20px; overflow-x: auto; }
-      .picks-grid { grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); }
-      .content-layout { flex-direction: column; gap: 16px; }
-      .cat-sidebar { width: 100%; position: static; }
-      .cat-tabs { flex-direction: row; flex-wrap: wrap; }
-      .cat-tab { width: auto; }
-    }
-    @media (max-width: 640px) {
-      .hero h1 { font-size: 1.6rem; }
-      .picks-grid { grid-template-columns: 1fr; }
-      .brand-grid { grid-template-columns: 1fr; }
-      .search-wrap { width: 160px; }
-    }
+    body { font-family: 'Inter', system-ui, sans-serif; background: #09090b; color: #e4e4e7; }
+    .ghost-btn { display: inline-flex; align-items: center; gap: 6px; padding: 9px 22px; border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; font-size: 0.85rem; font-weight: 500; color: #e4e4e7; transition: all 0.2s; background: transparent; cursor: pointer; text-decoration: none; }
+    .ghost-btn:hover { border-color: rgba(255,255,255,0.25); background: rgba(255,255,255,0.04); }
+    .ghost-accent { border-color: #a3e635; color: #a3e635; }
+    .ghost-accent:hover { background: rgba(163,227,53,0.08); }
+    .scene-card { background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.06); border-radius: 16px; overflow: hidden; transition: all 0.25s; display: block; text-decoration: none; }
+    .scene-card:hover { border-color: rgba(163,227,53,0.15); background: rgba(255,255,255,0.04); transform: translateY(-2px); }
+    .minimal-card { background: rgba(255,255,255,0.015); border: 1px solid rgba(255,255,255,0.05); border-radius: 12px; transition: all 0.2s; display: block; text-decoration: none; padding: 12px; }
+    .minimal-card:hover { border-color: rgba(255,255,255,0.12); background: rgba(255,255,255,0.03); }
+    .cat-tab { padding: 5px 14px; border-radius: 10px; font-size: 0.8rem; font-weight: 500; color: #71717a; cursor: pointer; transition: all 0.2s; background: transparent; border: 1px solid transparent; }
+    .cat-tab:hover { color: #e4e4e7; border-color: rgba(255,255,255,0.08); }
+    .cat-tab.active { color: #09090b; background: #a3e635; border-color: #a3e635; }
+    .hero-gradient { background: linear-gradient(180deg, rgba(9,9,11,0) 0%, rgba(9,9,11,0.9) 100%); }
+    input.search { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.07); border-radius: 10px; padding: 9px 16px; font-size: 0.8rem; color: #e4e4e7; outline: none; width: 100%; max-width: 260px; transition: border-color 0.2s; }
+    input.search:focus { border-color: rgba(163,227,53,0.25); }
+    input.search::placeholder { color: #52525b; }
+    .view-tab { position: relative; padding: 8px 20px; font-size: 0.9rem; font-weight: 500; cursor: pointer; transition: all 0.25s; color: #71717a; background: transparent; border: none; user-select: none; }
+    .view-tab:hover { color: #d4d4d8; }
+    .view-tab.active { color: #e4e4e7; }
+    .view-tab.active::after { content: ''; position: absolute; bottom: -1px; left: 20%; right: 20%; height: 2px; border-radius: 2px; background: #a3e635; }
+    .tab-pane { transition: opacity 0.25s ease, transform 0.25s ease; }
+    .tab-pane.entering { opacity: 0; transform: translateY(8px); }
+    .tab-pane.active { opacity: 1; transform: translateY(0); }
+    .brand-logo { width: 22px; height: 22px; border-radius: 4px; object-fit: contain; flex-shrink: 0; }
+    .badge-pill { display: inline-flex; align-items: center; gap: 4px; padding: 2px 10px; border-radius: 9999px; font-size: 0.65rem; font-weight: 500; border: 1px solid rgba(255,255,255,0.06); background: rgba(255,255,255,0.04); color: #a1a1aa; }
+    .badge-accent { background: rgba(163,227,53,0.1); color: #a3e635; border-color: rgba(163,227,53,0.15); }
+    .feature-card { background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.06); border-radius: 20px; overflow: hidden; transition: all 0.3s; }
+    .feature-card:hover { border-color: rgba(163,227,53,0.2); }
+    .nav-link { color: #71717a; font-size: 0.85rem; font-weight: 500; transition: color 0.2s; text-decoration: none; }
+    .nav-link:hover { color: #e4e4e7; }
+    @keyframes fadeUp { from { opacity:0; transform:translateY(10px); } to { opacity:1; transform:translateY(0); } }
+    .animate-up { animation: fadeUp 0.35s ease; }
   </style>
 </head>
 <body>
-  <header>
-    <a href="/" class="logo" aria-label="VinceMedia home"><img src="logo.png" alt="VinceMedia" width="120" height="36"></a>
-    <span class="header-tagline">Handpicked Amazon Brands</span>
-    <nav class="header-nav">
-      <a href="/" class="active">Home</a>
-      <a href="partners.html">Partner With Me</a>
-    </nav>
+  <!-- Nav -->
+  <header class="max-w-6xl mx-auto px-5 sm:px-8 py-4 flex items-center justify-between">
+    <a href="/" class="text-base font-bold tracking-tight text-zinc-100 no-underline">VinceMedia</a>
+    <div class="flex items-center gap-5">
+      <a href="/" class="nav-link">home</a>
+      <a href="partners.html" class="nav-link">for brands</a>
+    </div>
   </header>
 
-  <!-- Hero -->
-  <section class="hero">
-    <h1>Brands That <span>Actually Deliver</span></h1>
-    <p>No fluff, no random links. Every brand here is one I've personally tested, promoted, and trust enough to recommend to real people.</p>
-  </section>
-
-  <!-- Tab Bar -->
-  <div class="tab-bar">
-    <button class="tab-btn active" data-tab="picks">My Picks</button>
-    <button class="tab-btn" data-tab="all">All Brands</button>
-  </div>
-
-  <!-- Picks Tab -->
-  <section class="section tab-content active" id="tabPicks">
-    <div id="picksContent"></div>
-  </section>
-
-  <!-- All Brands Tab -->
-  <section class="section tab-content" id="tabAll">
-    <div class="content-layout">
-      <aside class="cat-sidebar">
-        <div class="cat-sidebar-title">Categories</div>
-        <div class="cat-tabs" id="catTabs"></div>
-      </aside>
-      <div class="brand-area">
-        <div class="section-header">
-          <h2 class="section-title" id="sectionTitle">All Brands</h2>
-          <div class="search-wrap">
-            <input class="search-input" id="searchInput" type="search" placeholder="Search brands..." autocomplete="off">
-            <span class="search-icon" aria-hidden="true">⌕</span>
-          </div>
-          <span class="brand-count" id="brandCount"></span>
+  <!-- Hero: left copy + right featured pick -->
+  <section class="max-w-6xl mx-auto px-5 sm:px-8 pt-14 pb-10">
+    <div class="grid grid-cols-1 lg:grid-cols-5 gap-10 items-center">
+      <div class="lg:col-span-3">
+        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-xl bg-white/[0.03] border border-white/[0.06] mb-6">
+          <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+          <span class="text-xs font-medium text-zinc-500">curated with intention</span>
         </div>
-        <div class="brand-grid" id="brandGrid"></div>
-        <div class="no-results" id="noResults">No brands match your search.</div>
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-zinc-100 leading-[1.06]">
+          picked for<br><span class="text-lime-400">a reason</span>
+        </h1>
+        <p class="text-sm sm:text-base text-zinc-500 mt-4 max-w-md leading-relaxed">
+          Every brand here earned its spot — through performance, quality, or real user love. 
+          No sponsorships, no shortcuts.
+        </p>
+        <div class="flex flex-wrap gap-3 mt-7">
+          <a href="#brands-section" onclick="switchView('picks');return true;" class="ghost-btn ghost-accent">
+            <span>see curated picks</span>
+            <i class="fas fa-arrow-right text-xs opacity-60"></i>
+          </a>
+          <a href="#brands-section" onclick="switchView('all');return true;" class="ghost-btn">
+            <span>browse all</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Right: featured brand card (dynamically picks the top core brand) -->
+      <div class="lg:col-span-2" id="featuredSlot">
+        <!-- populated by JS -->
       </div>
     </div>
   </section>
 
-  <footer>
-    <div class="footer-links">
-      <a href="/">Home</a>
-      <a href="partners.html">Partner With Me</a>
+  <!-- Trust bar -->
+  <section class="max-w-6xl mx-auto px-5 sm:px-8 pb-6">
+    <div class="flex flex-wrap items-center justify-center gap-3 py-3 border-t border-white/[0.03]">
+      <span class="badge-pill"><i class="fas fa-star text-amber-400/70 text-[10px]"></i> 4.9/5 avg brand rating</span>
+      <span class="badge-pill"><i class="fas fa-users text-zinc-500 text-[10px]"></i> 10k+ shoppers guided</span>
+      <span class="badge-pill"><i class="fas fa-check text-zinc-500 text-[10px]"></i> unbiased picks</span>
+    </div>
+  </section>
+
+  <!-- Brand Display: Tabbed (Curated Picks / All Brands) -->
+  <section id="brands-section" class="max-w-6xl mx-auto px-5 sm:px-8 py-12">
+    <!-- Tab Bar -->
+    <div class="flex items-center gap-1 mb-8 border-b border-white/[0.04] pb-1">
+      <button class="view-tab active" data-view="picks" onclick="switchView('picks')">
+        <span class="mr-1">&#x2728;</span>curated picks
+      </button>
+      <button class="view-tab" data-view="all" onclick="switchView('all')">
+        <span class="mr-1">&#x1F4C2;</span>all brands
+      </button>
+    </div>
+
+    <!-- Curated Picks Pane -->
+    <div id="picksPane" class="tab-pane active">
+      <div id="picksContainer" class="flex flex-col gap-14"></div>
+    </div>
+
+    <!-- All Brands Pane (hidden by default) -->
+    <div id="allPane" class="tab-pane" style="display:none;">
+      <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-6">
+        <div>
+          <h2 class="text-xl font-bold tracking-tight text-zinc-200">all brands</h2>
+          <p class="text-xs text-zinc-600 mt-0.5">every brand we track</p>
+        </div>
+        <input class="search" id="searchInput" type="text" placeholder="search...">
+      </div>
+      <div class="flex flex-wrap gap-2 mb-6" id="catTabs"></div>
+      <div class="flex items-center justify-between mb-3">
+        <span class="text-xs text-zinc-600" id="brandCount"></span>
+      </div>
+      <div id="noResults" class="hidden text-center py-16">
+        <p class="text-zinc-500 text-sm">no brands match.</p>
+      </div>
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3" id="brandGrid"></div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="max-w-6xl mx-auto px-5 sm:px-8 py-10 mt-8 border-t border-white/[0.03]">
+    <div class="flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-zinc-600">
+      <span>VinceMedia &copy; 2026</span>
+      <a href="partners.html" class="hover:text-zinc-400 transition-colors">for brands</a>
     </div>
   </footer>
 
-  <button class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">&#8593;</button>
-
-  <!-- SEO Hidden Content -->
-  <div style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden;" aria-hidden="true">
-    <h1>VinceMedia — Handpicked Amazon Brand Recommendations</h1>
-    <p>Expert-curated Amazon brand stores organized by real-world needs. Each brand is personally tested and reviewed.</p>
-  </div>
-
-  <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "3b6bc43a07e0454e84360b0b60120095"}'></script>
   <script src="brands.js"></script>
   <script src="affiliate-links.js"></script>
-
   <script>
-    // ── Tab switching ──
-    document.querySelectorAll('.tab-btn').forEach(btn => {
-      btn.addEventListener('click', () => {
-        document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-        document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
-        btn.classList.add('active');
-        document.getElementById('tab' + btn.dataset.tab.charAt(0).toUpperCase() + btn.dataset.tab.slice(1)).classList.add('active');
-      });
-    });
+    const categories = [...new Set(BRANDS.map(b => b.category))].sort();
 
-    // ── Picks (Featured) ──
-    const scenarios = [
-      { title: "Outdoor & Garden", emoji: "🌿", desc: "Upgrade your patio, lawn, and beach days", slugs: ["pocket-hose", "veradek", "shibumi-shade"] },
-      { title: "Kitchen & Cooking", emoji: "🍳", desc: "Cookware and tools that earn their spot", slugs: ["hexclad", "hawaiian-shaved-ice"] },
-      { title: "Beauty & Personal Care", emoji: "✨", desc: "Skincare, body care, and oral health that deliver", slugs: ["prequel-skin", "skin-grip", "hempvana", "moshlife", "made-by-dentists"] },
-      { title: "Home Essentials", emoji: "🏠", desc: "Simple upgrades that make daily life better", slugs: ["jack-rose", "isonic-inc"] },
-      { title: "Sports & Energy", emoji: "⚡", desc: "Fuel your active lifestyle", slugs: ["bull-shot"] }
-    ];
+    const sceneMap = {
+      'Home & Living': { emoji: '\uD83C\uDFE0', title: 'Home & Living', desc: 'upgrade your space' },
+      'Beauty & Care': { emoji: '\u2728', title: 'Beauty & Care', desc: 'look and feel your best' },
+      'Electronics': { emoji: '\uD83D\uDCF1', title: 'Electronics', desc: 'smarter tools' },
+      'Kitchen': { emoji: '\uD83C\uDF73', title: 'Kitchen', desc: 'cook better' },
+      'Sports & Outdoors': { emoji: '\uD83C\uDFC3', title: 'Sports & Outdoors', desc: 'active life' },
+      'Automotive': { emoji: '\uD83D\uDE97', title: 'Automotive', desc: 'car care' },
+      'Baby & Kids': { emoji: '\uD83D\uDC76', title: 'Baby & Kids', desc: 'little ones' },
+      'Fashion': { emoji: '\uD83D\uDC55', title: 'Fashion', desc: 'style' },
+      'Pet Supplies': { emoji: '\uD83D\uDC3E', title: 'Pet Supplies', desc: 'pet love' },
+    };
 
-    function getBrand(slug) { return BRANDS.find(b => b.slug === slug); }
+    // ─── Featured pick (hero right card) ───
+    (function buildFeatured() {
+      const slot = document.getElementById('featuredSlot');
+      const top = BRANDS.filter(b => b.isCore && b.bg)[0];
+      if (!top) return;
+      const bg = top.bg ? `background-image:url('${top.bg}');background-size:cover;background-position:center;` : `background:${top.gradient};`;
+      slot.innerHTML = `
+        <a href="brands/${top.slug}.html" target="_blank" rel="noopener noreferrer" class="feature-card block no-underline">
+          <div class="relative h-48 sm:h-56" style="${bg}">
+            <div class="absolute inset-0 hero-gradient"></div>
+            <div class="absolute top-3 left-3">
+              <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg text-[10px] font-medium bg-black/50 text-lime-400 border border-lime-400/20">
+                <i class="fas fa-star text-[8px]"></i> pick of the month
+              </span>
+            </div>
+          </div>
+          <div class="p-5">
+            <div class="flex items-center gap-2.5">
+              ${top.favicon ? `<img class="brand-logo" src="${top.favicon}" alt="" loading="lazy" onerror="this.style.display='none'">` : ''}
+              <span class="text-base font-bold text-zinc-100">${top.brand}</span>
+            </div>
+            <p class="text-xs text-zinc-500 mt-2 leading-relaxed">${top.description}</p>
+            <div class="flex items-center justify-between mt-4 pt-3 border-t border-white/[0.04]">
+              <span class="badge-pill badge-accent"><i class="fas fa-star text-[8px]"></i> reviewed</span>
+              <span class="text-sm font-medium text-lime-400">read review &rarr;</span>
+            </div>
+          </div>
+        </a>`;
+    })();
 
+    // ─── Picks ───
     function buildPicks() {
-      const container = document.getElementById('picksContent');
-      scenarios.forEach(scenario => {
-        const brands = scenario.slugs.map(getBrand).filter(Boolean);
-        if (!brands.length) return;
+      const container = document.getElementById('picksContainer');
+      const core = BRANDS.filter(b => b.isCore);
+      const scenes = {};
+      core.forEach(b => {
+        if (!scenes[b.category]) scenes[b.category] = [];
+        if (scenes[b.category].length < 4) scenes[b.category].push(b);
+      });
+      Object.entries(scenes).forEach(([cat, brands]) => {
+        const sc = sceneMap[cat] || { emoji: '\uD83C\uDF1F', title: cat, desc: '' };
         const sec = document.createElement('div');
-        sec.className = 'picks-section';
-        sec.innerHTML = `<div class="picks-section-header"><h2 class="picks-section-title">${scenario.emoji} ${scenario.title}</h2><span class="picks-section-desc">${scenario.desc}</span></div><div class="picks-grid">${
-          brands.map(b => {
-            const url = `brands/${b.slug}.html`;
-            const bgStyle = b.bg ? `background-image: url('${b.bg}');` : `background: ${b.gradient};`;
-            return `<a class="picks-scene-card" href="${url}" target="_blank" rel="noopener noreferrer">
-              <div class="picks-scene-card-img" style="${bgStyle} background-size: cover; background-position: center;">
-                <span class="picks-scene-card-tag">${scenario.emoji} Staff Pick</span>
-              </div>
-              <div class="picks-scene-card-body">
-                <div class="picks-scene-card-name">${b.favicon ? `<img class="brand-logo-sm" src="${b.favicon}" alt="" loading="lazy" onerror="this.style.display='none'">` : ''}<span>${b.brand}</span></div>
-                <div class="picks-scene-card-cat">${b.category}</div>
-                <div class="picks-scene-card-desc">${b.description}</div>
-                <div class="picks-scene-card-footer">
-                  <span class="picks-scene-card-scene">${scenario.title}</span>
-                  <span class="picks-scene-card-cta">Read My Review →</span>
-                </div>
-              </div>
-            </a>`;
-          }).join('')
-        }</div>`;
+        sec.className = 'animate-up';
+        sec.innerHTML = `
+          <div class="flex items-baseline gap-2 mb-6">
+            <h3 class="text-xl font-bold tracking-tight text-zinc-200"><span class="mr-1">${sc.emoji}</span>${sc.title}</h3>
+            <span class="text-xs text-zinc-600">${sc.desc}</span>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            ${brands.map(b => {
+              const url = `brands/${b.slug}.html`;
+              const bgImg = b.bg ? `background-image:url('${b.bg}');background-size:cover;background-position:center;` : `background:${b.gradient};`;
+              return `
+                <a href="${url}" target="_blank" rel="noopener noreferrer" class="scene-card group">
+                  <div class="relative h-40 overflow-hidden" style="${bgImg}">
+                    <div class="absolute inset-0 hero-gradient"></div>
+                    <div class="absolute top-2.5 left-2.5">
+                      <span class="badge-pill badge-accent text-[9px]"><i class="fas fa-file-pen text-[8px]"></i> exclusive review</span>
+                    </div>
+                  </div>
+                  <div class="p-4">
+                    <div class="flex items-center gap-2">
+                      ${b.favicon ? `<img class="brand-logo" src="${b.favicon}" alt="" loading="lazy" onerror="this.style.display='none'">` : ''}
+                      <span class="text-sm font-semibold text-zinc-200 group-hover:text-lime-400 transition-colors">${b.brand}</span>
+                    </div>
+                    <p class="text-xs text-zinc-600 mt-1.5 leading-relaxed line-clamp-2">${b.description}</p>
+                    <div class="flex items-center justify-between mt-3 pt-2.5 border-t border-white/[0.04]">
+                      <span class="text-[10px] text-zinc-600 uppercase tracking-wide">${cat}</span>
+                      <span class="text-xs font-medium text-zinc-400 group-hover:text-lime-400 transition-colors">read review &rarr;</span>
+                    </div>
+                  </div>
+                </a>`;
+            }).join('')}
+          </div>`;
         container.appendChild(sec);
       });
     }
 
-    // ── Category Tabs & Brand Grid ──
+    // ─── Filter + Grid ───
     let activeCategory = 'All';
     let searchQuery = '';
 
-    function buildCategoryTabs() {
-      const catCounts = {};
-      BRANDS.forEach(b => { catCounts[b.category] = (catCounts[b.category] || 0) + 1; });
-      const tabsEl = document.getElementById('catTabs');
-      tabsEl.innerHTML = '';
-      const allTab = document.createElement('button');
-      allTab.className = 'cat-tab active';
-      allTab.innerHTML = `<span>All</span><span class="cat-tab-count">${BRANDS.length}</span>`;
-      allTab.onclick = () => setCategory('All');
-      tabsEl.appendChild(allTab);
-      Object.keys(catCounts).sort().forEach(cat => {
-        const btn = document.createElement('button');
-        btn.className = 'cat-tab';
-        btn.innerHTML = `<span>${cat}</span><span class="cat-tab-count">${catCounts[cat]}</span>`;
-        btn.onclick = () => setCategory(cat);
-        tabsEl.appendChild(btn);
+    function buildTabs() {
+      const el = document.getElementById('catTabs');
+      const a = document.createElement('button');
+      a.className = 'cat-tab active'; a.textContent = 'all'; a.onclick = () => setCat('All');
+      el.appendChild(a);
+      categories.forEach(c => {
+        const b = document.createElement('button');
+        b.className = 'cat-tab'; b.textContent = c.toLowerCase(); b.onclick = () => setCat(c);
+        el.appendChild(b);
       });
     }
 
-    function setCategory(cat) {
-      activeCategory = cat;
-      document.getElementById('sectionTitle').textContent = cat === 'All' ? 'All Brands' : cat;
-      document.querySelectorAll('#catTabs .cat-tab').forEach(t => t.classList.toggle('active', t.textContent.trim().startsWith(cat)));
+    function setCat(c) {
+      activeCategory = c;
+      document.querySelectorAll('#catTabs .cat-tab').forEach(t => t.classList.toggle('active', t.textContent === c.toLowerCase() || (c === 'All' && t.textContent === 'all')));
       buildGrid();
     }
 
     function buildGrid() {
       const grid = document.getElementById('brandGrid');
-      const noResults = document.getElementById('noResults');
-      const countEl = document.getElementById('brandCount');
+      const no = document.getElementById('noResults');
+      const ct = document.getElementById('brandCount');
       const q = searchQuery.toLowerCase().trim();
-      let visible = BRANDS;
-      if (activeCategory !== 'All') visible = visible.filter(b => b.category === activeCategory);
-      if (q) visible = visible.filter(b => b.brand.toLowerCase().includes(q) || b.category.toLowerCase().includes(q) || b.description.toLowerCase().includes(q));
-      if (!visible.length) { grid.innerHTML = ''; noResults.classList.add('visible'); countEl.textContent = ''; return; }
-      noResults.classList.remove('visible');
-      countEl.textContent = `${visible.length} brand${visible.length !== 1 ? 's' : ''}`;
-      grid.innerHTML = visible.map(b => {
+      let v = BRANDS;
+      if (activeCategory !== 'All') v = v.filter(b => b.category === activeCategory);
+      if (q) v = v.filter(b => b.brand.toLowerCase().includes(q) || b.category.toLowerCase().includes(q));
+      if (!v.length) { grid.innerHTML = ''; no.classList.remove('hidden'); ct.textContent = ''; return; }
+      no.classList.add('hidden');
+      ct.textContent = v.length + ' brand' + (v.length !== 1 ? 's' : '');
+      grid.innerHTML = v.map(b => {
         const url = b.isCore ? `brands/${b.slug}.html` : (AFFILIATE_URLS[b.slug] || '#');
-        const bgStyle = b.bg ? `background-image: url('${b.bg}');` : `background: ${b.gradient};`;
-        const coreTag = b.isCore ? '<span class="core-badge">REVIEWED</span>' : '';
-        return `<a class="brand-card" href="${url}" target="_blank" rel="noopener noreferrer${!b.isCore ? ' nofollow' : ''}">
-          <div class="card-img-wrap" style="${bgStyle} background-size: cover; background-position: center;">
-            ${b.bg ? `<img class="card-img" src="${b.bg}" alt="" loading="lazy" style="opacity:0;position:absolute;" onerror="this.style.display='none'">` : ''}
-          </div>
-          <div class="card-body">
-            <div class="card-name">${b.favicon ? `<img class="brand-logo-sm" src="${b.favicon}" alt="" loading="lazy" onerror="this.style.display='none'">` : ''}<span>${b.brand}</span>${coreTag}</div>
-            <div class="card-cat">${b.category}</div>
-            <div class="card-desc">${b.description}</div>
-            <span class="card-btn">${b.isCore ? 'Read Review →' : 'Shop on Amazon →'}</span>
-          </div>
-        </a>`;
+        return `
+          <a class="minimal-card group" href="${url}" target="_blank" rel="noopener noreferrer${!b.isCore ? ' nofollow' : ''}">
+            <div class="flex items-center gap-2.5 mb-2">
+              ${b.favicon ? `<img class="brand-logo" src="${b.favicon}" alt="" loading="lazy" onerror="this.style.display='none'">` : `<div class="w-[22px] h-[22px] rounded flex items-center justify-center text-[10px] font-bold text-zinc-600 bg-white/[0.04]">${b.brand.charAt(0)}</div>`}
+              <span class="text-sm font-semibold text-zinc-300 truncate">${b.brand}</span>
+              ${b.isCore ? '<span class="text-[9px] text-lime-400 bg-lime-400/10 px-1.5 py-0.5 rounded border border-lime-400/20 ml-auto">review</span>' : ''}
+            </div>
+            <p class="text-[11px] text-zinc-600 leading-relaxed line-clamp-2 mb-2">${b.description}</p>
+            <span class="text-[11px] font-medium text-zinc-500 group-hover:text-lime-400 transition-colors">shop now &rarr;</span>
+          </a>`;
       }).join('');
     }
 
-    // ── Search ──
-    const searchInput = document.getElementById('searchInput');
-    let searchTimeout;
-    searchInput.addEventListener('input', () => {
-      clearTimeout(searchTimeout);
-      searchTimeout = setTimeout(() => { searchQuery = searchInput.value; buildGrid(); }, 150);
-    });
+    document.getElementById('searchInput').addEventListener('input', function() { searchQuery = this.value; buildGrid(); });
 
-    // ── Back to Top ──
-    const backToTop = document.getElementById('backToTop');
-    window.addEventListener('scroll', () => { backToTop.classList.toggle('visible', window.scrollY > 400); }, { passive: true });
+    // ─── View Switching ───
+    function switchView(view) {
+      document.querySelectorAll('.view-tab').forEach(t => t.classList.toggle('active', t.dataset.view === view));
+      document.getElementById('picksPane').style.display = view === 'picks' ? 'block' : 'none';
+      document.getElementById('allPane').style.display = view === 'all' ? 'block' : 'none';
+      if (view === 'all' && !document.getElementById('brandGrid').children.length) buildGrid();
+    }
 
-    // ── Init ──
     buildPicks();
-    buildCategoryTabs();
-    buildGrid();
+    buildTabs();
+    // grid builds on first switch to "all"
   </script>
 </body>
 </html>
