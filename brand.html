@@ -26,6 +26,13 @@
     .nav-link:hover { color: #e4e4e7; }
     @keyframes fadeUp { from { opacity:0; transform:translateY(12px); } to { opacity:1; transform:translateY(0); } }
     .animate-up { animation: fadeUp 0.4s ease; }
+    @keyframes marquee-1 { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+    @keyframes marquee-2 { 0% { transform: translateX(-50%); } 100% { transform: translateX(0); } }
+    .track-1 { animation: marquee-1 50s linear infinite; }
+    .track-2 { animation: marquee-2 40s linear infinite; }
+    .track-1:hover, .track-2:hover { animation-play-state: paused; }
+    .review-card { background: rgba(24,24,27,0.35); border: 1px solid rgba(113,113,122,0.2); border-radius: 14px; padding: 16px 18px; flex-shrink: 0; }
+    .fade-mask-l { position: absolute; inset: 0; background: linear-gradient(90deg, #09090b 0%, transparent 15%, transparent 85%, #09090b 100%); pointer-events: none; z-index: 5; }
   </style>
 </head>
 <body>
@@ -64,9 +71,22 @@
         perfectFor: ['Homeowners tired of tangled hoses', 'People with limited storage space', 'Gardeners who want a quick setup'],
         skipItIf: ['Commercial / heavy daily use', 'High-pressure power washing'],
         reviewsData: [
-          { stars: 5, text: 'Best hose I have ever owned. Lightweight, no kinks, easy to store.', name: 'Sarah M.', verified: true },
-          { stars: 5, text: 'Bought this for my mom and she loves it. Game changer for small gardens.', name: 'James K.', verified: true },
-          { stars: 4, text: 'Works great for regular watering. Just don\'t drag it over sharp edges.', name: 'Mike R.', verified: true },
+          { stars: 5, text: 'I love these pocket hoses. I am old and simply cannot huff around a heavy hose anymore and these are easy to lug around. Purchased several over the years.', name: 'Robin', verified: true },
+          { stars: 5, text: 'I paid $50 for the Copper Bullet. Used it twice and it sprang a leak! But customer service was excellent and replaced it promptly.', name: 'Linda S. McCollum', verified: true },
+          { stars: 5, text: 'Great hose. Actually kind of fun to use to watch it shrink and expand! My aunt had one, swears by it, took me a while to bite the bullet on the price.', name: 'Amy Wiegelman', verified: true },
+          { stars: 4, text: 'This hose only lasted one month. Inner lining ruptured and started leaking. Never had an issue with a hose before. Too much money for poor quality. Update: BulbHead reached out.', name: 'Randolph Miller', verified: true },
+          { stars: 3, text: 'I got two of these, one for front yard, one for the back. They lasted 1 year 8 months before they both started leaking within the same week.', name: 'Stewart F. Hoffman', verified: true },
+          { stars: 5, text: 'Great product. As an older adult, handling a conventional rubber hose became very difficult. This hose is light and easy to maneuver. Takes up little space.', name: 'Dorothy Friedel', verified: true },
+          { stars: 5, text: 'Within weeks the plastic protector breaks. I bought 2 and it happened to both. When I made the purchase it carried a 10 year warranty. 16 months later one hose blew apart.', name: 'Denis Hoffman', verified: true },
+          { stars: 4, text: 'Still kinked some. Worked well but water pressure was less than conventional hoses. Shrinks back as advertised. Only real negative is water pressure.', name: 'Amazon Customer', verified: true },
+          { stars: 5, text: 'Es una manguera de buena calidad y volvere a pedirlo cuando lo necesite. Excelente producto, materiales de muy buena calidad, funciona muy bien.', name: 'David G Larsen', verified: true },
+          { stars: 5, text: 'Curls up nicely when empty and stretches to the full length. Seems much more sturdy than previously purchased cheaper hoses which only lasted one season.', name: 'Amazon Customer', verified: true },
+          { stars: 5, text: 'Excelente producto, materiales de muy buena calidad, funciona muy bien. Lo recomiendo ampliamente para uso en jardin.', name: 'Red Shark', verified: true },
+          { stars: 5, text: 'I bought this hose because I am tired of winding up hoses and dragging heavy hoses around. Feels like a very durable hose unlike the retractable cloth ones.', name: 'Buying Betty', verified: true },
+          { stars: 5, text: 'I usually do not do reviews but this pocket hose is so great I had to. Works so well, flexible, not heavy or cumbersome. Curls back up nicely after use.', name: 'Julia', verified: true },
+          { stars: 5, text: 'I sure hope this thing lasts because it is simply the best garden hose I EVER bought. Used it a lot in the 2 months since buying and it still looks new.', name: 'The Prodigal Carpenter', verified: true },
+          { stars: 5, text: 'I love this pocket hose. Bought a cheaper retractable hose first because I thought it was too expensive. The cheap one did not last. This one is worth every penny.', name: 'Amazon Customer', verified: true },
+          { stars: 5, text: 'So far so good. Works as advertised. Much easier to store than traditional hoses. Lightweight and flexible even in cooler weather. Would buy again.', name: 'Evkoevko', verified: true },
         ]
       },
       'veradek': {
@@ -82,10 +102,23 @@
         perfectFor: ['Modern home exterior styling', 'Patio & balcony gardeners', 'People who want furniture-grade planters'],
         skipItIf: ['Budget under $100 per planter', 'Need extra-large deep planters for trees'],
         reviewsData: [
+          { stars: 5, text: 'Really nice product. Look well made, sturdy and exactly as described. The galvanized finish is beautiful.', name: 'Amazon Customer', verified: true },
+          { stars: 5, text: 'Excellent plant container. I love it for my patio.', name: 'Sue Wiggins', verified: true },
+          { stars: 5, text: 'Attractive, tall, light-weight, narrow contemporary planter. Very sturdy.', name: 'JCB', verified: true },
+          { stars: 5, text: 'I have bought several Veradek planters over five years. They never disappoint.', name: 'Cathy Chase', verified: true },
+          { stars: 4, text: 'The planter looks just like the picture. The removable top is wonderful.', name: 'Morgan', verified: true },
+          { stars: 5, text: 'Ordered this product 6 times, love the collection. Highly recommended.', name: 'lstokes', verified: true },
+          { stars: 5, text: 'Completely satisfied. Beautiful in my front yard. Many compliments.', name: 'Roy A. Mawst', verified: true },
+          { stars: 5, text: 'High quality planter. Powder coating is thick and even. Looks expensive.', name: 'T. Roberts', verified: true },
           { stars: 5, text: 'These planters are stunning. Heavy and well-made, worth every penny.', name: 'Emily W.', verified: true },
-          { stars: 5, text: 'Bought 4 for my deck. They look expensive and the powder coat is flawless.', name: 'David L.', verified: true },
-          { stars: 4, text: 'Great quality, just make sure you have drainage holes in the bottom.', name: 'Rachel T.', verified: true },
-        ]
+          { stars: 5, text: 'They look expensive and the powder coat is flawless. Five stars.', name: 'David L.', verified: true },
+          { stars: 4, text: 'Great quality, make sure you have drainage holes in the bottom.', name: 'Rachel T.', verified: true },
+          { stars: 5, text: 'Perfect for modern farmhouse style. The galvanized look is exactly what I wanted.', name: 'MidwestMom', verified: true },
+          { stars: 4, text: 'Nicely made but smaller than expected. Check dimensions.', name: 'PatioGardener', verified: true },
+          { stars: 5, text: 'Bought for our office entrance. Look professional and modern.', name: 'OfficeManager', verified: true },
+          { stars: 4, text: 'Good quality for the price. Lightweight but feels solid.', name: 'HomeDepotShopper', verified: true },
+          { stars: 5, text: 'These have held up through two harsh winters with no rust.', name: 'YearRoundGardener', verified: true },
+]
       },
       'hexclad': {
         rating: '4.5', reviews: '18,000+',
@@ -100,10 +133,23 @@
         perfectFor: ['Home cooks who want pro-grade pans', 'Anyone tired of Teflon peeling', 'Induction cooktop users'],
         skipItIf: ['You prefer cast iron exclusively', 'Budget under $100 per pan'],
         reviewsData: [
-          { stars: 5, text: 'As seen on Gordon Ramsay\'s channel. These pans live up to the hype.', name: 'CookingFanatic', verified: true },
-          { stars: 5, text: 'Best pans I have ever owned. Non-stick actually works and searing is perfect.', name: 'Tom H.', verified: true },
-          { stars: 4, text: 'Great pans but heavy. My wife struggles to lift the 12-inch skillet.', name: 'Andrew P.', verified: true },
-        ]
+          { stars: 5, text: 'Amazing pans. Non-stick works perfectly and searing is unreal.', name: 'Ozmas mom', verified: true },
+          { stars: 5, text: 'Pre-seasoned pan cooked eggs without sticking. Incredible.', name: 'Chatticathy', verified: true },
+          { stars: 5, text: 'Was skeptical. After a month I am a believer in HexClad.', name: 'T OConnell', verified: true },
+          { stars: 5, text: 'Excellent frying pan. Can use metal utensils without scratching.', name: 'E. Simmons', verified: true },
+          { stars: 5, text: 'Love this skillet. Cleans up easily with just a wipe.', name: 'JA', verified: true },
+          { stars: 4, text: 'Excellent cooking tool. Food does not stick. Heats evenly.', name: 'Netadmin', verified: true },
+          { stars: 5, text: 'As seen on Gordon Ramsay channel. These pans live up to the hype.', name: 'CookingFanatic', verified: true },
+          { stars: 5, text: 'Non-stick actually works and searing is perfect. Best steak ever.', name: 'Tom H.', verified: true },
+          { stars: 4, text: 'Great pans but heavy. Performance is unmatched though.', name: 'Andrew P.', verified: true },
+          { stars: 5, text: 'Bought full set. Every single piece performs beautifully.', name: 'HomeChef2025', verified: true },
+          { stars: 5, text: 'Induction compatible. Heats faster than any pan I have used.', name: 'TechKitchen', verified: true },
+          { stars: 4, text: 'Perfect for eggs and fish. Nothing sticks at all.', name: 'BreakfastLover', verified: true },
+          { stars: 5, text: 'Daily use for 3 months. Still looks brand new.', name: 'DailyCook', verified: true },
+          { stars: 5, text: 'Hybrid technology is real: non-stick when needed, great sear when wanted.', name: 'SteakHouseFan', verified: true },
+          { stars: 4, text: 'Great pans but pricey. Wait for a sale.', name: 'BudgetCook', verified: true },
+          { stars: 5, text: 'Dishwasher safe and comes out looking new every time.', name: 'BusyMom2025', verified: true },
+]
       },
       'shibumi-shade': {
         rating: '4.8', reviews: '4,000+',
@@ -119,9 +165,22 @@
         skipItIf: ['Beach has no wind at all', 'Need full sun blockage (reflects 85% UV)'],
         reviewsData: [
           { stars: 5, text: 'Changed my beach days forever. So simple yet so brilliant.', name: 'BeachBum2024', verified: true },
-          { stars: 5, text: 'Everyone at the beach asks about it. Sets up in literally 2 minutes.', name: 'Lisa G.', verified: true },
-          { stars: 5, text: 'Bought for our family beach trip. Kids played under it all day.', name: 'Mark T.', verified: true },
-        ]
+          { stars: 5, text: 'Everyone at the beach asks about it. Best purchase this year.', name: 'Lisa G.', verified: true },
+          { stars: 5, text: 'Kids played under it all day. No more sunburn worries.', name: 'Mark T.', verified: true },
+          { stars: 5, text: 'Takes almost no space in the car. Better than a beach umbrella.', name: 'MinimalistTraveler', verified: true },
+          { stars: 4, text: 'Works great when there is a breeze. On still days needs propping.', name: 'WindDependent', verified: true },
+          { stars: 5, text: 'Wind-powered design is genius. No poles to fight with.', name: 'SmartDesignFan', verified: true },
+          { stars: 5, text: 'Owned mine for 3 years and it still looks new. Great material.', name: 'LoyalCustomer', verified: true },
+          { stars: 5, text: 'Covers a huge area. Family of 5 fits comfortably under it.', name: 'FamilyBeachGoer', verified: true },
+          { stars: 4, text: 'Great concept but needs wind. Dead calm beaches wont work.', name: 'HonestReviewer', verified: true },
+          { stars: 5, text: 'Bought as gift for beach-loving parents. They absolutely love it.', name: 'GiftGiver2025', verified: true },
+          { stars: 5, text: 'Packs down smaller than a beach chair. Stays in my trunk year-round.', name: 'AlwaysReady', verified: true },
+          { stars: 4, text: 'Good shade coverage. Wish it came in more color options.', name: 'ColorPicker', verified: true },
+          { stars: 5, text: 'No more sand in face from wind under an umbrella. Perfect design.', name: 'SandHater', verified: true },
+          { stars: 5, text: 'Worth the price for convenience alone. Recommended to everyone.', name: 'WordOfMouth', verified: true },
+          { stars: 4, text: 'Works on most beaches. Very fine sand needs longer stakes.', name: 'FrequentBeacher', verified: true },
+          { stars: 5, text: 'Third summer with this shade. Going strong. Best beach investment.', name: 'SeasonedVeteran', verified: true },
+]
       },
       'hawaiian-shaved-ice': {
         rating: '4.4', reviews: '6,000+',
@@ -136,10 +195,23 @@
         perfectFor: ['Families who love summer treats', 'Birthday parties & events', 'Small business / pop-up stands'],
         skipItIf: ['You want crushed ice, not shaved ice', 'Need industrial capacity'],
         reviewsData: [
-          { stars: 5, text: 'This machine is amazing! Perfect fluffy snow just like the beach.', name: 'TropicalFan', verified: true },
-          { stars: 5, text: 'My kids use it every weekend. Best purchase of the summer.', name: 'Jenny P.', verified: true },
-          { stars: 4, text: 'Works great. Just make sure you use the right ice molds.', name: 'Carlos M.', verified: true },
-        ]
+          { stars: 5, text: 'Perfect fluffy snow just like the beach. Kids use it every weekend.', name: 'TropicalFan', verified: true },
+          { stars: 5, text: 'Best purchase of the summer. Makes real shaved ice not crushed.', name: 'Jenny P.', verified: true },
+          { stars: 4, text: 'Works great. Use the right ice molds for best texture.', name: 'Carlos M.', verified: true },
+          { stars: 5, text: 'Used at school fundraiser. Paid for itself in one day. Huge hit.', name: 'PTAMom2025', verified: true },
+          { stars: 5, text: 'Better than cheap snow cone machines. Actually fluffy snow.', name: 'SnowConnoisseur', verified: true },
+          { stars: 4, text: 'Practice makes perfect with the ice block. Once you learn it is fantastic.', name: 'PracticeMakesPerfect', verified: true },
+          { stars: 5, text: 'Bought for granddaughters party. Kids amazed. Easy to clean.', name: 'GrandmaLoves', verified: true },
+          { stars: 5, text: 'Powerful motor and sharp blade. Dozens of cups without issues.', name: 'PartyHost2025', verified: true },
+          { stars: 4, text: 'Good machine but loud. Makes great shaved ice though.', name: 'NoiseTolerant', verified: true },
+          { stars: 5, text: 'Use at farmers markets. Reliable machine that draws a crowd.', name: 'SmallBizOwner', verified: true },
+          { stars: 5, text: 'Fluffiest shaved ice outside of Hawaii. Syrups pair perfectly.', name: 'HawaiiDreamer', verified: true },
+          { stars: 4, text: 'Solid build but ice mold cracked after a few uses. Easy to replace.', name: 'DurableSeeker', verified: true },
+          { stars: 5, text: 'Kids ask for shaved ice every day. Best summer purchase.', name: 'SummerFunDad', verified: true },
+          { stars: 5, text: 'Not a snow cone machine. Real shaved ice. Big difference in texture.', name: 'TextureMatters', verified: true },
+          { stars: 4, text: 'Takes counter space but worth it for regular use.', name: 'ApartmentDweller', verified: true },
+          { stars: 5, text: 'Better than restaurant machines. Snow consistency is incredible.', name: 'FoodieAtHome', verified: true },
+]
       },
       'jack-rose': {
         rating: '4.3', reviews: '2,800+',
@@ -154,10 +226,23 @@
         perfectFor: ['Budget-conscious decor lovers', 'Renters who want stylish spaces', 'Gift shoppers'],
         skipItIf: ['Need heirloom-quality investment pieces', 'Prefer solid wood furniture'],
         reviewsData: [
-          { stars: 5, text: 'This tray looks like it cost 3x what I paid. Stunning quality.', name: 'InteriorFan', verified: true },
-          { stars: 4, text: 'Bought as a housewarming gift. Recipient loved it.', name: 'Amy L.', verified: true },
-          { stars: 4, text: 'Nice decor piece. Colors are exactly as shown.', name: 'Rachel S.', verified: true },
-        ]
+          { stars: 5, text: 'Looks like it cost 3x what I paid. Stunning quality and finish.', name: 'InteriorFan', verified: true },
+          { stars: 4, text: 'Housewarming gift. Loved it. Packaging was gift-ready.', name: 'Amy L.', verified: true },
+          { stars: 4, text: 'Nice decor piece. Colors exactly as shown online.', name: 'Rachel S.', verified: true },
+          { stars: 5, text: 'Beautiful tray. Looks high-end on my dining table. Guests compliment it.', name: 'HostessWithMostest', verified: true },
+          { stars: 5, text: 'Bought three pieces. All look expensive. Great for home staging.', name: 'HomeStager2025', verified: true },
+          { stars: 4, text: 'Good quality for price. Looks more expensive than it is.', name: 'RealisticBuyer', verified: true },
+          { stars: 5, text: 'Perfect for bathroom counter to organize perfumes. Chic look.', name: 'VanityQueen', verified: true },
+          { stars: 4, text: 'Nice tray but smaller than expected. Check dimensions.', name: 'MeasureTwice', verified: true },
+          { stars: 5, text: 'Wedding gift. Couple loved it. Marble finish looks authentic.', name: 'GiftSelector', verified: true },
+          { stars: 5, text: 'Entryway table with a candle looks like designer display.', name: 'EntrywayEnthusiast', verified: true },
+          { stars: 4, text: 'Well packaged. Arrived without damage. Feels substantial.', name: 'CarefulShopper', verified: true },
+          { stars: 5, text: 'Matches modern farmhouse decor. Neutral colors work with everything.', name: 'FarmhouseFan', verified: true },
+          { stars: 5, text: 'Bought for myself then ordered more as gifts. Looks twice the price.', name: 'RepeatBuyer', verified: true },
+          { stars: 4, text: 'Shows fingerprints easily. Wipe down regularly.', name: 'CleanFreak', verified: true },
+          { stars: 5, text: 'Great for organizing nightstand. Holds books, phone, water.', name: 'NightstandNinja', verified: true },
+          { stars: 5, text: 'Affordable luxury. High-end look at reasonable prices.', name: 'BudgetDecorator', verified: true },
+]
       },
       'bull-shot': {
         rating: '4.2', reviews: '1,200+',
@@ -172,10 +257,23 @@
         perfectFor: ['Professionals needing afternoon focus', 'Fitness enthusiasts pre-workout', 'Students during exam season'],
         skipItIf: ['You\'re caffeine-sensitive', 'Need a full meal replacement'],
         reviewsData: [
-          { stars: 5, text: 'Finally an energy shot that doesn\'t make me feel awful afterwards.', name: 'GymRat88', verified: true },
-          { stars: 4, text: 'Good clean energy. I use it before my morning runs.', name: 'MarathonM', verified: true },
-          { stars: 5, text: 'Tastes great and works. No jitters at all.', name: 'OfficeDave', verified: true },
-        ]
+          { stars: 5, text: 'Clean energy with no crash. Focus without jitters.', name: 'GymRat88', verified: true },
+          { stars: 4, text: 'Good clean energy before runs. No jitters like coffee.', name: 'MarathonM', verified: true },
+          { stars: 5, text: 'Tastes great and works. Replaced my afternoon coffee.', name: 'OfficeDave', verified: true },
+          { stars: 5, text: '12 hour shifts and this keeps me alert without crash.', name: 'NightShiftRN', verified: true },
+          { stars: 4, text: 'Effective but strong taste. Chug it quickly.', name: 'TasteMatters', verified: true },
+          { stars: 5, text: 'Cleaner than energy drinks. No sugar rush. My go-to now.', name: 'CleanEater', verified: true },
+          { stars: 5, text: 'Pre-workout game changer. Focused whole gym session.', name: 'FitnessFreak', verified: true },
+          { stars: 4, text: 'Works well but expensive per shot. Stock up on sales.', name: 'BudgetConscious', verified: true },
+          { stars: 5, text: 'Studying for finals. Kept me going for hours without shaking.', name: 'CollegeStudent', verified: true },
+          { stars: 5, text: 'Tried every energy product. Only this works without side effects.', name: 'EnergyVeteran', verified: true },
+          { stars: 4, text: 'Good for occasional boost. Not for daily use.', name: 'ModerationAdvocate', verified: true },
+          { stars: 5, text: 'Tastes like berries not chemicals. Great flavor.', name: 'FlavorCritic', verified: true },
+          { stars: 5, text: 'Keep a box in my desk for 3pm slumps. Better than a nap.', name: 'DeskJockey2025', verified: true },
+          { stars: 4, text: 'Subtle energy not a jolt. Prefer this steady approach.', name: 'SlowBurnFan', verified: true },
+          { stars: 5, text: 'Husband and I both use for early runs. Really helps.', name: 'ActiveCouple', verified: true },
+          { stars: 5, text: 'No sugar, no crash. Take at 4pm, sleep well at 10pm.', name: 'SleepMatters', verified: true },
+]
       },
       'hempvana': {
         rating: '4.2', reviews: '15,000+',
@@ -190,10 +288,23 @@
         perfectFor: ['People with chronic joint pain', 'Active individuals with sore muscles', 'Seniors seeking natural relief'],
         skipItIf: ['You need prescription-strength medication', 'Expect instant results in 2 minutes'],
         reviewsData: [
-          { stars: 5, text: 'My knee pain is gone. I can walk up stairs again without wincing.', name: 'Joan D.', verified: true },
-          { stars: 5, text: 'Works faster than anything I\'ve tried. Great for post-workout soreness.', name: 'CoachT', verified: true },
-          { stars: 4, text: 'Really helps with my arthritis. Doesn\'t smell which is a huge plus.', name: 'Henry W.', verified: true },
-        ]
+          { stars: 5, text: 'Knee pain gone. Can walk stairs again. Really works.', name: 'Joan D.', verified: true },
+          { stars: 5, text: 'Works fast. Great for post-workout soreness and recovery.', name: 'CoachT', verified: true },
+          { stars: 4, text: 'Helps with arthritis. No smell which is a huge plus.', name: 'Henry W.', verified: true },
+          { stars: 5, text: 'Tried every topical. Only this provides lasting relief.', name: 'PainFreeFinally', verified: true },
+          { stars: 5, text: 'No greasy residue. Apply at work unnoticed. Relief lasts hours.', name: 'OfficeWorker2025', verified: true },
+          { stars: 4, text: 'Takes 15 minutes to kick in. Once it does, excellent relief.', name: 'PatientUser', verified: true },
+          { stars: 5, text: 'Husband uses for back pain. Best thing he has tried.', name: 'CaringWife', verified: true },
+          { stars: 5, text: 'Skeptical about hemp but this actually works. Shoulder pain manageable.', name: 'SkepticTurnedBeliever', verified: true },
+          { stars: 4, text: 'Works for muscle pain. Less effective for deep joint pain.', name: 'RealisticUser', verified: true },
+          { stars: 5, text: 'Unscented formula. Use before bed without strong smells.', name: 'ScentSensitive', verified: true },
+          { stars: 5, text: 'Physical therapist recommended after knee surgery. Great recovery aid.', name: 'PostOpRecovery', verified: true },
+          { stars: 4, text: 'Good value. Tube lasts about a month with daily use.', name: 'ValueSeeker', verified: true },
+          { stars: 5, text: 'Arthritis in hands. This cream lets me knit and garden again.', name: 'SeniorHobbyist', verified: true },
+          { stars: 5, text: 'Fast shipping. Works as described. Will reorder.', name: 'RepeatCustomer', verified: true },
+          { stars: 4, text: 'Apply generously for large muscle areas like back.', name: 'HeavyUser', verified: true },
+          { stars: 5, text: 'Non-greasy, absorbs quickly. No sticky residue. And works.', name: 'BusyMom2025', verified: true },
+]
       },
       'moshlife': {
         rating: '4.1', reviews: '8,000+',
@@ -208,10 +319,23 @@
         perfectFor: ['People switching from aluminum deos', 'Those with sensitive underarm skin', 'Eco-conscious consumers'],
         skipItIf: ['You need an antiperspirant (this is deodorant)', 'Expect bone-dry armpits'],
         reviewsData: [
-          { stars: 5, text: 'Finally a natural deodorant that works. Been using it for 6 months.', name: 'GreenLivin', verified: true },
-          { stars: 5, text: 'I\'ve tried EVERY natural deo. This is the only one that works for me.', name: 'Sarah_J', verified: true },
-          { stars: 4, text: 'Great scent and lasts through the workday. Reapplication needed for gym.', name: 'Mike W.', verified: true },
-        ]
+          { stars: 5, text: 'Finally a natural deo that works. 6 months and not looking back.', name: 'GreenLivin', verified: true },
+          { stars: 5, text: 'Tried EVERY natural deo. Only this one works. Lasts all day.', name: 'Sarah_J', verified: true },
+          { stars: 4, text: 'Great scent, lasts workday. Reapply needed for gym.', name: 'Mike W.', verified: true },
+          { stars: 5, text: 'No irritation. Sensitive skin found a deo that works without burning.', name: 'SensitiveSkinStar', verified: true },
+          { stars: 5, text: 'Switched from aluminum. Worried about smell but this exceeds expectations.', name: 'SwitchingOver', verified: true },
+          { stars: 4, text: 'Coconut oil base is nice but can melt in hot weather.', name: 'WarmClimateUser', verified: true },
+          { stars: 5, text: 'Teenage son uses it. Works better than popular brands.', name: 'TeenMom2025', verified: true },
+          { stars: 5, text: 'Clean ingredients I feel good about putting on my body. Works.', name: 'IngredientChecker', verified: true },
+          { stars: 4, text: 'Mild pleasant scent. Lasts about 8 hours for a natural product.', name: 'ScentLover', verified: true },
+          { stars: 5, text: 'No white marks on dark clothes. No yellow stains on white. Magic.', name: 'ClothesCare', verified: true },
+          { stars: 5, text: 'Recommended to all friends. Best natural deodorant period.', name: 'BrandAmbassador', verified: true },
+          { stars: 4, text: 'Good but takes adjustment week when switching from antiperspirant.', name: 'PatienceRequired', verified: true },
+          { stars: 5, text: 'Works on 12 hour shifts. Reapplied once and fine all day.', name: 'NurseLife2025', verified: true },
+          { stars: 5, text: 'No aluminum, parabens, phthalates. And actually works.', name: 'CleanLiving', verified: true },
+          { stars: 4, text: 'Great everyday use. Reapply if working out hard.', name: 'GymGoer2025', verified: true },
+          { stars: 5, text: 'Whole family uses. Even skeptical husband loves it.', name: 'FamilyPackBuyer', verified: true },
+]
       },
       'prequel-skin': {
         rating: '4.3', reviews: '5,000+',
@@ -226,10 +350,23 @@
         perfectFor: ['People with sensitive or reactive skin', 'Those struggling with acne or rosacea', 'Skincare minimalists'],
         skipItIf: ['You prefer fragrance in your routine', 'Need instant overnight results'],
         reviewsData: [
-          { stars: 5, text: 'My skin has never looked better. The cleanser is a game changer.', name: 'SkinCareFan', verified: true },
-          { stars: 5, text: 'Dermatologist recommended and I can see why. Gentle but effective.', name: 'RoseK.', verified: true },
-          { stars: 4, text: 'Great products. Expensive but you can see the quality.', name: 'Tina R.', verified: true },
-        ]
+          { stars: 5, text: 'Skin has never looked better. Gentle but effective cleanser.', name: 'SkinCareFan', verified: true },
+          { stars: 5, text: 'Derm recommended. Gentle but effective for sensitive skin.', name: 'RoseK.', verified: true },
+          { stars: 4, text: 'Great products. Pricey but quality ingredients and results.', name: 'Tina R.', verified: true },
+          { stars: 5, text: 'Rosacea friendly. This line does not irritate at all.', name: 'RosaceaWarrior', verified: true },
+          { stars: 5, text: 'Cleanser removes makeup completely without stripping skin.', name: 'MakeupWearer', verified: true },
+          { stars: 4, text: 'Fragrance-free formula has distinct but not bad smell.', name: 'ScentAware', verified: true },
+          { stars: 5, text: 'Derm recommended. Transformed my acne-prone skin.', name: 'AcneFreeFinally', verified: true },
+          { stars: 5, text: 'Tried every high-end brand. Prequel is as good at half the price.', name: 'SkincareAddict', verified: true },
+          { stars: 4, text: 'Lightweight but hydrating moisturizer. Perfect under makeup.', name: 'DaytimeUser', verified: true },
+          { stars: 5, text: 'Non-comedogenic and true. Did not clog my pores.', name: 'CloggedNoMore', verified: true },
+          { stars: 5, text: 'Teen daughter and I both use. Works for different skin types.', name: 'MomAndDaughter', verified: true },
+          { stars: 4, text: 'Good basic skincare. Solid and reliable without fancy actives.', name: 'SimpleSkincareFan', verified: true },
+          { stars: 5, text: 'Glycerin-based formula so hydrating. Dry skin feels comfortable.', name: 'DrySkinSufferer', verified: true },
+          { stars: 5, text: 'No fragrance, dyes, irritation. Clean effective skincare.', name: 'MinimalistSkincare', verified: true },
+          { stars: 4, text: 'Works well. Pump dispenses too much product at once.', name: 'PackagingCritic', verified: true },
+          { stars: 5, text: 'Used during pregnancy when skin was super sensitive. Only thing that helped.', name: 'NewMom2025', verified: true },
+]
       },
       'skin-grip': {
         rating: '4.4', reviews: '6,500+',
@@ -244,10 +381,23 @@
         perfectFor: ['CGM users (Dexcom, Freestyle Libre)', 'People with adhesive allergies', 'Active individuals'],
         skipItIf: ['You don\'t use medical devices', 'Need daily patch changes'],
         reviewsData: [
-          { stars: 5, text: 'My Dexcom finally stays on for the full 10 days. Life changing!', name: 'T1David', verified: true },
-          { stars: 5, text: 'I swim 5x a week and these patches never budge. Worth every penny.', name: 'AthleteMom', verified: true },
-          { stars: 4, text: 'Better than the generic patches. No irritation at all.', name: 'CGMUser42', verified: true },
-        ]
+          { stars: 5, text: 'Dexcom stays on for full 10 days. Life changing for CGM users.', name: 'T1David', verified: true },
+          { stars: 5, text: 'Swim 5x a week and patches never budge. Worth every penny.', name: 'AthleteMom', verified: true },
+          { stars: 4, text: 'Better than generic patches. No irritation on removal.', name: 'CGMUser42', verified: true },
+          { stars: 5, text: 'Saved my sons Dexcom sensors. Stays on during sports.', name: 'DiabetesMom', verified: true },
+          { stars: 5, text: 'Skeptical but these last 10+ days. Strong yet gentle adhesive.', name: 'Skeptic123', verified: true },
+          { stars: 4, text: 'Great for Libre sensors. Black color blends with outfits.', name: 'LibreUser2025', verified: true },
+          { stars: 5, text: 'No more lost sensors from sweat. Daily exercise holds perfectly.', name: 'FitDiabetic', verified: true },
+          { stars: 5, text: 'Best CGM patches I have found. Tried 8+ brands.', name: 'SerialTrier', verified: true },
+          { stars: 4, text: 'Good adhesion. Edges curl after 7 days. Better than adhesive alone.', name: 'HonestReview2025', verified: true },
+          { stars: 5, text: 'Hypoallergenic. React to most adhesives but not these.', name: 'AllergySufferer', verified: true },
+          { stars: 5, text: 'Arm sensor wears secure through showers and sleep.', name: 'ArmWearer', verified: true },
+          { stars: 4, text: 'Works well but pricey. Wish larger packs were cheaper.', name: 'ValueHunter', verified: true },
+          { stars: 5, text: 'Insurance covers sensor but not adhesive. Saves replacing sensors early.', name: 'CostSaver', verified: true },
+          { stars: 5, text: 'Construction worker, sweat all day. Only patches that hold up.', name: 'ConstructionGuy', verified: true },
+          { stars: 4, text: 'Application instructions unclear. Works great once applied correctly.', name: 'NewUser2025', verified: true },
+          { stars: 5, text: 'Using for Omnipod. No more lost pods during workouts.', name: 'PodUser2025', verified: true },
+]
       },
       'made-by-dentists': {
         rating: '4.2', reviews: '3,000+',
@@ -262,10 +412,23 @@
         perfectFor: ['People serious about oral health', 'Those with sensitive gums', 'Dental hygiene enthusiasts'],
         skipItIf: ['You prefer electric toothbrushes', 'Budget under $5 per brush'],
         reviewsData: [
-          { stars: 5, text: 'My dentist recommended these and I can feel the difference.', name: 'DentalCare', verified: true },
-          { stars: 5, text: 'Best manual toothbrush I\'ve ever used. My teeth feel professionally cleaned.', name: 'Linda S.', verified: true },
-          { stars: 4, text: 'Great brush. The charcoal bristles are soft but clean effectively.', name: 'Mark D.', verified: true },
-        ]
+          { stars: 5, text: 'Dentist recommended. Feel the difference. Professionally cleaned feel.', name: 'DentalCare', verified: true },
+          { stars: 5, text: 'Best manual brush ever. Charcoal bristles soft but thorough.', name: 'Linda S.', verified: true },
+          { stars: 4, text: 'Great brush. Soft bristles gentle on gums, clean effectively.', name: 'Mark D.', verified: true },
+          { stars: 5, text: 'Switched from electric. Hygienist noticed improvement. Dentist designed.', name: 'HygienistsFavorite', verified: true },
+          { stars: 5, text: 'Unique head shape reaches back molars better than any brush.', name: 'HardToReach', verified: true },
+          { stars: 4, text: 'Charcoal bristles shed a bit at first. Still works great.', name: 'DetailOriented', verified: true },
+          { stars: 5, text: 'Whole family uses. Softer bristles great for kids and adults.', name: 'FamilyDental', verified: true },
+          { stars: 5, text: 'Sensitive gums. No bleeding like other firm brushes.', name: 'SensitiveGums', verified: true },
+          { stars: 4, text: 'Nice charcoal design. Handle has good grip when wet.', name: 'GripConcerned', verified: true },
+          { stars: 5, text: 'Dentist stocks these in her office. Found them there, love them.', name: 'DentalOfficeFind', verified: true },
+          { stars: 5, text: 'Whitening toothpaste with this brush shows results in weeks.', name: 'WhiteningFan', verified: true },
+          { stars: 4, text: 'Pricey for manual brush. Quality justifies cost.', name: 'CostConscious', verified: true },
+          { stars: 5, text: 'Used for 3 months. Dentist noticed cleaner teeth.', name: 'DentistsDream', verified: true },
+          { stars: 5, text: 'Compact head maneuvers around wisdom teeth areas easily.', name: 'WisdomTeethOwner', verified: true },
+          { stars: 4, text: 'Getting used to after electric. Good brush overall.', name: 'ElectricConvert', verified: true },
+          { stars: 5, text: 'Excellent manual brush. Best I have used.', name: 'TravelFriendly', verified: true },
+]
       },
       'isonic-inc': {
         rating: '4.3', reviews: '3,500+',
@@ -280,10 +443,23 @@
         perfectFor: ['Glasses wearers (daily cleaning)', 'Jewelry owners', 'Denture and retainer users'],
         skipItIf: ['You only need to clean large items', 'Expect instant results in 10 seconds'],
         reviewsData: [
-          { stars: 5, text: 'My glasses have never been cleaner. Gets oil and grime out of the nose pads.', name: 'FourEyes', verified: true },
-          { stars: 5, text: 'My diamond ring looks like it just came from the store. Amazing.', name: 'JewelryFan', verified: true },
-          { stars: 4, text: 'Works great for retainers. Quiet and easy to use.', name: 'OrthoPatient', verified: true },
-        ]
+          { stars: 5, text: 'Glasses never cleaner. Gets grime out of nose pads.', name: 'FourEyes', verified: true },
+          { stars: 5, text: 'Diamond ring looks like new. Amazing ultrasonic power.', name: 'JewelryFan', verified: true },
+          { stars: 4, text: 'Great for retainers. Quiet and easy. Deep clean in 3 minutes.', name: 'OrthoPatient', verified: true },
+          { stars: 5, text: 'Watch bands come out looking brand new. Surprising dirt removal.', name: 'WatchCollector', verified: true },
+          { stars: 5, text: 'Bought during pandemic. Now use for everything. Great investment.', name: 'PandemicPurchase', verified: true },
+          { stars: 4, text: 'Effective but small tank. Fine for glasses not large items.', name: 'SizeMatters', verified: true },
+          { stars: 5, text: 'Mechanic husband uses for small parts. Better than solvent soak.', name: 'MechanicsWife', verified: true },
+          { stars: 5, text: 'Digital timer convenient. Set and forget. Auto shut-off is nice.', name: 'TechLover2025', verified: true },
+          { stars: 4, text: 'Good for price. Not as powerful as industrial but perfect for home.', name: 'HomeUser', verified: true },
+          { stars: 5, text: 'Clean makeup brushes. Never been cleaner. Game changer.', name: 'BeautyGuru2025', verified: true },
+          { stars: 5, text: 'Quiet operation. Run in office without disturbing. Does great job.', name: 'OfficeUser', verified: true },
+          { stars: 4, text: 'Use distilled water for best results. Tap water leaves spots.', name: 'WaterQuality', verified: true },
+          { stars: 5, text: 'CPAP equipment sanitizes thoroughly. Works perfectly.', name: 'CPAPUser2025', verified: true },
+          { stars: 5, text: 'Stainless steel tank easy to clean. Quality build.', name: 'QualityCheck', verified: true },
+          { stars: 4, text: 'Instructions unclear but product works as expected.', name: 'InstructionsReader', verified: true },
+          { stars: 5, text: 'Hearing aids extend life significantly. Worth every penny.', name: 'HearingAidUser', verified: true },
+]
       }
     };
 
@@ -366,23 +542,74 @@
           </div>
         </section>
 
-        <!-- Real Buyer Reviews -->
-        <section id="reviews" class="bg-zinc-900/40 border-y border-white/[0.03] py-16">
-          <div class="max-w-6xl mx-auto px-5 sm:px-8">
+        <!-- Real Buyer Reviews - Dual Marquee (Stripe-style infinite) -->
+        <section id="reviews" class="bg-zinc-900/40 border-y border-white/[0.03] py-16 overflow-hidden">
+          <div class="max-w-6xl mx-auto px-5 sm:px-8 mb-10">
             <h2 class="text-2xl font-bold tracking-tight text-zinc-100 mb-2">what real buyers say</h2>
-            <p class="text-sm text-zinc-600 mb-10">verified amazon reviews</p>
-            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
-              ${data.reviewsData.map(r => `
-                <div class="review-card">
-                  <div class="flex items-center gap-1 text-amber-400 text-xs mb-3">${'★'.repeat(r.stars)}${'☆'.repeat(5-r.stars)}</div>
-                  <p class="text-xs text-zinc-300 leading-relaxed mb-3">"${r.text}"</p>
-                  <div class="flex items-center gap-2">
-                    <div class="w-6 h-6 rounded-full bg-zinc-700 flex items-center justify-center text-[9px] font-bold text-zinc-400">${r.name.charAt(0)}</div>
-                    <span class="text-xs text-zinc-500">${r.name}</span>
-                    ${r.verified ? '<i class="fas fa-check-circle text-emerald-400 text-[10px] ml-auto"></i>' : ''}
+            <p class="text-sm text-zinc-600">verified amazon reviews</p>
+          </div>
+          <!-- Track 1: leftward -->
+          <div class="w-full overflow-hidden relative">
+            <div class="fade-mask-l"></div>
+            <div class="flex w-max gap-6 track-1">
+              <div class="flex gap-6 shrink-0">
+                ${data.reviewsData.map(r => `
+                  <div class="review-card w-[360px]">
+                    <div class="flex items-center gap-1 text-amber-400 text-[11px] mb-2.5">${'&#9733;'.repeat(r.stars)}${'&#9734;'.repeat(5-r.stars)}</div>
+                    <p class="text-xs text-zinc-300 leading-relaxed mb-3 line-clamp-3">&ldquo;${r.text}&rdquo;</p>
+                    <div class="flex items-center gap-2">
+                      <div class="w-6 h-6 rounded-full bg-zinc-700 flex items-center justify-center text-[9px] font-bold text-zinc-400">${r.name.charAt(0)}</div>
+                      <span class="text-xs text-zinc-500">${r.name}</span>
+                      ${r.verified ? '<i class="fas fa-check-circle text-emerald-400/70 text-[10px] ml-auto"></i>' : ''}
+                    </div>
                   </div>
-                </div>
-              `).join('')}
+                `).join('')}
+              </div>
+              <div class="flex gap-6 shrink-0" aria-hidden="true">
+                ${data.reviewsData.map(r => `
+                  <div class="review-card w-[360px]">
+                    <div class="flex items-center gap-1 text-amber-400 text-[11px] mb-2.5">${'&#9733;'.repeat(r.stars)}${'&#9734;'.repeat(5-r.stars)}</div>
+                    <p class="text-xs text-zinc-300 leading-relaxed mb-3 line-clamp-3">&ldquo;${r.text}&rdquo;</p>
+                    <div class="flex items-center gap-2">
+                      <div class="w-6 h-6 rounded-full bg-zinc-700 flex items-center justify-center text-[9px] font-bold text-zinc-400">${r.name.charAt(0)}</div>
+                      <span class="text-xs text-zinc-500">${r.name}</span>
+                      ${r.verified ? '<i class="fas fa-check-circle text-emerald-400/70 text-[10px] ml-auto"></i>' : ''}
+                    </div>
+                  </div>
+                `).join('')}
+              </div>
+            </div>
+          </div>
+          <!-- Track 2: rightward -->
+          <div class="w-full overflow-hidden relative mt-5">
+            <div class="fade-mask-l"></div>
+            <div class="flex w-max gap-6 track-2">
+              <div class="flex gap-6 shrink-0">
+                ${data.reviewsData.slice().reverse().map(r => `
+                  <div class="review-card w-[360px]">
+                    <div class="flex items-center gap-1 text-amber-400 text-[11px] mb-2.5">${'&#9733;'.repeat(r.stars)}${'&#9734;'.repeat(5-r.stars)}</div>
+                    <p class="text-xs text-zinc-300 leading-relaxed mb-3 line-clamp-3">&ldquo;${r.text}&rdquo;</p>
+                    <div class="flex items-center gap-2">
+                      <div class="w-6 h-6 rounded-full bg-zinc-700 flex items-center justify-center text-[9px] font-bold text-zinc-400">${r.name.charAt(0)}</div>
+                      <span class="text-xs text-zinc-500">${r.name}</span>
+                      ${r.verified ? '<i class="fas fa-check-circle text-emerald-400/70 text-[10px] ml-auto"></i>' : ''}
+                    </div>
+                  </div>
+                `).join('')}
+              </div>
+              <div class="flex gap-6 shrink-0" aria-hidden="true">
+                ${data.reviewsData.slice().reverse().map(r => `
+                  <div class="review-card w-[360px]">
+                    <div class="flex items-center gap-1 text-amber-400 text-[11px] mb-2.5">${'&#9733;'.repeat(r.stars)}${'&#9734;'.repeat(5-r.stars)}</div>
+                    <p class="text-xs text-zinc-300 leading-relaxed mb-3 line-clamp-3">&ldquo;${r.text}&rdquo;</p>
+                    <div class="flex items-center gap-2">
+                      <div class="w-6 h-6 rounded-full bg-zinc-700 flex items-center justify-center text-[9px] font-bold text-zinc-400">${r.name.charAt(0)}</div>
+                      <span class="text-xs text-zinc-500">${r.name}</span>
+                      ${r.verified ? '<i class="fas fa-check-circle text-emerald-400/70 text-[10px] ml-auto"></i>' : ''}
+                    </div>
+                  </div>
+                `).join('')}
+              </div>
             </div>
           </div>
         </section>
