@@ -95,9 +95,9 @@
   <!-- Trust bar -->
   <section class="max-w-6xl mx-auto px-5 sm:px-8 pb-6">
     <div class="flex flex-wrap items-center justify-center gap-3 py-3 border-t border-white/[0.03]">
-      <span class="badge-pill"><i class="fas fa-star text-amber-400/70 text-[10px]"></i> 4.9/5 avg brand rating</span>
-      <span class="badge-pill"><i class="fas fa-users text-zinc-500 text-[10px]"></i> 10k+ shoppers guided</span>
-      <span class="badge-pill"><i class="fas fa-check text-zinc-500 text-[10px]"></i> unbiased picks</span>
+      <span class="badge-pill"><i class="fas fa-star text-amber-400/70 text-[10px]"></i> 4.5/5 avg &middot; 475k+ amazon ratings</span>
+      <span class="badge-pill"><i class="fas fa-users text-zinc-500 text-[10px]"></i> 70k+ shoppers guided (6 mo)</span>
+      <span class="badge-pill"><i class="fas fa-check text-zinc-500 text-[10px]"></i> reviews verified from amazon</span>
     </div>
   </section>
 
@@ -119,7 +119,7 @@
       <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-6">
         <div>
           <h2 class="text-xl font-bold tracking-tight text-zinc-200">all brands</h2>
-          <p class="text-xs text-zinc-600 mt-0.5">every brand we track</p>
+          <p class="text-xs text-zinc-600 mt-0.5">ranked by last-30-day sales</p>
         </div>
         <input class="search" id="searchInput" type="text" placeholder="search...">
       </div>
@@ -150,6 +150,7 @@
     const sceneMap = {
       'Home & Living': { title: 'Home & Living', desc: 'upgrade your space' },
       'Beauty & Care': { title: 'Beauty & Care', desc: 'look and feel your best' },
+      'Wellness': { title: 'Wellness', desc: 'mind & body' },
       'Electronics': { title: 'Electronics', desc: 'smarter tools' },
       'Kitchen': { title: 'Kitchen', desc: 'cook better' },
       'Sports & Outdoors': { title: 'Sports & Outdoors', desc: 'active life' },
@@ -196,7 +197,7 @@
       const scenes = {};
       core.forEach(b => {
         if (!scenes[b.category]) scenes[b.category] = [];
-        if (scenes[b.category].length < 4) scenes[b.category].push(b);
+        if (scenes[b.category].length < 10) scenes[b.category].push(b);
       });
       Object.entries(scenes).forEach(([cat, brands]) => {
         const sc = sceneMap[cat] || { title: cat, desc: '' };

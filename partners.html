@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Partner with VinceMedia — $25K+ in a single month, 13.4% top conversion rate. Affiliate marketing for Amazon brands.">
+  <meta name="description" content="Partner with VinceMedia — verified Amazon Attribution results: $30K+ in August, $82K+ over six months, 3.64% conversion. Affiliate marketing for Amazon brands.">
   <meta name="robots" content="index, follow">
   <title>VinceMedia — Partner Program</title>
   <link rel="icon" type="image/png" href="logo.png">
@@ -18,7 +18,7 @@
     .ghost-accent:hover { background: rgba(163,227,53,0.06); }
     .stat-card { background: rgba(255,255,255,0.02); border: 1px solid rgba(113,113,122,0.15); border-radius: 20px; padding: 28px; text-align: center; position: relative; overflow: hidden; }
     .stat-card::after { content: ''; position: absolute; bottom: 0; left: 10%; right: 10%; height: 2px; border-radius: 2px; background: linear-gradient(90deg, transparent, rgba(163,227,53,0.4), transparent); }
-    .stat-number { font-size: 3.5rem; font-weight: 900; letter-spacing: -0.04em; line-height: 1; }
+    .stat-number { font-size: 3rem; font-weight: 900; letter-spacing: -0.04em; line-height: 1; }
     .rank-card { background: rgba(255,255,255,0.015); border: 1px solid rgba(113,113,122,0.12); border-radius: 16px; padding: 24px; }
     .rank-row { display: flex; align-items: center; gap: 12px; padding: 12px 0; border-bottom: 1px solid rgba(113,113,122,0.1); }
     .rank-row:last-child { border-bottom: none; }
@@ -33,7 +33,11 @@
     .founder-card { background: rgba(255,255,255,0.02); border: 1px solid rgba(113,113,122,0.15); border-radius: 20px; padding: 28px; }
     .glow { position: relative; }
     .glow::before { content: ''; position: absolute; inset: -2px; border-radius: 14px; background: linear-gradient(135deg, rgba(163,227,53,0.15), transparent, rgba(163,227,53,0.08)); z-index: -1; }
-    @keyframes fadeUp { from { opacity:0; transform:translateY(12px); } to { opacity:1; transform:translateY(0); } }
+    .period-tab { position: relative; padding: 10px 26px; font-size: 0.95rem; font-weight: 600; cursor: pointer; transition: all 0.25s; color: #71717a; background: transparent; border: 1px solid transparent; border-radius: 12px; user-select: none; }
+    .period-tab:hover { color: #d4d4d8; background: rgba(255,255,255,0.03); }
+    .period-tab.active { color: #09090b; background: #a3e635; border-color: #a3e635; box-shadow: 0 4px 18px rgba(163,227,53,0.2); }
+    .pane { animation: fadeUp 0.3s ease; }
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
     .slide-in { animation: fadeUp 0.35s ease; }
   </style>
 </head>
@@ -50,43 +54,51 @@
   <section class="max-w-6xl mx-auto px-5 sm:px-8 pt-14 pb-8 text-center">
     <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-xl bg-white/[0.03] border border-white/[0.06] mb-6">
       <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
-      <span class="text-xs font-medium text-zinc-500">verified affiliate · single month results</span>
+      <span class="text-xs font-medium text-zinc-500">verified affiliate · amazon attribution</span>
     </div>
     <h1 class="text-5xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-zinc-100 leading-[1.04]">
       let's <span class="text-lime-400">grow together</span>
     </h1>
     <p class="text-sm sm:text-base text-zinc-500 mt-4 max-w-lg mx-auto leading-relaxed">
-      i'm an amazon affiliate partner with a proven track record. 
+      i'm an amazon affiliate partner with a proven track record.
       if you're a brand looking for authentic promotion, let's talk.
     </p>
   </section>
 
-  <!-- Mega Stats with glow -->
+  <!-- Period Tabs -->
+  <section class="max-w-5xl mx-auto px-5 sm:px-8 pb-6">
+    <div class="flex items-center justify-center gap-2">
+      <button class="period-tab active" data-period="month" onclick="switchPeriod('month')">last 30 days</button>
+      <button class="period-tab" data-period="half" onclick="switchPeriod('half')">last 6 months</button>
+    </div>
+  </section>
+
+  <!-- Mega Stats -->
   <section class="max-w-5xl mx-auto px-5 sm:px-8 pb-8">
     <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
       <div class="stat-card">
-        <div class="stat-number text-lime-400">$25k<span class="text-2xl font-bold">+</span></div>
+        <div class="stat-number text-lime-400" id="statSales">$30,259</div>
         <div class="text-xs font-medium text-zinc-500 uppercase tracking-wider mt-2">tracked sales</div>
-        <div class="text-[10px] text-zinc-600 mt-1">single month verified</div>
+        <div class="text-[10px] text-zinc-600 mt-1" id="statSalesNote">august, amazon us</div>
       </div>
       <div class="stat-card">
-        <div class="stat-number text-zinc-100">520<span class="text-2xl font-bold">+</span></div>
+        <div class="stat-number text-zinc-100" id="statConv">847</div>
         <div class="text-xs font-medium text-zinc-500 uppercase tracking-wider mt-2">conversions</div>
-        <div class="text-[10px] text-zinc-600 mt-1">across 114 brands</div>
+        <div class="text-[10px] text-zinc-600 mt-1" id="statConvNote">across 127 brands</div>
       </div>
       <div class="stat-card">
-        <div class="stat-number text-zinc-100">4.2<span class="text-2xl font-bold">%</span></div>
+        <div class="stat-number text-zinc-100" id="statRate">3.64<span class="text-2xl font-bold">%</span></div>
         <div class="text-xs font-medium text-zinc-500 uppercase tracking-wider mt-2">avg conv rate</div>
-        <div class="text-[10px] text-zinc-600 mt-1">top at 16.3%</div>
+        <div class="text-[10px] text-zinc-600 mt-1" id="statRateNote">23,267 clicks</div>
       </div>
     </div>
   </section>
 
-  <!-- Rankings: side by side on desktop -->
-  <section class="max-w-5xl mx-auto px-5 sm:px-8 py-8">
+  <!-- Rankings -->
+  <section class="max-w-5xl mx-auto px-5 sm:px-8 py-6">
     <div class="flex items-baseline gap-3 mb-8 justify-center">
       <h2 class="text-2xl font-bold tracking-tight text-zinc-200">top performers</h2>
-      <span class="text-sm text-zinc-600">by the numbers</span>
+      <span class="text-sm text-zinc-600" id="rankPeriodLabel">by the numbers · last 30 days</span>
     </div>
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-5">
       <div id="rankSales"></div>
@@ -110,8 +122,8 @@
   <!-- CTA Button (click to reveal email) -->
   <section class="max-w-3xl mx-auto px-5 sm:px-8 py-8 text-center">
     <div class="glow inline-block">
-      <button id="ctaBtn" onclick="revealEmail()" class="ghost-btn ghost-accent text-base px-10 py-3.5" style="font-size:1rem;padding:14px 40px;">
-        <span id="ctaText">apply for a free brand audit</span>
+      <button id="ctaBtn" onclick="revealEmail()" class="ghost-btn ghost-accent text-base" style="font-size:1rem;padding:14px 40px;">
+        <span>apply for a free brand audit</span>
         <i class="fas fa-arrow-right text-sm"></i>
       </button>
     </div>
@@ -124,6 +136,9 @@
         </button>
       </div>
     </div>
+    <p class="text-[10px] text-zinc-600 mt-6 max-w-md mx-auto leading-relaxed">
+      all figures from the amazon attribution (us) dashboard · last 30 days = august 2026 · conversion rate = orders / clicks
+    </p>
   </section>
 
   <footer class="max-w-6xl mx-auto px-5 sm:px-8 py-8 mt-4 border-t border-white/[0.03]">
@@ -140,45 +155,101 @@
       document.getElementById('emailReveal').classList.remove('hidden');
     }
 
-    // Rank data
-    const bySales = [
-      { brand: 'Pocket Hose', stat: '$5,798', pct: 100 },
-      { brand: 'Veradek', stat: '$3,577', pct: 62 },
-      { brand: 'HexClad', stat: '$2,883', pct: 50 }
-    ];
-    const byConv = [
-      { brand: 'Made By Dentists', stat: '16.3%', pct: 100 },
-      { brand: 'Veradek', stat: '13.4%', pct: 82 },
-      { brand: 'Bull Shot', stat: '11.5%', pct: 71 }
-    ];
+    // ── data: month vs half (amazon attribution us only) ──
+    const PERIODS = {
+      month: {
+        label: 'last 30 days · august 2026',
+        statNoteSales: 'august, amazon us',
+        statNoteConv: 'across 127 brands',
+        statNoteRate: '23,267 clicks',
+        sales: ['$30,259', '$30,259'],
+        conv: ['847', '847'],
+        rate: ['3.64', '3.64'],
+        bySales: [
+          { brand: 'USX MOUNT', stat: '$5,684', sub: '157 conversions', pct: 100 },
+          { brand: 'Mounting Dream', stat: '$2,854', sub: '74 conversions', pct: 50 },
+          { brand: 'Bull Shot', stat: '$1,567', sub: '67 conversions', pct: 28 },
+          { brand: 'Hempvana', stat: '$1,462', sub: '64 conversions', pct: 26 },
+          { brand: 'fatty15', stat: '$1,214', sub: '11 conversions', pct: 21 }
+        ],
+        byConv: [
+          { brand: 'Dry Idea', stat: '75.0%', sub: '27 orders / 36 clicks', pct: 100 },
+          { brand: 'SACHEU', stat: '40.0%', sub: '14 orders / 35 clicks', pct: 53 },
+          { brand: 'Starbond', stat: '21.5%', sub: '17 orders / 79 clicks', pct: 29 },
+          { brand: 'The Jel Sert Company', stat: '17.4%', sub: '8 orders / 46 clicks', pct: 23 },
+          { brand: 'Relaxium', stat: '14.5%', sub: '30 orders / 207 clicks', pct: 19 }
+        ]
+      },
+      half: {
+        label: 'last 6 months',
+        statNoteSales: 'mar-aug, amazon us',
+        statNoteConv: 'across 259 brands',
+        statNoteRate: '70,500 clicks',
+        sales: ['$82,616', '$82,616'],
+        conv: ['2,072', '2,072'],
+        rate: ['2.94', '2.94'],
+        bySales: [
+          { brand: 'Pocket Hose', stat: '$9,616', sub: '176 conversions', pct: 100 },
+          { brand: 'USX MOUNT', stat: '$7,775', sub: '217 conversions', pct: 81 },
+          { brand: 'Veradek', stat: '$3,860', sub: '25 conversions', pct: 40 },
+          { brand: 'HexClad', stat: '$3,839', sub: '24 conversions', pct: 40 },
+          { brand: 'Hempvana', stat: '$3,284', sub: '135 conversions', pct: 34 }
+        ],
+        byConv: [
+          { brand: 'Dry Idea', stat: '38.5%', sub: '40 orders / 104 clicks', pct: 100 },
+          { brand: 'SACHEU', stat: '37.8%', sub: '14 orders / 37 clicks', pct: 98 },
+          { brand: 'ATLAS OLIVE OILS USA Inc.', stat: '32.1%', sub: '17 orders / 53 clicks', pct: 83 },
+          { brand: 'Starbond', stat: '23.0%', sub: '20 orders / 87 clicks', pct: 60 },
+          { brand: 'Prequel Skin', stat: '16.4%', sub: '38 orders / 232 clicks', pct: 43 }
+        ]
+      }
+    };
 
     const medals = ['medal-gold', 'medal-silver', 'medal-bronze'];
 
-    function buildRankSlot(containerId, title, subtitle, data) {
+    function iconHtml(brand) {
+      const bd = BRANDS.find(function(b) { return b.brand === brand; });
+      if (bd && bd.favicon) {
+        return '<img class="brand-logo-sm" src="' + bd.favicon + '" alt="" loading="lazy" onerror="this.style.display=\'none\'">';
+      }
+      return '<span class="w-[22px] h-[22px] rounded flex items-center justify-center text-[10px] font-bold text-zinc-600 bg-white/[0.04]">' + brand.charAt(0) + '</span>';
+    }
+
+    function buildRank(containerId, title, subtitle, data) {
       const el = document.getElementById(containerId);
-      let h = `<div class="rank-card">
-        <div class="flex items-center gap-2 mb-4">
-          <span class="text-sm font-bold text-zinc-200">${title}</span>
-          <span class="text-[11px] text-zinc-600">${subtitle}</span>
-        </div>`;
-      data.forEach((item, i) => {
-        var bd = BRANDS.find(function(b) { return b.brand === item.brand; });
-        var iconHtml = bd && bd.favicon
-          ? '<img class="brand-logo-sm" src="'+bd.favicon+'" alt="" loading="lazy" onerror="this.style.display=\'none\'">'
-          : '<span class="w-[22px] h-[22px] rounded flex items-center justify-center text-[10px] font-bold text-zinc-600 bg-white/[0.04]">'+item.brand.charAt(0)+'</span>';
-        h += '<div class="rank-row">';
-        h += '<div class="w-9 h-9 rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0 ' + medals[i] + '">' + (i + 1) + '</div>';
-        h += iconHtml;
-        h += '<div class="flex-1 min-w-0"><div class="flex items-center justify-between"><span class="text-sm font-semibold text-zinc-200 truncate">' + item.brand + '</span><span class="text-sm font-bold text-lime-400 ml-2">' + item.stat + '</span></div>';
-        h += '<div class="progress-bar mt-1.5"><div class="progress-fill" style="width:' + item.pct + '%"></div></div></div>';
-        h += '</div>';
+      let h = '<div class="rank-card">'
+        + '<div class="flex items-center gap-2 mb-4">'
+        + '<span class="text-sm font-bold text-zinc-200">' + title + '</span>'
+        + '<span class="text-[11px] text-zinc-600">' + subtitle + '</span></div>';
+      data.forEach(function(item, i) {
+        const medal = i < 3 ? medals[i] : 'medal-silver';
+        h += '<div class="rank-row">'
+          + '<div class="w-9 h-9 rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0 ' + medal + '">' + (i + 1) + '</div>'
+          + iconHtml(item.brand)
+          + '<div class="flex-1 min-w-0"><div class="flex items-center justify-between"><span class="text-sm font-semibold text-zinc-200 truncate">' + item.brand + '</span><span class="text-sm font-bold text-lime-400 ml-2">' + item.stat + '</span></div>'
+          + '<div class="flex items-center gap-2 mt-1"><span class="text-[10px] text-zinc-600 flex-1">' + item.sub + '</span></div>'
+          + '<div class="progress-bar mt-1.5"><div class="progress-fill" style="width:' + item.pct + '%"></div></div></div></div>';
       });
       h += '</div>';
       el.innerHTML = h;
     }
 
-    buildRankSlot('rankSales', 'sales leaders', 'by revenue', bySales);
-    buildRankSlot('rankConv', 'conversion leaders', 'by rate', byConv);
+    function switchPeriod(p) {
+      document.querySelectorAll('.period-tab').forEach(function(t) { t.classList.toggle('active', t.dataset.period === p); });
+      const d = PERIODS[p];
+      document.getElementById('statSales').textContent = d.sales[0];
+      document.getElementById('statConv').textContent = d.conv[0];
+      document.getElementById('statRate').innerHTML = d.rate[0] + '<span class="text-2xl font-bold">%</span>';
+      document.getElementById('statSalesNote').textContent = d.statNoteSales;
+      document.getElementById('statConvNote').textContent = d.statNoteConv;
+      document.getElementById('statRateNote').textContent = d.statNoteRate;
+      document.getElementById('rankPeriodLabel').textContent = 'by the numbers · ' + d.label;
+      const pane = document.querySelector('#rankSales').parentElement;
+      buildRank('rankSales', 'sales leaders', 'by revenue', d.bySales);
+      buildRank('rankConv', 'conversion leaders', 'by rate (30+ clicks)', d.byConv);
+    }
+
+    switchPeriod('month');
   </script>
 </body>
 </html>
