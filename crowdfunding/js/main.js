@@ -3,7 +3,9 @@
 (function () {
   const $ = (id) => document.getElementById(id);
   const fmtMoney = (n) => '$' + Number(n).toLocaleString('en-US');
-  const fmtCompact = (n) => { if (n >= 1000000) return '$' + (n / 1000000).toFixed(1) + 'M'; if (n >= 1000) return '$' + Math.round(n / 1000) + 'k'; return '$' + n; };
+  const dispPledged = (n) => { if (n >= 1000000) return '$' + (n / 1000000).toFixed(1) + 'M+'; if (n >= 1000) return '$' + Math.round(n / 1000) + 'k+'; return '$' + n; };
+  const dispBackers = (n) => { if (n >= 1000) return Math.floor(n / 100) * 100 + '+'; return '' + n; };
+  const dispPct = (pc) => { if (pc >= 1000) return Math.floor(pc / 1000) * 1000 + '%+'; return pc + '%'; };
 
   let DATA = null;
   let filter = 'all';
@@ -11,6 +13,7 @@
   function endTs(p) { return p.endDate ? new Date(p.endDate).getTime() : null; }
   function isLive(p) { return p.type === 'crowdfunding' && p.status === 'live' && (!endTs(p) || endTs(p) > Date.now()); }
   function isLatePledge(p) { return p.type === 'crowdfunding' && p.status === 'late-pledge'; }
+  function isEnded(p) { return p.type === 'crowdfunding' && !isLatePledge(p) && endTs(p) !== null && endTs(p) <= Date.now(); }
   function isReady(p) { return p.type === 'shopify'; }
   function pct(p) { return p.goal && p.pledged ? Math.min(999, Math.round((p.pledged / p.goal) * 100)) : null; }
   function daysLeft(p) { const t = endTs(p); if (!t) return null; return Math.max(0, Math.ceil((t - Date.now()) / 86400000)); }
@@ -18,15 +21,16 @@
   function badge(p) {
     if (p.isHero) return '<span class="badge-pill" style="background:#a3e635;color:#09090b;">Vince Pick</span>';
     if (isReady(p)) return '<span class="badge-pill" style="border:1px solid #22d3ee;color:#22d3ee;">Ready to Ship</span>';
+    if (isEnded(p)) return '<span class="badge-pill" style="border:1px solid #71717a;color:#a1a1aa;">Campaign Ended</span>';
     const pc = pct(p);
-    if (pc !== null && pc >= 100) return '<span class="badge-pill" style="border:1px solid #f59e0b;color:#fbbf24;">' + pc + '% Funded</span>';
+    if (pc !== null && pc >= 100) return '<span class="badge-pill" style="border:1px solid #f59e0b;color:#fbbf24;">' + dispPct(pc) + ' Funded</span>';
     return '<span class="badge-pill" style="border:1px solid #52525b;color:#a1a1aa;">Fresh Launch</span>';
   }
 
   function countdownText(p) {
     if (isLatePledge(p)) return '<span style="color:#a3e635;">Funded &middot; Late pledges open</span>';
     const d = daysLeft(p);
-    if (p.type === 'crowdfunding') return d !== null && d > 0 ? '<span style="color:#fbbf24;">' + d + (d === 1 ? ' day' : ' days') + ' left</span>' : '<span style="color:#f87171;">ended</span>';
+    if (p.type === 'crowdfunding') return d !== null && d > 0 ? '<span style="color:#fbbf24;">' + d + (d === 1 ? ' day' : ' days') + ' left</span>' : '<span style="color:#71717a;">ended</span>';
     return '';
   }
 
@@ -47,8 +51,8 @@
           : '<div class="pt-1">' +
               (progress ? '<div class="h-1.5 rounded-full bg-zinc-800 overflow-hidden"><div class="h-full rounded-full" style="width:' + progress + ';background:#a3e635;"></div></div>' : '') +
               '<div class="flex items-center justify-between text-xs pt-1.5">' +
-                '<span class="text-zinc-400 font-semibold">' + (pc !== null ? pc + '% Funded' : '') + '</span>' +
-                '<span class="text-zinc-500">' + fmtCompact(p.pledged) + ' · ' + Number(p.backers).toLocaleString('en-US') + ' backers</span>' +
+                '<span class="text-zinc-400 font-semibold">' + (pc !== null ? dispPct(pc) + ' Funded' : '') + '</span>' +
+                '<span class="text-zinc-500">' + dispPledged(p.pledged) + ' · ' + dispBackers(p.backers) + ' backers</span>' +
               '</div>' +
             '</div>') +
         '<div class="pt-2 mt-auto"><span class="ghost-btn w-full justify-center text-xs" style="padding:7px 12px;">' + (isReady(p) ? 'View Deal <i class="fas fa-arrow-right"></i>' : 'Explore Campaign <i class="fas fa-arrow-right"></i>') + '</span></div>' +
@@ -69,8 +73,8 @@
           '<h1 class="text-2xl sm:text-3xl font-extrabold tracking-tight text-zinc-50 leading-tight">' + p.name + '</h1>' +
           '<p class="text-sm text-zinc-400 leading-relaxed">' + p.blurb + '</p>' +
           '<div class="flex flex-wrap gap-x-6 gap-y-2 text-xs pt-1">' +
-            '<div><div class="text-zinc-600">pledged</div><div class="font-bold text-zinc-100 text-sm">' + fmtMoney(p.pledged) + '</div></div>' +
-            '<div><div class="text-zinc-600">backers</div><div class="font-bold text-zinc-100 text-sm">' + Number(p.backers).toLocaleString('en-US') + '</div></div>' +
+            '<div><div class="text-zinc-600">pledged</div><div class="font-bold text-zinc-100 text-sm">' + dispPledged(p.pledged) + '</div></div>' +
+            '<div><div class="text-zinc-600">backers</div><div class="font-bold text-zinc-100 text-sm">' + dispBackers(p.backers) + '</div></div>' +
             '<div><div class="text-zinc-600">updates</div><div class="font-bold text-zinc-100 text-sm">' + p.updates + '</div></div>' +
             '<div><div class="text-zinc-600">campaign ends</div><div class="font-bold" style="color:#fbbf24;font-size:0.85rem;" id="heroCountdown">…</div></div>' +
           '</div>' +
@@ -113,9 +117,11 @@
     if (cd) {
       const t = endTs(hero);
       const tick = () => {
-        if (!t) { cd.innerHTML = 'ended'; return; }
-        const d = Math.max(0, Math.ceil((t - Date.now()) / 86400000));
-        const h = Math.max(0, Math.floor(((t - Date.now()) % 86400000) / 3600000));
+        if (!t) { cd.innerHTML = 'Ended'; return; }
+        const diff = t - Date.now();
+        if (diff <= 0) { cd.innerHTML = 'Ended'; return; }
+        const d = Math.max(0, Math.ceil(diff / 86400000));
+        const h = Math.max(0, Math.floor((diff % 86400000) / 3600000));
         cd.innerHTML = d + 'd ' + h + 'h';
       };
       tick();

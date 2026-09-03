@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="robots" content="index, follow">
+  <meta name="robots" content="noindex, follow">
   <title>brand review — VinceMedia</title>
   <link rel="icon" type="image/png" href="logo.png">
   <script src="https://cdn.tailwindcss.com"></script>
@@ -55,6 +55,7 @@
   <script src="affiliate-links.js?v=20260904"></script>
   <script>
     const slug = new URLSearchParams(window.location.search).get('slug') || '';
+    if (slug) { window.location.replace('brands/' + slug + '.html'); }
     const brand = BRANDS.find(b => b.slug === slug);
 
     // ─── Detailed content per brand ───
