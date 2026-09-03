@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="VinceMedia Innovation Lab — handpicked crowdfunding campaigns and ready-to-ship products. Independent audits, honest risk notes, no hype.">
+  <meta name="robots" content="index, follow">
+  <title>Innovation Lab — VinceMedia</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', system-ui, sans-serif; background: #09090b; color: #e4e4e7; }
+    .nav-link { color: #71717a; font-size: 0.85rem; font-weight: 500; transition: color 0.2s; text-decoration: none; }
+    .nav-link:hover { color: #e4e4e7; }
+    .nav-link.active { color: #e4e4e7; }
+    .ghost-btn { display: inline-flex; align-items: center; gap: 6px; padding: 9px 22px; border: 1px solid rgba(113,113,122,0.25); border-radius: 12px; font-size: 0.85rem; font-weight: 500; color: #e4e4e7; transition: all 0.2s; background: transparent; cursor: pointer; text-decoration: none; }
+    .ghost-btn:hover { border-color: rgba(113,113,122,0.5); background: rgba(255,255,255,0.03); }
+    .ghost-accent { border-color: #a3e635; color: #a3e635; }
+    .ghost-accent:hover { background: rgba(163,227,53,0.06); }
+    .proj-card { background: rgba(255,255,255,0.02); border: 1px solid rgba(113,113,122,0.15); border-radius: 16px; overflow: hidden; transition: all 0.3s ease-in-out; display: block; text-decoration: none; }
+    .proj-card:hover { border-color: rgba(113,113,122,0.35); background: rgba(255,255,255,0.04); transform: translateY(-4px); box-shadow: 0 8px 20px rgba(0,0,0,0.4); }
+    .view-tab { padding: 6px 16px; border-radius: 10px; font-size: 0.8rem; font-weight: 500; color: #71717a; cursor: pointer; transition: all 0.2s; background: transparent; border: 1px solid transparent; }
+    .view-tab:hover { color: #e4e4e7; }
+    .view-tab.active { color: #09090b; background: #a3e635; }
+    .badge-pill { display: inline-flex; align-items: center; gap: 5px; padding: 3px 10px; border-radius: 999px; font-size: 0.68rem; font-weight: 600; letter-spacing: 0.02em; }
+  </style>
+</head>
+<body class="bg-[#09090b] text-zinc-200">
+
+  <!-- Nav -->
+  <nav class="max-w-6xl mx-auto px-5 sm:px-8 py-5 flex items-center justify-between">
+    <a href="../" class="text-base font-bold tracking-tight text-zinc-100 no-underline">VinceMedia</a>
+    <div class="flex items-center gap-5">
+      <a href="../" class="nav-link">home</a>
+      <a href="index.html" class="nav-link active">crowdfunding</a>
+      <a href="../partners.html" class="nav-link">for brands</a>
+    </div>
+  </nav>
+
+  <!-- Trust Banner -->
+  <div class="max-w-6xl mx-auto px-5 sm:px-8">
+    <div class="rounded-xl border border-zinc-800 bg-zinc-900/40 px-4 py-3 text-xs text-zinc-500 leading-relaxed">
+      <span class="font-semibold text-zinc-300">Vince Innovation Lab:</span> handpicked consumer innovations &amp; backer projects. We surface unique designs and assess campaign transparency to bring you notable tech and gear.
+      <span class="text-zinc-600">Note: crowdfunding carries fulfillment risk — items that say "ready to ship" are sold via stores, not campaigns.</span>
+    </div>
+  </div>
+
+  <!-- Hero -->
+  <section class="max-w-6xl mx-auto px-5 sm:px-8 pt-8 pb-2" id="heroSection"></section>
+
+  <!-- Filter -->
+  <section class="max-w-6xl mx-auto px-5 sm:px-8 pt-6 pb-2 flex flex-wrap items-center gap-2" id="filterBar"></section>
+
+  <!-- Grid -->
+  <section class="max-w-6xl mx-auto px-5 sm:px-8 py-6">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4" id="projGrid"></div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="border-t border-zinc-800/60 mt-10">
+    <div class="max-w-6xl mx-auto px-5 sm:px-8 py-8 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-zinc-600">
+      <div>&copy; 2026 VinceMedia — independent picks. We may earn a commission from links on this page.</div>
+      <div class="flex items-center gap-4">
+        <a href="../" class="hover:text-zinc-400 transition-colors">home</a>
+        <a href="index.html" class="hover:text-zinc-400 transition-colors">crowdfunding</a>
+        <a href="../partners.html" class="hover:text-zinc-400 transition-colors">for brands</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
