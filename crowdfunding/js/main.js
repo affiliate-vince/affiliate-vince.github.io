@@ -3,8 +3,8 @@
 (function () {
   const $ = (id) => document.getElementById(id);
   const fmtMoney = (n) => '$' + Number(n).toLocaleString('en-US');
-  const dispPledged = (n) => { if (n >= 1000000) return '$' + (n / 1000000).toFixed(1) + 'M+'; if (n >= 1000) return '$' + Math.round(n / 1000) + 'k+'; return '$' + n; };
-  const dispBackers = (n) => { if (n >= 1000) return Math.floor(n / 100) * 100 + '+'; return '' + n; };
+  const dispPledged = (n) => { if (n >= 1000000) return '$' + Math.floor(n / 1000000) + 'M+'; if (n >= 100000) return '$' + Math.floor(n / 100000) * 100 + 'k+'; if (n >= 1000) return '$' + Math.floor(n / 1000) + 'k+'; return '$' + n; };
+  const dispBackers = (n) => { if (n >= 1000) return (Math.floor(n / 1000) * 1000).toLocaleString('en-US') + '+'; if (n >= 100) return (Math.floor(n / 100) * 100).toLocaleString('en-US') + '+'; return '' + n; };
   const dispPct = (pc) => { if (pc >= 1000) return Math.floor(pc / 1000) * 1000 + '%+'; return pc + '%'; };
 
   let DATA = null;
@@ -52,7 +52,7 @@
               (progress ? '<div class="h-1.5 rounded-full bg-zinc-800 overflow-hidden"><div class="h-full rounded-full" style="width:' + progress + ';background:#a3e635;"></div></div>' : '') +
               '<div class="flex items-center justify-between text-xs pt-1.5">' +
                 '<span class="text-zinc-400 font-semibold">' + (pc !== null ? dispPct(pc) + ' Funded' : '') + '</span>' +
-                '<span class="text-zinc-500">' + dispPledged(p.pledged) + ' · ' + dispBackers(p.backers) + ' backers</span>' +
+                '<span class="text-zinc-500">' + dispPledged(p.pledged) + ' · ' + dispBackers(p.backers) + ' backers' + (p.type === 'crowdfunding' && !isLatePledge(p) ? ' · and counting' : '') + '</span>' +
               '</div>' +
             '</div>') +
         '<div class="pt-2 mt-auto"><span class="ghost-btn w-full justify-center text-xs" style="padding:7px 12px;">' + (isReady(p) ? 'View Deal <i class="fas fa-arrow-right"></i>' : 'Explore Campaign <i class="fas fa-arrow-right"></i>') + '</span></div>' +
@@ -62,9 +62,9 @@
   function heroCard(p) {
     const pc = pct(p);
     return '<div class="proj-card overflow-hidden" style="background:linear-gradient(120deg, rgba(163,227,53,0.05), rgba(9,9,11,0) 45%);">' +
-      '<div class="grid grid-cols-1 md:grid-cols-2 gap-0">' +
-        '<div class="relative" style="aspect-ratio:16/9;min-height:100%;background:#18181b;">' +
-          (p.image ? '<img src="' + p.image + '" alt="' + p.name + '" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display=\'none\'">' : '') +
+      '<div class="grid grid-cols-1 lg:grid-cols-2 gap-0">' +
+        '<div class="bg-zinc-800 overflow-hidden">' +
+          (p.image ? '<img src="' + p.image + '" alt="' + p.name + '" class="w-full h-56 sm:h-72 lg:h-full object-cover" onerror="this.style.display=\'none\'">' : '<div class="h-56 sm:h-72 lg:h-full"></div>') +
         '</div>' +
         '<div class="p-6 sm:p-8 flex flex-col justify-center gap-3">' +
           '<div class="flex items-center gap-2 flex-wrap">' + badge(p) +
@@ -72,6 +72,7 @@
           '</div>' +
           '<h1 class="text-2xl sm:text-3xl font-extrabold tracking-tight text-zinc-50 leading-tight">' + p.name + '</h1>' +
           '<p class="text-sm text-zinc-400 leading-relaxed">' + p.blurb + '</p>' +
+          (p.type === 'crowdfunding' && !isLatePledge(p) ? '<p class="text-[11px] text-zinc-500"><i class="fas fa-arrow-trend-up"></i> campaign figures shown are lower bounds — they only go up.</p>' : '') +
           '<div class="flex flex-wrap gap-x-6 gap-y-2 text-xs pt-1">' +
             '<div><div class="text-zinc-600">pledged</div><div class="font-bold text-zinc-100 text-sm">' + dispPledged(p.pledged) + '</div></div>' +
             '<div><div class="text-zinc-600">backers</div><div class="font-bold text-zinc-100 text-sm">' + dispBackers(p.backers) + '</div></div>' +
