@@ -28,9 +28,9 @@
   }
 
   function countdownText(p) {
-    if (isLatePledge(p)) return '<span style="color:#a3e635;">Funded &middot; Late pledges open</span>';
+    if (isLatePledge(p)) return '<span style="color:#a3e635;">Funded &middot; Late Pledges Open</span>';
     const d = daysLeft(p);
-    if (p.type === 'crowdfunding') return d !== null && d > 0 ? '<span style="color:#fbbf24;">' + d + (d === 1 ? ' day' : ' days') + ' left</span>' : '<span style="color:#71717a;">ended</span>';
+    if (p.type === 'crowdfunding') return d !== null && d > 0 ? '<span style="color:#fbbf24;">' + d + (d === 1 ? ' day' : ' days') + ' left</span>' : '<span style="color:#71717a;">Ended</span>';
     return '';
   }
 
@@ -47,7 +47,7 @@
         '<div class="text-[15px] font-bold text-zinc-100 leading-snug truncate">' + p.name + '</div>' +
         '<div class="text-xs text-zinc-500 leading-relaxed line-clamp-2" style="display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;">' + p.tagline + '</div>' +
         (isReady(p)
-          ? '<div class="flex items-center gap-2 text-xs text-zinc-400 pt-1"><span style="color:#22d3ee;"><i class="fas fa-box-open"></i> In Stock &amp; Guaranteed</span><span class="ml-auto text-zinc-500">Store price</span></div>'
+          ? '<div class="flex items-center gap-2 text-xs text-zinc-400 pt-1"><span style="color:#22d3ee;"><i class="fas fa-box-open"></i> In Stock &amp; Guaranteed</span><span class="ml-auto text-zinc-500">STORE PRICE</span></div>'
           : '<div class="pt-1">' +
               (progress ? '<div class="h-1.5 rounded-full bg-zinc-800 overflow-hidden"><div class="h-full rounded-full" style="width:' + progress + ';background:#a3e635;"></div></div>' : '') +
               '<div class="flex items-center justify-between text-xs pt-1.5">' +
@@ -74,13 +74,13 @@
           '<p class="text-sm text-zinc-400 leading-relaxed">' + p.blurb + '</p>' +
           (p.type === 'crowdfunding' && !isLatePledge(p) ? '<p class="text-[11px] text-zinc-500"><i class="fas fa-arrow-trend-up"></i> campaign figures shown are lower bounds — they only go up.</p>' : '') +
           '<div class="flex flex-wrap gap-x-6 gap-y-2 text-xs pt-1">' +
-            '<div><div class="text-zinc-600">pledged</div><div class="font-bold text-zinc-100 text-sm">' + dispPledged(p.pledged) + '</div></div>' +
-            '<div><div class="text-zinc-600">backers</div><div class="font-bold text-zinc-100 text-sm">' + dispBackers(p.backers) + '</div></div>' +
-            '<div><div class="text-zinc-600">updates</div><div class="font-bold text-zinc-100 text-sm">' + p.updates + '</div></div>' +
-            '<div><div class="text-zinc-600">campaign ends</div><div class="font-bold" style="color:#fbbf24;font-size:0.85rem;" id="heroCountdown">…</div></div>' +
+            '<div><div class="text-zinc-600">PLEDGED</div><div class="font-bold text-zinc-100 text-sm">' + dispPledged(p.pledged) + '</div></div>' +
+            '<div><div class="text-zinc-600">BACKERS</div><div class="font-bold text-zinc-100 text-sm">' + dispBackers(p.backers) + '</div></div>' +
+            '<div><div class="text-zinc-600">UPDATES</div><div class="font-bold text-zinc-100 text-sm">' + p.updates + '</div></div>' +
+            '<div><div class="text-zinc-600">CAMPAIGN ENDS</div><div class="font-bold" style="color:#fbbf24;font-size:0.85rem;" id="heroCountdown">…</div></div>' +
           '</div>' +
           '<div class="pt-2 flex items-center gap-3 flex-wrap">' +
-            '<a class="ghost-btn ghost-accent" href="projects/beni.html"><i class="fas fa-search"></i> Read the full audit</a>' +
+            '<a class="ghost-btn ghost-accent" href="projects/beni.html"><i class="fas fa-search"></i> Read the Full Audit</a>' +
           '</div>' +
         '</div>' +
       '</div></div>';
@@ -111,7 +111,7 @@
     });
     // hero 项目在网格中保留一张普通卡
     $('projGrid').innerHTML = shown.map(card).join('');
-    if (!shown.length) $('projGrid').innerHTML = '<p class="text-zinc-600 text-sm col-span-3">nothing here yet.</p>';
+    if (!shown.length) $('projGrid').innerHTML = '<p class="text-zinc-600 text-sm col-span-3">Nothing here yet.</p>';
 
     // hero 倒计时
     const cd = $('heroCountdown');

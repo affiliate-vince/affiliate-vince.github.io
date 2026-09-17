@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="VinceMedia — Handpicked Amazon brands that solve real problems. Expert recommendations with curated reviews.">
+  <meta name="description" content="Honest, independent Amazon product reviews and Kickstarter campaign audits — real buyer ratings, curated picks, and no sponsorships.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://affiliate-vince-github-io.vercel.app/">
-  <title>VinceMedia — picked for a reason</title>
-  <meta property="og:title" content="VinceMedia — picked for a reason">
-  <meta property="og:description" content="Brands that solve real problems — curated, reviewed, and trusted.">
+  <title>VinceMedia — Honest Amazon Reviews &amp; Kickstarter Audits</title>
+  <meta property="og:title" content="VinceMedia — Honest Amazon Reviews &amp; Kickstarter Audits">
+  <meta property="og:description" content="Real buyer ratings, curated picks, and honest Kickstarter campaign audits.">
   <meta property="og:image" content="https://affiliate-vince-github-io.vercel.app/logo.png">
   <link rel="icon" type="image/png" href="logo.png">
   <script src="https://cdn.tailwindcss.com"></script>
@@ -48,15 +48,21 @@
     @keyframes fadeUp { from { opacity:0; transform:translateY(10px); } to { opacity:1; transform:translateY(0); } }
     .animate-up { animation: fadeUp 0.35s ease; }
   </style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+ {"@type":"Organization","name":"VinceMedia","url":"https://affiliate-vince-github-io.vercel.app/","logo":"https://affiliate-vince-github-io.vercel.app/logo.png","description":"Independent, honest reviews of Amazon products and Kickstarter campaigns."},
+ {"@type":"WebSite","name":"VinceMedia","url":"https://affiliate-vince-github-io.vercel.app/"}
+]}
+</script>
 </head>
 <body>
   <!-- Nav -->
   <header class="max-w-6xl mx-auto px-5 sm:px-8 py-4 flex items-center justify-between">
     <a href="/" class="text-base font-bold tracking-tight text-zinc-100 no-underline">VinceMedia</a>
     <div class="flex items-center gap-5">
-      <a href="/" class="nav-link">home</a>
-      <a href="crowdfunding/" class="nav-link">crowdfunding</a>
-      <a href="partners.html" class="nav-link">for brands</a>
+      <a href="/" class="nav-link">Home</a>
+      <a href="crowdfunding/" class="nav-link">Crowdfunding</a>
+      <a href="partners.html" class="nav-link">For Brands</a>
     </div>
   </header>
 
@@ -66,22 +72,22 @@
       <div class="lg:col-span-3">
         <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-xl bg-white/[0.03] border border-white/[0.06] mb-6">
           <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
-          <span class="text-xs font-medium text-zinc-500">curated with intention</span>
+          <span class="text-xs font-medium text-zinc-500">CURATED WITH INTENTION</span>
         </div>
         <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-zinc-100 leading-[1.06]">
-          picked for<br><span class="text-lime-400">a reason</span>
+          Picked for<br><span class="text-lime-400">a Reason</span>
         </h1>
         <p class="text-sm sm:text-base text-zinc-500 mt-4 max-w-md leading-relaxed">
-          Every brand here earned its spot — through performance, quality, or real user love. 
-          No sponsorships, no shortcuts.
+          Honest Amazon product reviews &amp; Kickstarter campaign audits — every brand here earned its spot
+          through performance, quality, or real user love. No sponsorships, no shortcuts.
         </p>
         <div class="flex flex-wrap gap-3 mt-7">
           <a href="#brands-section" onclick="switchView('picks');return true;" class="ghost-btn ghost-accent">
-            <span>see curated picks</span>
+            <span>See Curated Picks</span>
             <i class="fas fa-arrow-right text-xs opacity-60"></i>
           </a>
           <a href="#brands-section" onclick="switchView('all');return true;" class="ghost-btn">
-            <span>browse all</span>
+            <span>Browse All</span>
           </a>
         </div>
       </div>
@@ -96,9 +102,9 @@
   <!-- Trust bar -->
   <section class="max-w-6xl mx-auto px-5 sm:px-8 pb-6">
     <div class="flex flex-wrap items-center justify-center gap-3 py-3 border-t border-white/[0.03]">
-      <span class="badge-pill"><i class="fas fa-star text-amber-400/70 text-[10px]"></i> 4.5/5 avg &middot; 475k+ amazon ratings</span>
-      <span class="badge-pill"><i class="fas fa-users text-zinc-500 text-[10px]"></i> 70k+ shoppers guided (6 mo)</span>
-      <span class="badge-pill"><i class="fas fa-check text-zinc-500 text-[10px]"></i> reviews verified from amazon</span>
+      <span class="badge-pill"><i class="fas fa-star text-amber-400/70 text-[10px]"></i> 4.5/5 AVG &middot; 475K+ AMAZON RATINGS</span>
+      <span class="badge-pill"><i class="fas fa-users text-zinc-500 text-[10px]"></i> 70K+ SHOPPERS GUIDED (6 MO)</span>
+      <span class="badge-pill"><i class="fas fa-check text-zinc-500 text-[10px]"></i> REVIEWS VERIFIED FROM AMAZON</span>
     </div>
   </section>
 
@@ -106,8 +112,8 @@
   <section id="brands-section" class="max-w-6xl mx-auto px-5 sm:px-8 py-12">
     <!-- Tab Bar -->
     <div class="flex items-center gap-1 mb-8 border-b border-white/[0.04] pb-1">
-      <button class="view-tab active" data-view="picks" onclick="switchView('picks')">curated picks</button>
-      <button class="view-tab" data-view="all" onclick="switchView('all')">all brands</button>
+      <button class="view-tab active" data-view="picks" onclick="switchView('picks')">Curated Picks</button>
+      <button class="view-tab" data-view="all" onclick="switchView('all')">All Brands</button>
     </div>
 
     <!-- Curated Picks Pane -->
@@ -119,8 +125,8 @@
     <div id="allPane" class="tab-pane" style="display:none;">
       <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-6">
         <div>
-          <h2 class="text-xl font-bold tracking-tight text-zinc-200">all brands</h2>
-          <p class="text-xs text-zinc-600 mt-0.5">ranked by last-30-day sales</p>
+          <h2 class="text-xl font-bold tracking-tight text-zinc-200">All Brands</h2>
+          <p class="text-xs text-zinc-600 mt-0.5">Ranked by Last-30-Day Sales</p>
         </div>
         <input class="search" id="searchInput" type="text" placeholder="search...">
       </div>
@@ -129,7 +135,7 @@
         <span class="text-xs text-zinc-600" id="brandCount"></span>
       </div>
       <div id="noResults" class="hidden text-center py-16">
-        <p class="text-zinc-500 text-sm">no brands match.</p>
+        <p class="text-zinc-500 text-sm">No brands match.</p>
       </div>
       <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3" id="brandGrid"></div>
     </div>
@@ -139,10 +145,10 @@
   <section class="max-w-6xl mx-auto px-5 sm:px-8 py-12">
     <div class="flex items-end justify-between mb-4">
       <div>
-        <h2 class="text-xl font-bold tracking-tight text-zinc-200">picks from Kickstarter &amp; beyond</h2>
-        <p class="text-xs text-zinc-600 mt-0.5">crowdfunding campaigns we audited — real numbers, honest risk notes</p>
+        <h2 class="text-xl font-bold tracking-tight text-zinc-200">Picks from Kickstarter &amp; Beyond</h2>
+        <p class="text-xs text-zinc-600 mt-0.5">Crowdfunding Campaigns We Audited — Real Numbers, Honest Risk Notes</p>
       </div>
-      <a href="crowdfunding/" class="text-xs text-zinc-500 hover:text-lime-400 transition-colors no-underline">view all projects →</a>
+      <a href="crowdfunding/" class="text-xs text-zinc-500 hover:text-lime-400 transition-colors no-underline">View All Projects →</a>
     </div>
     <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
       <a href="crowdfunding/projects/beni.html" class="minimal-card group" style="grid-column: span 2;">
@@ -158,7 +164,7 @@
       <a href="crowdfunding/projects/trettitre.html" class="minimal-card group">
         <div class="w-full h-16 rounded-lg overflow-hidden bg-zinc-800 mb-2"><img src="https://i.kickstarter.com/assets/053/299/731/203e43fa445e498c4a396dd0d3db370c_original.jpg?anim=false&fit=cover&gravity=auto&height=576&origin=ugc&q=92&v=1775906690&width=1024&sig=sAujpI97Bz%2B9%2BbIFvn4G%2BU5FULXZ5cTzf8dmFIBY9%2BE%3D" alt="" class="w-full h-full object-cover" onerror="this.style.display='none'"></div>
         <div class="text-xs font-semibold text-zinc-200 truncate group-hover:text-lime-400 transition-colors">TRETTITRE — retro wall audio</div>
-        <div class="text-[11px] text-zinc-500 mt-0.5">funded · late pledges open</div>
+        <div class="text-[11px] text-zinc-500 mt-0.5">Funded · Late Pledges Open</div>
       </a>
       <a href="crowdfunding/projects/moonbox.html" class="minimal-card group">
         <div class="w-full h-16 rounded-lg overflow-hidden bg-zinc-800 mb-2"><img src="https://i.kickstarter.com/assets/054/791/005/bba0b722451d906d2f7d986d3e04504f_original.png?anim=false&fit=cover&gravity=auto&height=576&origin=ugc&q=92&v=1787002354&width=1024&sig=TWWGhb3wAC0Q%2FQfx191IoIlGfYxQC4xrq2mRM%2Fq1Mjk%3D" alt="" class="w-full h-full object-cover" onerror="this.style.display='none'"></div>
@@ -172,8 +178,8 @@
   <footer class="max-w-6xl mx-auto px-5 sm:px-8 py-10 mt-8 border-t border-white/[0.03]">
     <div class="flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-zinc-600">
       <span>VinceMedia &copy; 2026</span>
-      <a href="crowdfunding/" class="hover:text-zinc-400 transition-colors">crowdfunding</a>
-        <a href="partners.html" class="hover:text-zinc-400 transition-colors">for brands</a>
+      <a href="crowdfunding/" class="hover:text-zinc-400 transition-colors">Crowdfunding</a>
+        <a href="partners.html" class="hover:text-zinc-400 transition-colors">For Brands</a>
     </div>
   </footer>
 
@@ -207,7 +213,7 @@
             <div class="absolute inset-0 hero-gradient"></div>
             <div class="absolute top-3 left-3">
               <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg text-[10px] font-medium bg-black/50 text-lime-400 border border-lime-400/20">
-                <i class="fas fa-star text-[8px]"></i> pick of the month
+                <i class="fas fa-star text-[8px]"></i> PICK OF THE MONTH
               </span>
             </div>
           </div>
@@ -218,8 +224,8 @@
             </div>
             <p class="text-xs text-zinc-500 mt-2 leading-relaxed">${top.description}</p>
             <div class="flex items-center justify-between mt-4 pt-3 border-t border-white/[0.04]">
-              <span class="badge-pill badge-accent"><i class="fas fa-star text-[8px]"></i> reviewed</span>
-              <span class="text-sm font-medium text-lime-400">read review &rarr;</span>
+              <span class="badge-pill badge-accent"><i class="fas fa-star text-[8px]"></i> REVIEWED</span>
+              <span class="text-sm font-medium text-lime-400">Read Review &rarr;</span>
             </div>
           </div>
         </a>`;
@@ -253,7 +259,7 @@
                   <div class="relative h-40 overflow-hidden" style="${bgImg}">
                     <div class="absolute inset-0 hero-gradient"></div>
                     <div class="absolute top-2.5 left-2.5">
-                      <span class="badge-pill badge-accent text-[9px]"><i class="fas fa-file-pen text-[8px]"></i> exclusive review</span>
+                      <span class="badge-pill badge-accent text-[9px]"><i class="fas fa-file-pen text-[8px]"></i> EXCLUSIVE REVIEW</span>
                     </div>
                   </div>
                   <div class="p-4">
@@ -264,7 +270,7 @@
                     <p class="text-xs text-zinc-600 mt-1.5 leading-relaxed line-clamp-2">${b.description}</p>
                     <div class="flex items-center justify-between mt-3 pt-2.5 border-t border-white/[0.04]">
                       <span class="text-[10px] text-zinc-600 uppercase tracking-wide">${cat}</span>
-                      <span class="text-xs font-medium text-zinc-400 group-hover:text-lime-400 transition-colors">read review &rarr;</span>
+                      <span class="text-xs font-medium text-zinc-400 group-hover:text-lime-400 transition-colors">Read Review &rarr;</span>
                     </div>
                   </div>
                 </a>`;
@@ -314,10 +320,10 @@
             <div class="flex items-center gap-2.5 mb-2">
               ${b.favicon ? `<img class="brand-logo" src="${b.favicon}" alt="" loading="lazy" onerror="this.style.display='none'">` : `<div class="w-[22px] h-[22px] rounded flex items-center justify-center text-[10px] font-bold text-zinc-600 bg-white/[0.04]">${b.brand.charAt(0)}</div>`}
               <span class="text-sm font-semibold text-zinc-300 truncate">${b.brand}</span>
-              ${b.isCore ? '<span class="text-[9px] text-lime-400 bg-lime-400/10 px-1.5 py-0.5 rounded border border-lime-400/20 ml-auto">review</span>' : ''}
+              ${b.isCore ? '<span class="text-[9px] text-lime-400 bg-lime-400/10 px-1.5 py-0.5 rounded border border-lime-400/20 ml-auto">REVIEW</span>' : ''}
             </div>
             <p class="text-[11px] text-zinc-600 leading-relaxed line-clamp-2 mb-2">${b.description}</p>
-            <span class="text-[11px] font-medium text-zinc-500 group-hover:text-lime-400 transition-colors">shop now &rarr;</span>
+            <span class="text-[11px] font-medium text-zinc-500 group-hover:text-lime-400 transition-colors">Shop Now &rarr;</span>
           </a>`;
       }).join('');
     }
