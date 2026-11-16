@@ -56,6 +56,7 @@
     .sec-title { font-size: 1.05rem; font-weight: 800; letter-spacing: -0.01em; color: #fafafa; }
     .pill { display: inline-flex; align-items: center; gap: 5px; padding: 3px 10px; border-radius: 999px; font-size: 0.68rem; font-weight: 600; }
   </style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How well funded is GripNGo Vault?","acceptedAnswer":{"@type":"Answer","text":"The campaign raised $62k+ from 700+ backers &mdash; more than 31x its funding goal. Funding figures shown are lower bounds; the live total keeps growing while the campaign accepts pledges."}},{"@type":"Question","name":"What is the biggest risk with GripNGo Vault?","acceptedAnswer":{"@type":"Answer","text":"First campaign, zero updates so far."}},{"@type":"Question","name":"When does the GripNGo Vault campaign end?","acceptedAnswer":{"@type":"Answer","text":"The campaign is scheduled to end on September 13, 2026. After that date, rewards can no longer be pledged through Kickstarter unless the creator opens late pledges."}},{"@type":"Question","name":"How does VinceMedia audit crowdfunding campaigns?","acceptedAnswer":{"@type":"Answer","text":"VinceMedia crowdfunding audits are built from the public campaign page, not press releases. We record objective indicators only &mdash; funding multiple, backer count, creator track record, update activity and fulfillment risk &mdash; and we list who should skip the campaign. Funding figures shown are lower bounds that only grow while the campaign is live."}}]}</script>
 </head>
 <body class="bg-[#09090b] text-zinc-200">
   <nav class="max-w-5xl mx-auto px-5 sm:px-8 py-5 flex items-center justify-between">
@@ -109,7 +110,30 @@
       <p class="text-[11px] text-zinc-600 mt-3">Campaign ends Sep 13, 2026 · affiliate disclosure above.</p>
     </section>
   </main>
-  <footer class="border-t border-zinc-800/60">
+  
+<section class="max-w-4xl mx-auto px-5 sm:px-8 py-10 border-t border-zinc-800/60" id="faq">
+  <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight text-zinc-100">Frequently Asked Questions</h2>
+  <div class="mt-6 space-y-3">
+    <details class="panel p-5 group">
+      <summary class="cursor-pointer font-semibold text-zinc-100 flex items-center justify-between gap-3">How well funded is GripNGo Vault?<span class="text-zinc-600 transition-transform group-open:rotate-180">&#9662;</span></summary>
+      <p class="text-sm text-zinc-400 mt-3 leading-relaxed">The campaign raised $62k+ from 700+ backers &amp;mdash; more than 31x its funding goal. Funding figures shown are lower bounds; the live total keeps growing while the campaign accepts pledges.</p>
+    </details>
+    <details class="panel p-5 group">
+      <summary class="cursor-pointer font-semibold text-zinc-100 flex items-center justify-between gap-3">What is the biggest risk with GripNGo Vault?<span class="text-zinc-600 transition-transform group-open:rotate-180">&#9662;</span></summary>
+      <p class="text-sm text-zinc-400 mt-3 leading-relaxed">First campaign, zero updates so far.</p>
+    </details>
+    <details class="panel p-5 group">
+      <summary class="cursor-pointer font-semibold text-zinc-100 flex items-center justify-between gap-3">When does the GripNGo Vault campaign end?<span class="text-zinc-600 transition-transform group-open:rotate-180">&#9662;</span></summary>
+      <p class="text-sm text-zinc-400 mt-3 leading-relaxed">The campaign is scheduled to end on September 13, 2026. After that date, rewards can no longer be pledged through Kickstarter unless the creator opens late pledges.</p>
+    </details>
+    <details class="panel p-5 group">
+      <summary class="cursor-pointer font-semibold text-zinc-100 flex items-center justify-between gap-3">How does VinceMedia audit crowdfunding campaigns?<span class="text-zinc-600 transition-transform group-open:rotate-180">&#9662;</span></summary>
+      <p class="text-sm text-zinc-400 mt-3 leading-relaxed">VinceMedia crowdfunding audits are built from the public campaign page, not press releases. We record objective indicators only &amp;mdash; funding multiple, backer count, creator track record, update activity and fulfillment risk &amp;mdash; and we list who should skip the campaign. Funding figures shown are lower bounds that only grow while the campaign is live.</p>
+    </details>
+  </div>
+</section>
+
+<footer class="border-t border-zinc-800/60">
     <div class="max-w-5xl mx-auto px-5 sm:px-8 py-8 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-zinc-600">
       <div>&copy; 2026 VinceMedia — independent picks. We may earn a commission from links on this page.</div>
       <div class="flex items-center gap-4">
@@ -118,7 +142,8 @@
         <a href="../../partners.html" class="hover:text-zinc-400 transition-colors">For Brands</a>
       </div>
     </div>
-  </footer>
+  <a href="../../how-we-score.html" class="hover:text-zinc-400">How We Score</a>
+      </footer>
   <script>
     (function () {
       var end = new Date('2026-09-13T13:39:00Z').getTime();
